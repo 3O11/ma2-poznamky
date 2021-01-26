@@ -24,7 +24,7 @@
 \contentsline {section}{\numberline {2}Parciální derivace}{6}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Definice a značení}{6}{subsection.2.1}%
 \contentsline {subsection}{\numberline {2.2}Totální diferenciál}{6}{subsection.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.1}Definice}{7}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.1}Definice}{6}{subsubsection.2.2.1}%
 \contentsline {subsubsection}{\numberline {2.2.2}Tvrzení o spojitosti funkce a totálním diferenciálu}{7}{subsubsection.2.2.2}%
 \contentsline {subsubsection}{\numberline {2.2.3}Věta o totálním diferenciálu}{7}{subsubsection.2.2.3}%
 \contentsline {subsection}{\numberline {2.3}Pravidla pro počítání parciálních derivací}{8}{subsection.2.3}%
@@ -34,7 +34,7 @@
 \contentsline {subsubsection}{\numberline {2.4.1}Násobení}{9}{subsubsection.2.4.1}%
 \contentsline {subsubsection}{\numberline {2.4.2}Dělení}{9}{subsubsection.2.4.2}%
 \contentsline {subsection}{\numberline {2.5}Lagrangeova věta ve více proměnných}{9}{subsection.2.5}%
-\contentsline {subsection}{\numberline {2.6}Tvrzení o záměnnosti pořadí při parciálních derivacích}{10}{subsection.2.6}%
+\contentsline {subsection}{\numberline {2.6}Tvrzení o záměnnosti pořadí při parciálních derivacích}{9}{subsection.2.6}%
 \contentsline {subsubsection}{\numberline {2.6.1}Důsledek tvrzení o záměnnosti}{10}{subsubsection.2.6.1}%
 \contentsline {subsection}{\numberline {2.7}Věta o konvergentní podposloupnosti}{11}{subsection.2.7}%
 \contentsline {section}{\numberline {3}Kompaktní prostory}{11}{section.3}%

@@ -8,9 +8,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Definice a značení}
 \hspace{1.2mm}
-\noindent
-
-\hspace{1.2mm}
 Pro $f(x_1,...,x_n)$ vezmeme 
 \[\phi_k(t) = f(x_1,...,x_{k-1},t,x_{k+1},...x_n)\]
 \[... t = x_k...\]
@@ -24,11 +21,13 @@ Označení
 Pro $f(x,y)$ píšeme
 \[\frac{\partial f(x,y)}{\partial x} \textrm{ a } \frac{\partial f(x,y)}{\partial y}, \textrm{ atd.}\]
 
+\noindent
 \hspace{1.2mm}
 Když $\frac{\partial f(x_1,...,x_n)}{\partial x_k}$ existuje pro všechna $(x_1,...,x_n)$ v nějaké oblasti $D$ máme funkci
 
 \[\frac{\partial f}{\partial x_k}: D \rightarrow \mathbb{R}.\]
 
+\noindent
 \hspace{1.2mm}
 Když budeme mluvit o parciální derivaci bude vždy zřejmé máme-li na mysli funkci, nebo jen číslo (hodnotu té limity nahoře).
 \noindent
@@ -37,51 +36,53 @@ Když budeme mluvit o parciální derivaci bude vždy zřejmé máme-li na mysli
 \subsection{Totální diferenciál}
 \hspace{1.2mm}
 Nespojitá funkce $f$ může mít po souřadnicích má obě parciální derivace v každém bodě, to však ale neimplikuje spojitost.
-
 \begin{center}
     existence parciálních derivací neimplikuje spojitost!
 \end{center}
-
 \hspace{1.2mm}
 Budeme potřebovat něco silnejšího. Připomeňte si tvrzení ekvivalentní se standardní derivací:
 
+\noindent
+\hspace{1.2mm}
 Existuje $\mu$ konvergujíci k 0 při $h \rightarrow 0$ a A takové, že 
 
 \[f(x+h) - f(x) = Ah + |h| \cdot \mu(h)\]
 
 \hspace{1.2mm}
+\noindent
 \textit{Geometrický pohled:}
 $f(x+h) - f(x) = Ah$ vyjadřuje tečnu ke grafu funkce v bodě $(x,f(x)).$
 
+\noindent
 \hspace{1.2mm}
 $|h|\cdot \mu(h)$ je jakási malá chyba.
-\noindent
 
+\noindent
 \hspace{1.2mm}
 Mysleme podobně o funkci $f(x,y)$ a uvažujme plochu 
 \[S = \{(t,u,f(t,u)) : (t,u) \in D\}.\]
 
+\noindent
 \hspace{1.2mm}
 Dvě parciální derivace vyjadřují směry dvou tečných přímek k S vbode $(x,y,f(x,y))$, ale \underline{ne tečnou rovinu}, 
 která teprve bude uspokojivé rozšíření faktu nahoře.
 
-
+\noindent
 \hspace{1.2mm}
 Pro \textbf{x} $\in \mathbb{E}_n$ definujeme
 \[||\textbf{x}||  = \max_i|x_i|\]
 
+\noindent
 \hspace{1.2mm}
 To bude místo absolutní hodnoty, místo $h$ bude $n$-tice blízká nule.
-\noindent
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Definice}
+\hspace{1.2mm}
 Funkce $f$ má \textit{totální diferenciál} v bodě \textbf{x} existuje-li funkce $\mu$ spojitá v okolí $U$ bodu $o$ taková, že $\mu(\textbf{o}) = 0$
 a čísla $A_1,...,A_n$ pro která
 
 \[f(\textbf{a}+\textbf{h}) - f(\textbf{a}) = \sum^n_{k=1}A_kh_k+||\textbf{h}||\mu(\textbf{h}).\]
-\hspace{1.2mm}
-\noindent
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Tvrzení o spojitosti funkce a totálním diferenciálu}
@@ -90,10 +91,9 @@ Nechť má funkce $f$ totální diferenciál v bodě \textbf{a}. Potom platí, �
 \begin{enumerate}
     \item $f$ je spojitá v \textbf{a},
     \item $f$ má všechny parciální derivace v \textbf{a}, a to s hodnotami 
-    
     \[\frac{\partial f(\textbf{a})}{\partial x_k} = A_k.\]
 \end{enumerate}
-Důkaz:
+\textbf{Důkaz:}
 \begin{enumerate}
     \item Máme
     
@@ -105,10 +105,13 @@ Důkaz:
     a limita na pravé straně je zřejmě $A_k$.
     
 \end{enumerate}
+
+
+    \noindent
+    \hspace{1.2mm}
     Teď již spojitost dostaneme. Vidíme, že v případě funkcí jedné proměnné není rozdíl mezi existencí derivace v bodě \textbf{a} a vlastností
     mít totální diferenciál v tomto bodě. V případě více proměnných je však tento rozdíl zcela zásadní. Může být trochu překvapujíci, že 
     zatímco existence parciálních derivací mnoho neznamená, \underline{existence spojitých parciálních derivací} je něco úplně jiného.
-\noindent
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Věta o totálním diferenciálu}
@@ -120,11 +123,11 @@ Buď
 
 \[f(\textbf{a}+\textbf{h}) - f(\textbf{a}) = \sum^n_{k=1}(f(\textbf{a}+\textbf{h}^{(k-1)})-f(\textbf{a}+\textbf{h}^{(k)})) = M.\]
 
+\noindent
+\hspace{1.2mm}
 Podle Lagrangeovy věty existují $0 \leq \Theta_k \leq 1$ takové, že
 \[f(\textbf{a}+\textbf{h}^{(k-1)})-f(\textbf{a}+\textbf{h}^{(k)}) = \frac{\partial f(a_1,...,a_{k-1},a_k+ \theta_kh_k,a_{k+1},...,a_n)}{\partial x_k}h_k\]
-
 a můžeme pokračovat
-
 \begin{align*} 
 \begin{split}
 M & = \sum\frac{\partial f(a_1,...a_k+\Theta_kh_k,...,a_n)}{\partial x_k}h_k = \\
@@ -134,17 +137,14 @@ M & = \sum\frac{\partial f(a_1,...a_k+\Theta_kh_k,...,a_n)}{\partial x_k}h_k = \
  {\partial x_k}- \frac{\partial f(\textbf{a})}{\partial x_k}\right)\frac{h_k}{||\textbf{h}||}.
 \end{split}
 \end{align*}
-
 Položíme
 \[\mu (\textbf{h}) = \sum\left(\frac{\partial f(a_1,...,a_k+\Theta_kh_k,...,a_n)}{\partial x_k} -
     \frac{\partial f(\textbf{a})}{\partial x_k} \right)\frac{h_k}{||\textbf{h}||}.\]
-    
     Jelikož $\left|\frac{h_k}{||\textbf{h}||}\right| \leq 1$ a jelikož jsou funkce $\frac{\partial f}{\partial x_k}$ spojité,
     $\lim_{\textbf{h}\rightarrow \textbf{0}} \mu (\textbf{h}) = 0$.
     \begin{center}
     \LARGE 
     Můžeme tedy schematicky psát
-    
     \LARGE 
     spojité PD $\implies$ TD $\implies$ PD
     \end{center}
