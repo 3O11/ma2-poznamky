@@ -1,0 +1,90 @@
+\babel@toc {czech}{}
+\contentsline {section}{\numberline {1}Metrické prostory}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Definice metrického prostoru}{3}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Euklidovský prostor $\mathbb {E}_n$}{3}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Diskrétní prostor}{3}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Podprostor}{3}{subsection.1.4}%
+\contentsline {subsection}{\numberline {1.5}Spojité zobrazení}{3}{subsection.1.5}%
+\contentsline {subsection}{\numberline {1.6}Triviality}{3}{subsection.1.6}%
+\contentsline {subsubsection}{\numberline {1.6.1}Identické zobrazení}{3}{subsubsection.1.6.1}%
+\contentsline {subsubsection}{\numberline {1.6.2}Vložení podprostoru}{3}{subsubsection.1.6.2}%
+\contentsline {subsubsection}{\numberline {1.6.3}Složení spojitých zobrazení je spojité}{4}{subsubsection.1.6.3}%
+\contentsline {subsection}{\numberline {1.7}Věta o konvergenci}{4}{subsection.1.7}%
+\contentsline {subsection}{\numberline {1.8}Okolí}{4}{subsection.1.8}%
+\contentsline {subsection}{\numberline {1.9}Otevřená a uzavřená množina}{4}{subsection.1.9}%
+\contentsline {subsection}{\numberline {1.10}Uzávěr}{4}{subsection.1.10}%
+\contentsline {subsection}{\numberline {1.11}Vlastnosti zobrazení mezi metrickými prostory}{4}{subsection.1.11}%
+\contentsline {subsection}{\numberline {1.12}Silně ekvivalentní metriky}{4}{subsection.1.12}%
+\contentsline {subsection}{\numberline {1.13}Vzory a obrazy}{4}{subsection.1.13}%
+\contentsline {subsubsection}{\numberline {1.13.1}Obraz}{5}{subsubsection.1.13.1}%
+\contentsline {subsubsection}{\numberline {1.13.2}Vzor}{5}{subsubsection.1.13.2}%
+\contentsline {subsection}{\numberline {1.14}Reálná funkce o $n$ proměnných}{5}{subsection.1.14}%
+\contentsline {subsection}{\numberline {1.15}Součiny}{5}{subsection.1.15}%
+\contentsline {subsection}{\numberline {1.16}Věta o spojitých zobrazeních}{6}{subsection.1.16}%
+\contentsline {section}{\numberline {2}Parciální derivace}{6}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Definice a značení}{6}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Totální diferenciál}{7}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Definice}{7}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}Tvrzení o spojitosti funkce a totálním diferenciálu}{7}{subsubsection.2.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.3}Věta o totálním diferenciálu}{8}{subsubsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.3}Pravidla pro počítání parciálních derivací}{8}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}Věta pro derivaci složených funkcí o více proměnných}{8}{subsubsection.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.3.2}Důsledek (Řetízkové Pravidlo)}{9}{subsubsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.4}Aritmetická pravidla z řetězového násobení}{9}{subsection.2.4}%
+\contentsline {subsubsection}{\numberline {2.4.1}Násobení}{9}{subsubsection.2.4.1}%
+\contentsline {subsubsection}{\numberline {2.4.2}Dělení}{10}{subsubsection.2.4.2}%
+\contentsline {subsection}{\numberline {2.5}Lagrangeova věta ve více proměnných}{10}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}Tvrzení o záměnnosti pořadí při parciálních derivacích}{10}{subsection.2.6}%
+\contentsline {subsubsection}{\numberline {2.6.1}Důsledek tvrzení o záměnnosti}{11}{subsubsection.2.6.1}%
+\contentsline {subsection}{\numberline {2.7}Věta o konvergentní podposloupnosti}{11}{subsection.2.7}%
+\contentsline {section}{\numberline {3}Kompaktní prostory}{12}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Definice kompaktního prostoru}{12}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Tvrzení o podprostoru kompaktního prostoru}{12}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Tvrzení o uzavřenosti podprostoru}{12}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Tvrzení o omezenosti kompaktního prostoru}{12}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Věta o součinu kompaktních prostorů}{12}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}Věta : podprostor euklidovského prostoru je kompaktní právě když je omezený a uzavřený}{13}{subsection.3.6}%
+\contentsline {subsection}{\numberline {3.7}Tvrzení: obraz spojitého zobrazení je kompaktní}{13}{subsection.3.7}%
+\contentsline {subsection}{\numberline {3.8}Tvrzení: každá spojitá funkce na kompaktním prostoru nabýva maxima i minima}{13}{subsection.3.8}%
+\contentsline {subsection}{\numberline {3.9}Věta o vzájemně jednoznačném spojitém zobrazení}{13}{subsection.3.9}%
+\contentsline {subsection}{\numberline {3.10}Definice cauchyovské posloupnosti $(x_n)_n$}{13}{subsection.3.10}%
+\contentsline {subsection}{\numberline {3.11}Tvrzení o konvergenci cauchyovské posloupnosti}{13}{subsection.3.11}%
+\contentsline {subsection}{\numberline {3.12}Definice úplného metrického prostoru}{14}{subsection.3.12}%
+\contentsline {subsection}{\numberline {3.13}Tvrzení: Podprostor úplného prostoru je úplný právě když je uzavřený}{14}{subsection.3.13}%
+\contentsline {subsection}{\numberline {3.14}Tvrzení: Každý kompaktní prostor je úplný}{14}{subsection.3.14}%
+\contentsline {subsection}{\numberline {3.15}Lemma o cauchyovské posloupnosti}{14}{subsection.3.15}%
+\contentsline {subsection}{\numberline {3.16}Věta: Součin úplných prostorů je úplný }{14}{subsection.3.16}%
+\contentsline {subsubsection}{\numberline {3.16.1}Důsledek}{14}{subsubsection.3.16.1}%
+\contentsline {section}{\numberline {4}Implicitní funkce}{14}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Ilustrační příklady}{14}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.1}Obecný příklad}{14}{subsubsection.4.1.1}%
+\contentsline {subsubsection}{\numberline {4.1.2}Příklad pro $F(x,y) = x^2 + y^2 - 1$}{15}{subsubsection.4.1.2}%
+\contentsline {subsection}{\numberline {4.2}Věta o implicitní funkci}{15}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Věta o implicitních funkcích}{15}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Definice Jacobiho determinantu}{15}{subsection.4.4}%
+\contentsline {section}{\numberline {5}Extrémy}{16}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Věta o hledání extrémů funkcí}{16}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Definice Regulárního zobrazení}{17}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Tvrzení o obrazu regulární funkce}{17}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Tvrzení o inverzi regulárního zobrazení}{17}{subsection.5.4}%
+\contentsline {subsubsection}{\numberline {5.4.1}Důsledek tvrzení o inverzi regulárního zobrazení}{17}{subsubsection.5.4.1}%
+\contentsline {section}{\numberline {6}Objemy a obsahy}{18}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Vlastnosti}{18}{subsection.6.1}%
+\contentsline {section}{\numberline {7}Stejnoměrná spojitost}{18}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Definice stejnoměrné spojitosti}{18}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Věta o stejnoměrné spojitosti}{18}{subsection.7.2}%
+\contentsline {section}{\numberline {8}Opakování}{18}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Riemannův integrál v jedné proměnné}{18}{subsection.8.1}%
+\contentsline {subsubsection}{\numberline {8.1.1}Riemannův integrál}{19}{subsubsection.8.1.1}%
+\contentsline {subsubsection}{\numberline {8.1.2}Tvrzení o existenci Riemannova integrálu}{19}{subsubsection.8.1.2}%
+\contentsline {subsubsection}{\numberline {8.1.3}Věta: Existence Riemannova integrálu pro spojité funkce v $\mathbb {R}$}{20}{subsubsection.8.1.3}%
+\contentsline {subsubsection}{\numberline {8.1.4}Integrální věta o střední hodnotě}{20}{subsubsection.8.1.4}%
+\contentsline {subsubsection}{\numberline {8.1.5}Základní věta analýzy}{20}{subsubsection.8.1.5}%
+\contentsline {subsubsection}{\numberline {8.1.6}Důsledky základní věty analýzy}{20}{subsubsection.8.1.6}%
+\contentsline {section}{\numberline {9}Riemannův integrál ve více proměnných}{21}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Pomocné definice}{21}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}Tvrzení o existenci Riemannova integrálu}{23}{subsection.9.2}%
+\contentsline {subsection}{\numberline {9.3}Věta: Každá spojitá funkce na n-rozměrnem kompaktním intervalu má Riemannův integrál}{23}{subsection.9.3}%
+\contentsline {subsection}{\numberline {9.4}Fubiniova věta}{23}{subsection.9.4}%
+\contentsline {subsection}{\numberline {9.5}Lebesgueův integrál}{24}{subsection.9.5}%
+\contentsline {subsection}{\numberline {9.6}Tietzeova věta}{25}{subsection.9.6}%
