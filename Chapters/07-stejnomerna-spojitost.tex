@@ -1,0 +1,38 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Stejnoměrná spojitost}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Definice stejnoměrné spojitosti}
+\hspace{1.2mm}
+
+Řekneme, že $f : (X,d) \rightarrow (Y,d')$ je stejnoměrně spojité, je-li
+\[\forall \varepsilon \exists \delta : d(x,y) < \delta \implies d'(f(x),f(y)) < \varepsilon\].
+\noindent
+\textbf{Příklad:}
+
+$f = (x \mapsto x^2) : \mathbf{R} \rightarrow \mathbf{R}$ je spojitá, ale ne stejnoměrně spojitá.
+Máme $|f(x) - f(y)| = |x+y| \cdot |x-y|$; tedy abychom dostali $|f(x)-f(y)| < \varepsilon $ v 
+blízkosti $x = 100$ potřebujeme $\delta$ stokrát menší než v blízkosti $x = 1$.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Věta o stejnoměrné spojitosti}
+\hspace{1.2mm}
+Je-li $(X,d)$ kompaktní, je každé spojité $f : (X,d) \rightarrow (Y,d')$ stejnoměrně spojité. Zejména to platí 
+pro spojité reálné funkce na kompaktních intervalech.
+
+
+\vspace{5mm}
+\noindent
+\textbf{Důkaz:} Nechť $f : (X,d) \rightarrow (Y,d')$ není stejnoměrně spojité. Potom $\exists \varepsilon > 0 : \forall n \exists x_n, y_n :$
+\[d(x_n,y_n) < \frac{1}{n}\]
+ale
+\[d'(f(x_n),f(y_n)) \geq \varepsilon.\]
+
+Zvolme konvergentní podposloupnost $(x_{k_n})_n$ posloupnosti $(x_n)_n$. Označme $a = lim_n x_{k_n}.$ Potom podle $d(x_n,y_n) < \frac{1}{n}$ je též 
+$a = lim_n y_{k_n}.$ Podle $d'(f(x_n),f(y_n)) \geq \varepsilon$ nemůže být $f(a) = lim_n f(x_{k_n})$ a zároveň $f(a) = lim_n f(y_{k_n})$, 
+a tedy $f$ není ani spojité.
+
+\end{document}
