@@ -18,7 +18,7 @@ Nechť mají spojité parciální derivace. Nechť je hodnost matice
 \vdots & \ddots & \vdots\\
 \frac{\partial g_k}{\partial x_1} & \dots & \frac{\partial g_k}{\partial x_n}\\
 \end{pmatrix}\]
-maximální, tedy $k$, v každém bodě oboru $D$.
+maximální, tedy $k \leq n$, v každém bodě oboru $D$.
 
 \noindent
 \hspace{1.2mm}
@@ -32,17 +32,17 @@ pak existují čísla $\lambda _1, ... , \lambda _k$ taková, že $\forall i \in
 \noindent
 \textbf{Důkaz:} Matice $M$ má hodnost $k$ právě když aspoň jedna její $k\times k$ podmatice $M$ je regulární (a tedy má nenulový determinant). Dejme tomu,
 \[ 0 \neq \begin{vmatrix}
-\frac{\partial g_1}{\partial x_1} & \dots & \frac{\partial g_1}{\partial x_n}\\
+\frac{\partial g_1}{\partial x_1} & \dots & \frac{\partial g_1}{\partial x_k}\\
 \vdots & \ddots & \vdots\\
-\frac{\partial g_k}{\partial x_1} & \dots & \frac{\partial g_k}{\partial x_n}\\
+\frac{\partial g_k}{\partial x_1} & \dots & \frac{\partial g_k}{\partial x_k}\\
 \end{vmatrix}\]
 Potom podle věty o implicitních funkcích máme okolí bodu $\textbf{a}$ funkce $\phi_i(x_{k+1},...,x_n)$
 se spojitými parciálními derivacemi takové, že (pišme $\Tilde{\textbf{x}}$ pro $(x_{k+1},...,x_n))$
-\[g_i(\phi_1(\Tilde{\textbf{x}}),...,\phi_k(\Tilde{\textbf{x}},\Tilde{\textbf{x}}) = 0 \text{ pro } i=1,...,k.\]
+\[g_i(\phi_1(\Tilde{\textbf{x}}),...,\phi_k(\Tilde{\textbf{x}}),\Tilde{\textbf{x}}) = 0 \text{ pro } i=1,...,k.\]
 tedy lokální maximum nebo minimum funkce $f(\textbf{x}$) v $\textbf{a}$ podmíněné danými vazbami dává lokální maximum či minimum (nepodmíněné) funkce
 \[F(\Tilde{\textbf{x}}) = f(\phi_1(\Tilde{\textbf{x}}),...,\phi_k(\Tilde{\textbf{x}}),\Tilde{\textbf{x}}),\]
 v $\Tilde{\textbf{a}}$, a tedy je 
-\[\frac{\partial F(\Tilde{\textbf{a}}}{\partial x_i} = 0 \text{ pro } i = k+1,...,n,\]
+\[\frac{\partial F(\Tilde{\textbf{a}})}{\partial x_i} = 0 \text{ pro } i = k+1,...,n,\]
 to jest, podle řetízkového pravidla
 \[\sum^k_{r=1}\frac{\partial f(\textbf{a})}{\partial x_r}\cdot \frac{\partial \phi_r(\Tilde{\textbf{a}})}{\partial x_i} + \frac{\partial f(\textbf{a})}{\partial x_i} \text{ pro } i = k+1,...,n.\]
 Derivováním konstantní $g_i(\phi_1(\Tilde{\textbf{x}},...,\phi_k(\Tilde{\textbf{x}}),\Tilde{\textbf{x}}) = 0$ dostaneme pro $j = 1,...,k$
@@ -52,7 +52,7 @@ Dále použijeme znovu vlastnost toho, že determinant je nenulový. Vzhledem k 
 jediné řešení $\lambda_1,...,\lambda_k.$ To jsou rovnosti z tvrzení, ale jen pro $i \leq k$. Musíme ještě dokázat, že to platí i pro $i > k$. 
 
 \begin{align*}
-\frac{\partial f(\textbf{a})}{\partial} + & \sum^n_{j=1}\lambda_j\cdot\frac{\partial g_j(\textbf{a})}{\partial x_i}=\\
+\frac{\partial f(\textbf{a})}{\partial x_i} + & \sum^n_{j=1}\lambda_j\cdot\frac{\partial g_j(\textbf{a})}{\partial x_i}=\\
 = & - \sum^k_{r=1} \frac{\partial f(\textbf{a})}{\partial x_r}\cdot\frac{\partial \phi_r(\Tilde{\textbf{a}})}{\partial x_i} -
 \sum^k_{j=1}\lambda_j\cdot\sum^k_{r=1}\frac{\partial g_j(\textbf{a})}{\partial x_r}\cdot\frac{\partial \phi_r(\Tilde{\textbf{a}})}{\partial x_i} =\\
 = & - \sum^n_{r=1}\left(\frac{\partial f(\textbf{a})}{\partial x_i}+\sum^n_{j=1}\lambda_j\cdot\frac{\partial g_j(\textbf{a})}{\partial x_i}\right)\frac{\partial \phi_r(\Tilde{\textbf{a}})}{\partial x_i}=\\
@@ -73,7 +73,7 @@ je \textbf{regulární}, jestliže
 \subsection{Tvrzení o obrazu regulární funkce}
 \hspace{1.2mm}
 \noindent
-Je-li $\mathbf{f}: U \to \mathbf{E}_n$ regulární, je obraz $\mathbf{f}[V]$ každé otevřené podmnožiny
+Je-li $\mathbf{f}: U \to \mathbb{E}_n$ regulární, je obraz $\mathbf{f}[V]$ každé otevřené podmnožiny
 $V \subseteq U$ otevřený.
 
 \vspace{5mm}
@@ -85,26 +85,26 @@ a $\frac{D(\textbf{F})}{D(\textbf{x})} \neq 0$,
 a tedy můžeme použít větu o IF a dostaneme 
 $\delta > 0$ a $\Delta > 0 : \forall \textbf{y} : ||\textbf{y} - \textbf{y}^0|| < \delta \exists \textbf{x} : ||\textbf{x} - \textbf{x}^0|| < \Delta$ a 
 $F_i(\textbf{x},\textbf{y}) = f_i(\textbf{x}) - y_i = 0$. To znamená, že máme $\textbf{f}(\textbf{x}) = \textbf{y}$ (pozor, $y_i$ jsou zde proměnné, $x_j$ hledané funkce a
-\[\Omega(\textbf{y}^0,\delta) = \{\textbf{y} : ||\textbf{y} - \textbf{y}^0 || < \delta \subseteq \textbf{f}[V]\}.\]
+\[\Omega(\textbf{y}^0,\delta) = \{\textbf{y} : ||\textbf{y} - \textbf{y}^0 || < \delta \} \subseteq \textbf{f}[V].\]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Tvrzení o inverzi regulárního zobrazení}
 \hspace{1.2mm}
 \noindent
-Buď $\mathbf{f}: U \to \mathbf{E}_n$ regulární zobrazení. Potom $\forall \mathbf{x}^0 \in U$
-otevřené okolí $V$ takové, že restrikce $\mathbf{f}|V$ je prosté zobrazení. Navíc, zobrazení
+Buď $\mathbf{f}: U \to \mathbf{E}_n$ regulární zobrazení. Potom $\forall \mathbf{x}^0 \in U \exists$
+otevřené okolí $V$ takové, že restrikce $\mathbf{f}|V$ je bijekce. Navíc, zobrazení
 $\mathbf{g}: f[V] \to \mathbb{E}_n$ inverzní k $\mathbf{f}|V$ je regulární.
 
 \vspace{5mm}
 \noindent
 \textbf{Důkaz:} Znovu použijeme zobrazení $\textbf{F} = (F_1,...,F_n)$, kde $F_i(\textbf{x},\textbf{y}) = f_i(\textbf{x})-y_i$. Pro dost malé 
-$\Delta > 0$ máme právě jedno $\textbf{x} = \textbf{g}(\textbf{y})$ takové, že $\textbf{F}(\textbf{x},\textbf{y}) = 0$ a $||\textbf{x} - \textbf{x}^0|| < \Delta$.
+$\Delta > 0$ máme právě jedno $\textbf{x} = \textbf{g}(\textbf{y})$ takové, že $\textbf{F}(\mathbf{g}(\textbf{y}),\textbf{y}) = 0$ a $||\textbf{x} - \textbf{x}^0|| < \Delta$.
 Toto $\textbf{g}$ má navíc spojité parciální derivace. Máme
 \[D(id) = D(\textbf{f}\circ\textbf{g}) = D(\textbf{f})\cdot D(\textbf{g}).\]
 Podle řetízkového pravidla (a věty o násobení determinantů) je 
 \[\frac{D(\textbf{f})}{D(\textbf{x})}\cdot\frac{D(\textbf{g})}{D(\textbf{y})} = \det D(\textbf{f})\cdot \det D(\textbf{g}) = 1\]
 
-a tedy je pro každé $\textbf{y} \in \textbf{f}[V], \partial{D(\textbf{g})}{D(\textbf{y})}(\textbf{y}) \neq 0$.
+a tedy je pro každé $\textbf{y} \in \textbf{f}[V], \frac{D(\textbf{g})}{D(\textbf{y})}(\textbf{y}) \neq 0$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Důsledek tvrzení o inverzi regulárního zobrazení}
