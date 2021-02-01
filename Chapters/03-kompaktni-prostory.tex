@@ -20,8 +20,8 @@ Podprostor kompaktního prostoru je kompaktní právě když je uzavřený.
 \noindent
 \textbf{Důkaz:} 
 \begin{enumerate}
-    \item Buď $Y$ uzavřený podprostor kompaktního $X$ a buď $(y_n)_n$ podposloupnost v $Y$. Jako posloupnost v X má podposloupnost s limitou
-    a z uzavřenosti je tato limita v $Y$.
+    \item Buď $Y$ uzavřený podprostor kompaktního $X$ a buď $(y_n)_n$ posloupnost v $Y$. Jako posloupnost v X má 
+    konvergentní podposloupnost s limitou a z uzavřenosti je konvergentní podposloupností a tato limita je v $Y$.
     \item Nechť $Y$ není uzavřená. Potom existuje posloupnost $(y_n)_n)$ v $Y$ konvergentní v $X$ taková, že $y = lim_n y_n \notin Y$. Potom $(y_n)_n$
     nemůže mít podposloupnost konvergentní v $Y$ protože každá její podposloupnost konverguje k $y$.
 \end{enumerate}
@@ -61,7 +61,7 @@ Součin konečně mnoha kompaktních prostorů je kompaktní.
 
 \vspace{5mm}
 \noindent
-\textbf{Důkaz:} Stačí dokázat pro součin dvou prostorů.
+\textbf{Důkaz:} Stačí dokázat pro součin dvou prostorů. (protože součin prostorů je komutativní)
 
 Buďte $(X,d_1), (X, d_2)$ kompaktní a buď $((x_n,y_n))_n$ posloupnost v $X \times Y$. 
 Zvolme konvergentní podposloupnost $(x_{k_n})_n$ posloupnosti $(x_n)_n$ a konvergentní podposloupnost $(y_{k_{l_n}})_n$ posloupnosti $(y_{k_n})_n$.
@@ -85,7 +85,7 @@ Podprostor euklidovského prostoru $\mathbb{E}_n$ je kompaktní právě když je
 \noindent
 \textbf{Důkaz:} 
 \begin{enumerate}
-    \item Že je uzavřený a omezený už víme.
+    \item Že je uzavřený a omezený už víme (3.4, 3.5).
     \item Buď nyní $Y \subseteq \mathbb{E}_n$ omezený a uzavřený. Jelikož je omezený, je pro dostatečně velký kompaktní interval
     \[Y \subseteq J^n \subseteq \mathbb{E}_n.\]
     $J^n$ je kompaktní jako součin intervalů $\left<a_i,b_i\right>$, a jelikož je $Y$ uzavřený v $\mathbb{E}_n$ je též uzavřený
@@ -108,13 +108,16 @@ Potom je $(y_{k_n})_n = (f(x_{k_n}))_n$ konvergentní podposloupnost $(x_n)_n$.
 \subsection{Tvrzení: každá spojitá funkce na kompaktním prostoru nabýva maxima i minima}
 \hspace{1.2mm}
 \noindent
-Buď $(X,d)$ kompaktní. Potom každá spojitá funkce $f:(X,d)\to \mathbb{R}$ nabývá maxima i minima.
+Buď $(X,d)$ kompaktní. Potom každá spojitá funkce $f:(X,d)\to \mathbb{R}$ nabývá maxima i minima (t.j. nejsou nekonečné).
 
 \vspace{5mm}
 \noindent
-\textbf{Důkaz:} Buď $Y = f[X] \subseteq \mathbb{R}$ kompaktní. Je to tedy omezená množina a musí mít supremum $M$ a infimum $m$. Zřejmě máme 
+\textbf{Důkaz:} Buď $Y = f[X] \subseteq \mathbb{R}$ kompaktní. Je to tedy omezená množina a musí mít supremum $M\in \mathbb{R}$ a infimum $m\in \mathbb{R}$. Zřejmě máme 
 $d(m,Y) = d(M,Y) = 0$ a jelikož $Y$ je uzavřená, $m,M \in Y$. Víme, že spojitá $f$ je charakterizována tím, že všechny vzory uzavřených množin
-jsou uzavřené. Nyní vidíme, že je-li definiční obor kompaktní, platí též, že obrazy uzavřených podmnožin jsou uzavřené. Z toho plyne následujíci:
+jsou uzavřené. Nyní vidíme, že je-li definiční obor kompaktní, platí též, že obrazy uzavřených podmnožin jsou uzavřené. 
+\\
+\\
+Z toho plyne následujíci:
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Věta o vzájemně jednoznačném spojitém zobrazení}
@@ -127,7 +130,7 @@ $f$ homeomorfismus.
 \hspace{1.2mm}
 {\small
 Obecněji: Nechť $f:(X,d) \to (Y,d')$ je spojité zobrazení. Mějme potom $g: (X,d) \to (Z, d'')$ a
-$h: (Y,d') \to (Z,d'')$ takové, že $h \circ f = g$. Potom je $h$ spojité.}
+$h: (Y,d') \to (Z,d'')$ takové, že $h \circ f = g$. Potom je $h$ spojité. (chybí předpoklad)}
 
 \vspace{5mm}
 \noindent
@@ -151,8 +154,8 @@ podposloupnosti.
 
 \vspace{5mm}
 \noindent
-\textbf{Důkaz:} Nechť je $(x_n)_n$ Cauchyovská a nechť $lim_{n}x_{k_n} = x.$ Buď $d(x_m,x_n) < \varepsilon$ pro $m,n \geq n_1$ 
-a $d(x_{k_n},x) \leq \varepsilon$ pro $n \geq n_2$. Položíme-li $n_0 = max(n_1,n_2)$, máme pro $n \geq n_0$ (protože $k_n \geq n$)
+\textbf{Důkaz:} Nechť je $(x_n)_n$ Cauchyovská a nechť $lim_{n}x_{k_n} = x.$ Buď $d(x_m,x_n) < \varepsilon$ pro $ \forall m,n \geq n_1$ 
+a $d(x_{k_n},x) \leq \varepsilon$ pro $\forall n \geq n_2$. Položíme-li $n_0 = max(n_1,n_2)$, máme pro $\forall n \geq n_0$ (protože $k_n \geq n$)
 \[d(x_n,x) \leq d(x_n,x_{k_n}) + d(x_{k_n},x) < 2\varepsilon.\]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

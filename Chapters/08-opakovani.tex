@@ -13,7 +13,7 @@
 
 {\normalsize
 \textit{Zjemnění:
-\[P' : a = t'_0 < t'_1 < \cdot \cdot \cdot < t'_{n-1} < t_m = b\]
+\[P' : a = t'_0 < t'_1 < \cdot \cdot \cdot < t'_{n-1} < t'_m = b\]
 \[\text{kde }\{t_j: j = 1,...,n-1\}\subseteq \{t'_j : j = 1,...,m-1\}.\]
 }}
 \textit{Jemnost rozdělení} $P: \mu(P) = \text{max}_j(t_j-t_{j-1}).$
@@ -25,13 +25,13 @@ Pro omezenou $f:J=\left<a,b\right> \rightarrow \mathbf{R} $ a $P$ definujeme dol
 \end{align*}
 kde
 
-\[m_j = inf\{f(x) : t_{j-1} \leq x \leq t_j\}, M_j = \text{sup}\{f(x) : t_{j-1} \leq x \leq t_j\}.\]
+\[m_j = \inf\{f(x) : t_{j-1} \leq x \leq t_j\}, M_j = \text{sup}\{f(x) : t_{j-1} \leq x \leq t_j\}.\]
 
 \begin{itemize}
     \item Pokud $P'$ zjemňuje $P$ dostáváme
     \[s(f,P) \leq s(f,P') \text{ a } S(f,P) \geq S(f,P')\]
     \item Pro každá dvě $P_1, P_2$ je 
-    \[s(f,P_1 \leq S(f, P_2).\]
+    \[s(f,P_1) \leq S(f, P_2).\]
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -60,7 +60,7 @@ Riemannův integrál $\int^b_a f(x) dx$ existuje právě když $\forall \varepsi
     \item Nechť $\int^b_a f(x) dx$ existuje a nechť $\varepsilon > 0$. Potom existují rozdělení $P_1$ a $P_2$ takové, že
     \begin{center}
         \begin{tabular}{ c c c }
-            $S(f,P_1) < \int^b_a f(x) dx + \frac{\varepsilon}{2}$ & a & $s(f,P_2) > \int^b_a f(x) dx+\frac{\varepsilon}{2}$  \\
+            $S(f,P_1) < \int^b_a f(x) dx + \frac{\varepsilon}{2}$ & a & $s(f,P_2) > \int^b_a f(x) dx - \frac{\varepsilon}{2}$  \\
         \end{tabular}
     \end{center}
     Potom je pro společné zjemnění $P$ těch dvou $P_1,P_2$
@@ -79,12 +79,12 @@ Pro každou spojitou $f : \left<a,b\right> \rightarrow \mathbb{R}$ Riemannův in
 \vspace{5mm}
 \noindent
 \textbf{Důkaz:} Pro $\varepsilon > 0 $ zvolme $\delta > 0$ tak, aby 
-\[|x-y| < \delta \implies |f(x) - f(y)| < \frac{\varepsilon}{b-a}.\]
+\[\forall x,y : |x-y| < \delta \implies |f(x) - f(y)| < \frac{\varepsilon}{b-a}.\]
 Je-li $\mu(P) < \delta$ máme $t_j-t_{j-1} < \delta$ pro všechna $j$, a tedy
-\[M_j - m_j = \text{sup}\{f(x) : t_{j-1} \leq x \leq t_j\} - \text{inf}\{f(x) : t_{j-1} \leq x \ leq t_j\} \leq\]
+\[M_j - m_j = \text{sup}\{f(x) : t_{j-1} \leq x \leq t_j\} - \text{inf}\{f(x) : t_{j-1} \leq x \leq t_j\} \leq\]
 \[\leq \text{sup}\{|f(x) - f(y)| : t_{j-1} \leq x,y \leq t_j\} \leq \frac{\varepsilon}{b-a}\]
 takže
-\[S(f,P) - s(f,P) = \sum (M_j - m_j)(t_j-t_{j-1)}\leq\]
+\[S(f,P) - s(f,P) = \sum (M_j - m_j)(t_j-t_{j-1})\leq\]
 \[\leq \frac{\varepsilon}{b-a}\sum (t_j-t{j-1}) = \frac{\varepsilon}{b-a}(b-a) = \varepsilon.\]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -123,7 +123,7 @@ Pro $h\neq 0$ máme
     \item Spojitá funkce $f : \left<a,b\right> \rightarrow \mathbb{R}$ má na intervalu $(a,b)$ primitivní funkci spojitou na $\left<a,b\right>$.
           Pro kteroukoli primitivní funkci $G$ funkce $f$ na $(a,b)$ spojitou na $\left<a,b\right>$ platí
           \[\int^b_a f(t)dt = G(b) - G(a).\]
-    \item Integrálni věta o střední hodnotě:
+    \item Integrální věta o střední hodnotě:
     \[F(b) - F(a) = \int^b_a f = f(c)(b-a) = F'(c)(b-a)\]
 \end{enumerate}
 \noindent
