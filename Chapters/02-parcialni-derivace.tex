@@ -16,7 +16,7 @@ Pro $f(x_1,...,x_n)$ vezmeme
 \[\lim_{h\rightarrow 0}\frac{f(x_1,...,x_{k-1},x_k+h,x_{k+1},...x_n) - f(x_1,..)}{h}.\]
 \hspace{1.2mm}
 Označení
-\[\frac{\partial f(x_1,...(x_n)}{\partial x_k} \textrm{ nebo } \frac{\partial f}{\partial x_k} (x_1,...,x_n),\]
+\[\frac{\partial f(x_1,...,(x_n)}{\partial x_k} \textrm{ nebo } \frac{\partial f}{\partial x_k} (x_1,...,x_n),\]
 \hspace{1.2mm}
 Pro $f(x,y)$ píšeme
 \[\frac{\partial f(x,y)}{\partial x} \textrm{ a } \frac{\partial f(x,y)}{\partial y}, \textrm{ atd.}\]
@@ -35,21 +35,21 @@ Když budeme mluvit o parciální derivaci bude vždy zřejmé máme-li na mysli
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Totální diferenciál}
 \hspace{1.2mm}
-Nespojitá funkce $f$ může mít po souřadnicích má obě parciální derivace v každém bodě, to však ale neimplikuje spojitost.
+Nespojitá funkce $f$ může mít po souřadnicích obě parciální derivace v každém bodě, to však ale neimplikuje spojitost.
 \begin{center}
-    existence parciálních derivací neimplikuje spojitost!
+    \textbf{Existence parciálních derivací neimplikuje spojitost!}
 \end{center}
 \hspace{1.2mm}
 Budeme potřebovat něco silnejšího. Připomeňte si tvrzení ekvivalentní se standardní derivací:
 
 \noindent
 \hspace{1.2mm}
-Existuje $\mu$ konvergujíci k 0 při $h \rightarrow 0$ a A takové, že 
+Existuje $\mu$ konvergující k 0 při $h \rightarrow 0$ a A takové, že 
 
 \[f(x+h) - f(x) = Ah + |h| \cdot \mu(h)\]
 
-\hspace{1.2mm}
 \noindent
+\hspace{1.2mm}
 \textit{Geometrický pohled:}
 $f(x+h) - f(x) = Ah$ vyjadřuje tečnu ke grafu funkce v bodě $(x,f(x)).$
 
@@ -60,11 +60,11 @@ $|h|\cdot \mu(h)$ je jakási malá chyba.
 \noindent
 \hspace{1.2mm}
 Mysleme podobně o funkci $f(x,y)$ a uvažujme plochu 
-\[S = \{(t,u,f(t,u)) : (t,u) \in D\}.\]
+\[S = \{(t,u,f(t,u)) : (t,u) \in D\} \subseteq \mathbb{R}^3.\]
 
 \noindent
 \hspace{1.2mm}
-Dvě parciální derivace vyjadřují směry dvou tečných přímek k S vbode $(x,y,f(x,y))$, ale \underline{ne tečnou rovinu}, 
+Dvě parciální derivace vyjadřují směry dvou tečných přímek k S v bodě $(x,y,f(x,y))$, ale \underline{ne tečnou rovinu}, 
 která teprve bude uspokojivé rozšíření faktu nahoře.
 
 \noindent
@@ -79,7 +79,7 @@ To bude místo absolutní hodnoty, místo $h$ bude $n$-tice blízká nule.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Definice}
 \hspace{1.2mm}
-Funkce $f$ má \textit{totální diferenciál} v bodě \textbf{x} existuje-li funkce $\mu$ spojitá v okolí $U$ bodu $o$ taková, že $\mu(\textbf{o}) = 0$
+Funkce $f$ má \textit{totální diferenciál} v bodě \textbf{x} existuje-li funkce $\mu$ spojitá v okolí $U$ bodu $\textbf{o} \in \mathbb{R}^n$ taková, že $\mu(\textbf{o}) = 0$
 a čísla $A_1,...,A_n$ pro která
 
 \[f(\textbf{a}+\textbf{h}) - f(\textbf{a}) = \sum^n_{k=1}A_kh_k+||\textbf{h}||\mu(\textbf{h}).\]
@@ -110,7 +110,7 @@ Nechť má funkce $f$ totální diferenciál v bodě \textbf{a}. Potom platí, �
     \noindent
     \hspace{1.2mm}
     Teď již spojitost dostaneme. Vidíme, že v případě funkcí jedné proměnné není rozdíl mezi existencí derivace v bodě \textbf{a} a vlastností
-    mít totální diferenciál v tomto bodě. V případě více proměnných je však tento rozdíl zcela zásadní. Může být trochu překvapujíci, že 
+    mít totální diferenciál v tomto bodě. V případě více proměnných je však tento rozdíl zcela zásadní. Může být trochu překvapující, že 
     zatímco existence parciálních derivací mnoho neznamená, \underline{existence spojitých parciálních derivací} je něco úplně jiného.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -131,17 +131,22 @@ a můžeme pokračovat
 \begin{align*} 
 \begin{split}
 M & = \sum\frac{\partial f(a_1,...a_k+\Theta_kh_k,...,a_n)}{\partial x_k}h_k = \\
- & = \sum \frac{\partial f(\textbf{a})}{\partial x_k} + \sum \left( \frac{\partial f(a_1,...,a_k+\Theta_kh_k,...,a_n)}{\partial x_k}
+ & = \sum \frac{\partial f(\textbf{a})}{\partial x_k}h_k + \sum \left( \frac{\partial f(a_1,...,a_k+\Theta_kh_k,...,a_n)}{\partial x_k}
  - \frac{\partial f(\textbf{a})}{\partial x_k} \right)h_k = \\
  & = \sum \frac{\partial f(\textbf{a})}{\partial x_k}h_k + ||\textbf{h}||\sum\left(\frac{\partial f(a_1,...,a_k+\Theta_kh_k,...,a_n)}
  {\partial x_k}- \frac{\partial f(\textbf{a})}{\partial x_k}\right)\frac{h_k}{||\textbf{h}||}.
 \end{split}
 \end{align*}
 Položíme
-\[\mu (\textbf{h}) = \sum\left(\frac{\partial f(a_1,...,a_k+\Theta_kh_k,...,a_n)}{\partial x_k} -
-    \frac{\partial f(\textbf{a})}{\partial x_k} \right)\frac{h_k}{||\textbf{h}||}.\]
+\[\mu (\textbf{h}) =
+    \begin{cases} & \sum\left(\frac{\partial f(a_1,...,a_k+\Theta_kh_k,...,a_n)}{\partial x_k} -
+    \frac{\partial f(\textbf{a})}{\partial x_k} \right)\frac{h_k}{||\textbf{h}||}.\\
+    & 0 \text{ pokud } \mathbf{h} = \mathbf{o}
+    \end{cases}\]
+
     Jelikož $\left|\frac{h_k}{||\textbf{h}||}\right| \leq 1$ a jelikož jsou funkce $\frac{\partial f}{\partial x_k}$ spojité,
     $\lim_{\textbf{h}\rightarrow \textbf{0}} \mu (\textbf{h}) = 0$.
+
     \begin{center}
     \LARGE 
     Můžeme tedy schematicky psát
@@ -154,16 +159,16 @@ Položíme
 \subsection{Pravidla pro počítání parciálních derivací}
 \hspace{1.2mm}
 \noindent
-Aritmetická pravidla jsou stejná jako pro obyčejné derivace(tady totiž obyčejnými derivacemi jsou).
+Aritmetická pravidla jsou stejná jako pro obyčejné derivace (tady totiž obyčejnými derivacemi jsou).
 Trochu jinak tomu je u pravidla pro skládání. Pro derivace jedné proměnné se dokazuje z formule
 \[ f(a+h) - f(a) = Ah + |h|\mu (h) \]
-tedy z diferenciálu(který je pro ně totéž jako existence derivace). Pravidlo pro skládání v
+tedy z diferenciálu (který je pro ně totéž jako existence derivace). Pravidlo pro skládání v
 Pravidlo pro skládání v nejjednodušší podobě následuje.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Věta pro derivaci složených funkcí o více proměnných}
 \hspace{1.2mm}
-Nechť má $f(\textbf{x})$ totální diferenciál v bodu \textbf{a}. Nechť mají $g_k(t)$ derivace v bodě b a nechť je $g_k(b) = a_k$ pro 
+Nechť má $f(\textbf{x})$ totální diferenciál v bodě \textbf{a}. Nechť mají $g_k(t)$ derivace v bodě b a nechť je $g_k(b) = a_k$ pro 
 $k = 1,...n.$ Položme
 \[F(t) = f(\textbf{g}(t)) = f(g_1(t),...g_n(t)).\]
 
@@ -178,7 +183,7 @@ Důkaz:
  &=\sum^n_{k=1}A_k\frac{g_k(b+h)-g_k(b)}{h} + \mu(\textbf{g}(b+h) - \textbf{g}(b)) \max_k\frac{|g_k(b+h)-g_k(b)|}{h}.
 \end{align*}
 
-Máme li $lim_{h \rightarrow 0} \mu(\textbf{g}(b+h)-\textbf{g}(b)) = 0$ jelikož jsou funkce $g_k$ spojité v $b$. 
+Máme $lim_{h \rightarrow 0} \mu(\textbf{g}(b+h)-\textbf{g}(b)) = 0$ jelikož jsou funkce $g_k$ spojité v $b$. 
 Jelikož funkce $g_k$ mají derivace, jsou $\max_k \frac{|g_k(b+h) - g_k(b)|}{h}$ omezené v dostatečně malém okolí nuly. Limita 
 poslední sčítance je tedy nula a máme
 
@@ -210,8 +215,8 @@ Pravidlo z předchozí věty dá tedy
 \[\frac{\partial (f_i \circ \mathbf{g})(b)}{\partial t_j} = \sum^n_{k=1} \frac{\partial f_i(\mathbf{a})}{\partial x_k}
 \cdot \frac{\partial g_k(\mathbf{b})}{\partial t_j}.\]
 
-Zavedeme-li matice $D\mathbf{f} = \left(\frac{\partial f_i(\mathbf{a}}{\partial x_k}\right)_{ik}$ je 
-$D(\mathbf{f}\circ \mathbf{g} = D\mathbf{f}\cdot D\mathbf{g}$ (napravo násobení matic), a tak to má být. $D\mathbf{h}$ je matice lineární aproximace 
+Zavedeme-li matice $D\mathbf{f} = \left(\frac{\partial f_i(\mathbf{a})}{\partial x_k}\right)_{ik}$ je 
+$D(\mathbf{f}\circ \mathbf{g}) = D\mathbf{f}\cdot D\mathbf{g}$ (napravo násobení matic), a tak to má být. $D\mathbf{h}$ je matice lineární aproximace 
 funkce $\mathbf{h}$: \textit{lineární aproximace se skládají spolu s aproximovanými funkcemi}.
 \noindent
 
@@ -225,7 +230,7 @@ funkce $\mathbf{h}$: \textit{lineární aproximace se skládají spolu s aproxim
 \noindent
 Potom $ \frac{\partial f}{\partial u} = v $ a $ \frac{\partial f}{\partial v} = u $
 a pro $u = \psi (x)$ a $ v = \phi (x) $ platí:
-\[ (\phi (x), \psi (y))' =
+\[ (\phi (x) \psi (y))' =
 \frac{\partial f}{\partial u} \phi '(x) + \frac{\partial f}{\partial v} \psi '(x) = 
 \phi (x)\psi '(x) + \phi '(x)\psi (x)  \]
 
@@ -238,7 +243,7 @@ a pro $u = \psi (x)$ a $ v = \phi (x) $ platí:
 Potom $ \frac{\partial f}{\partial u} = \frac{1}{v} $ a $ \frac{\partial f}{\partial v} = -\frac{u}{v^2} $
 a pro $u = \psi (x)$ a $ v = \phi (x) $ platí:
 \[ \left( \frac{\phi (x)}{\psi (x)} \right)' =
-\frac{\partial f}{\partial u} \phi '(x) - \frac{\partial f}{\partial v} = \psi '(x) =
+\frac{\partial f}{\partial u} \phi '(x) - \frac{\partial f}{\partial v} \psi '(x) =
 \frac{1}{\psi (x)} \phi '(x) + \frac{1}{\psi (x)^2}\psi '(x) =
 \frac{\psi (x)\phi '(x) - \phi (x)\psi '(x)}{\psi (x)^2} \]
 
@@ -254,10 +259,10 @@ Potom pro libovolné dva body $x,y \in D \exists 0 \leq \theta \leq 1$ takové, 
 \noindent
 \textbf{Důkaz:}
 Mějme $\mathbf{g}$, pro které platí $g_j(t) = x_j + t(y_j - x_j)$.
-Potom máme $F(t) = f \circ \mathbf{g} = (\mathbf{x} + t(\mathbf{y}-\mathbf{x}))$ a
+Potom máme $F(t) = f \circ \mathbf{g} = f(\mathbf{x} + t(\mathbf{y}-\mathbf{x}))$ a
 \[ F'(t) = \sum^{n}_{j=1} \frac{\partial f(\mathbf{g}(t))}{\partial x_j}g_j'(t) =
 \sum^{n}_{j=1} \frac{\partial f(\mathbf{g}(t))}{\partial x_j}(y_j - x_j)  \]
-Podle Lagrangeovy věty:
+Podle Lagrangeovy věty $\exists \theta : 0 \leq \theta \leq 1$:
 \[ f(\mathbf{y}) - f(\mathbf{x}) = F(1) - F(0) = F'(\theta) \]
 
 \noindent
@@ -351,7 +356,7 @@ nekonečná: skutečně, máme $x > s - \varepsilon$ takové, že $x_n > x$ pro 
 konečně mnoho $n$ takových, že $x_n \geq s + \varepsilon$. 
 
 Zvolme $k_1$ tak, aby
-\[s - 1 < x_{k_{1_2}} < s+1.\]
+\[s - 1 < x_{k_{1}} < s+1.\]
 Mějme zvolena $k_1 < k_2 < \cdot \cdot \cdot < k_n$ taková, že $j = 1,...,n$
 \[s - \frac{1}{j} < x_{k_j} < s + \frac{1}{j}.\]
 Jelikož $K(n+1)$ je nekonečná, můžeme zvolit $k_{n+1} > k_n$ tak, aby

@@ -8,20 +8,24 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Definice metrického prostoru}
 \hspace{1.2mm}
-Metrický prostor : $(X,d), d: X \times X \rightarrow \mathbb{R}$, kde platí:
+Metrický prostor : Nechť $X$ je množina,  $d: X \times X \rightarrow \mathbb{R}$ funkce t. ž. platí:
 
 \begin{itemize}
-\item{$d(x,y \geq 0, d(x,y) \iff x = y$ }
-\item{$d(x,y) = d(y,x)$}
-\item{$d(x,z) \leq d(x,y) + d(y,z)$ (trojúhelníková nerovnost)}
+\item{$\forall x,y \in X : d(x,y) \geq 0, d(x,y) \iff x = y$ }
+\item{$\forall x,y \in X : d(x,y) = d(y,x)$}
+\item{$\forall x,y \in X : d(x,z) \leq d(x,y) + d(y,z)$ (trojúhelníková nerovnost)}
 \end{itemize}
-
+pak $(X,d)$ je metrický prostor.
 
 \noindent
 \hspace{1.2mm}
-Příklady: 
-\[(\mathbb{R}, |x-y|),\]
-\[(\mathbb{C},|x-y|)\]
+Příklady:
+\begin{align*} 
+    (\mathbb{R}, |x-y|) &,\\
+    (\mathbb{C},|x-y|) &,\\
+    (G,d) &, G \text{ je orientovaný souvislý graf, } d \text{ je délka nejdelší cesty}\\
+\end{align*}
+
 \hspace{1.2mm}
 Pozor: trojúhelníková nerovnost v $(\mathbb{C}, |x-y|)$ není tak triviální jako v $\mathbb{R}$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
