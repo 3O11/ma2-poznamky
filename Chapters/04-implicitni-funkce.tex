@@ -73,22 +73,8 @@ $f: (x_0 - \delta , x_0 + \delta ) \to \mathbb{R}$ má spojité derivace do řá
 %\noindent
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Věta o implicitních funkcích}
-\hspace{1.2mm}
-\noindent
-Buďte $F_i(\mathbf{x}, y_1, ... , y_m)$ pro $i \in {1, ... , m}$ funkce $n+m$ proměnných se spojitými
-parciálními derivacemi do řádu $k \geq 1$. Buď \[ \mathbf{F}(\mathbf{x}^0, \mathbf{y}^0) = \mathbf{o} \]
-a buď totální diferenciál v bodě $(\mathbf{x}^0, \mathbf{y}^0)$ \[ \frac{D(\mathbf{F})}{D(\mathbf{y})}(\mathbf{x}^0, \mathbf{y}^0) \neq 0 \]
-Potom existují $\delta > 0$ a $\Delta > 0$ takové, že pro každé
-\[ \mathbf{x} \in (x_{1}^{0} - \delta, x_{1}^{0} + \delta) \times \cdot \cdot \cdot \times 
-(x_{n}^{0} - \delta, x_{n}^{0} + \delta)\]
-existuje právě jedno
-\[ \mathbf{y} \in (y_{1}^{0} - \Delta , y_{1}^{0} + \Delta) \times \cdot \cdot \cdot \times
-(y_{m}^{0} - \Delta , y_{m}^{0} + \Delta) \]
-takové, že
-\[ \mathbf{F}(\mathbf{x}, \mathbf{y}) = 0 \]
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \subsection{Definice Jacobiho determinantu}
 \hspace{1.2mm}
 \noindent
@@ -99,4 +85,21 @@ a pro $\mathbf{y} = (y_1, ... , y_m)$ se definuje \textbf{Jacobiho determinant}(
 \[ \frac{D(\mathbf{F})}{D(\mathbf{y})} =
 \det \left( \frac{\partial F_i}{\partial y_j} \right)_{i,j \in \{ 1, ... , m\}} \]
 
+\subsection{Věta o implicitních funkcích}
+\hspace{1.2mm}
+\noindent
+Buďte $F_i(\mathbf{x}, y_1, ... , y_m)$ pro $i \in {1, ... , m}$ funkce $n+m$ proměnných se spojitými
+parciálními derivacemi do řádu $k \geq 1$. Buď \[ \mathbf{F}(\mathbf{x}^0, \mathbf{y}^0) = \mathbf{o} \]
+%a buď totální diferenciál v bodě $(\mathbf{x}^0, \mathbf{y}^0)$ 
+\[ \frac{D(\mathbf{F})}{D(\mathbf{y})}(\mathbf{x}^0, \mathbf{y}^0) \neq 0 \]
+Potom existují $\delta > 0$ a $\Delta > 0$ takové, že pro každé
+\[ \mathbf{x} \in (x_{1}^{0} - \delta, x_{1}^{0} + \delta) \times \cdot \cdot \cdot \times 
+(x_{n}^{0} - \delta, x_{n}^{0} + \delta)\]
+existuje právě jedno
+\[ \mathbf{y} \in (y_{1}^{0} - \Delta , y_{1}^{0} + \Delta) \times \cdot \cdot \cdot \times
+(y_{m}^{0} - \Delta , y_{m}^{0} + \Delta) \]
+takové, že
+\[ \mathbf{F}(\mathbf{x}, \mathbf{y}) = 0 \]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{document}

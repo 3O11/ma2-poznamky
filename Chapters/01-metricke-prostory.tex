@@ -36,7 +36,7 @@ Definujeme jako metrický prostor $(\mathbb{R}^n,d)$, kde $d$:
 \[d((x_1,...,x_n),(y_1,...,y_n)) = \sqrt{\sum_i(x_i-y_i)^2}\]
 
 Pro nás zvlášť důležitý, známy v podobě vektorového prostoru $\mathbb{R}^n$ se skalárním součinem $\langle \textbf{u} | v \rangle$ a normou
-$\|\textbf{u}\| = \sqrt{\textbf{uu}}$ a vzdáleností $d(\textbf{u},v) = ||\textbf{u}-\textbf{v}||$
+$\|\textbf{u}\| = \sqrt{\textbf{uu}}$ a vzdáleností $d(\textbf{u},v) = ||\textbf{u}-v||$
 \noindent
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -90,7 +90,7 @@ posloupnost $(f(x_n))_n$ konverguje v $(X_2,d_2)$ a platí $\lim_n f(x_n) = f(\l
 \hspace{1.2mm}
 \textbf{Důkaz:}
 Buď $f$ spojitá a nechť $\lim_nx_n = x$. Pro $\varepsilon > 0$ volme ze spojitosti $\delta > 0$
-tak aby $\forall x,y \in X_1 : d_1(x,y) <\delta \implies d_2(f(y),f(x)) <\varepsilon$ pro $d_1(x,y) < \delta$.
+tak, aby $\forall x,y \in X_1 : d_1(x,y) <\delta \implies d_2(f(y),f(x)) <\varepsilon$ pro $d_1(x,y) < \delta$.
 Podle definice konvergence posloupnosti existuje $n_0$ takové, že pro $n\leq n_0$ je $d_1(x_n,x) < \delta$. Tedy je-li $n \leq n_0$
 máme $d_2(f(x_n),f(x)) < \varepsilon$ a potom $\lim_n f(x_n) = f(\lim_n x_n)$.
 
@@ -101,7 +101,7 @@ máme $d_2(f(x_n),f(x)) < \varepsilon$ a potom $\lim_n f(x_n) = f(\lim_n x_n)$.
 Nechť $(X,d)$ je metrický prostor, $x\in X$, pak
 $\Omega (x,\varepsilon) = \{ y | d(x,y) < \varepsilon \}$
 
-formulací $\Omega (x,\varepsilon)$ se říká otevřená koule s poloměrem $\varepsilon$ okolo $x$.
+formulaci $\Omega (x,\varepsilon)$ se říká otevřená koule s poloměrem $\varepsilon$ okolo $x$.
 \vspace{5mm}
 
 \noindent
@@ -118,8 +118,8 @@ $U \subseteq (X,d)$ je \textbf{otevřená}, pokud je okolím \textit{každého} 
 
 \noindent
 \hspace{1.2mm}
-$V \subseteq (X,d)$ je \textbf{uzavřená}, pokud $\forall (x_n)_n \subseteq A$ je konvergentní
-v $X$ je $\lim_n x_n \in A$.
+$V \subseteq (X,d)$ je \textbf{uzavřená}, pokud $\forall (x_n)_n \subseteq V$ je konvergentní
+v $X$ a $\lim_n x_n \in V$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Uzávěr}
@@ -127,27 +127,6 @@ v $X$ je $\lim_n x_n \in A$.
 \textbf{Uzávěr:} Nechť $(X,d)$ je metrický prostor, $A \subseteq X, x\in X$, pak 
 \[d(x,A) = \inf\{d(x,a)\mid a \in A\}\]
 a uzávěrem rozumíme $\overline{A} : \{x \mid d(x,A) = 0\}$
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Vlastnosti zobrazení mezi metrickými prostory}
-\hspace{1.2mm}
-Buďte $(X_1, d_1)$ a $(X_2, d_2)$ metrické prostory a buď zobrazení $f: X_1 \to X_2$. Následující
-jsou potom ekvivalentní:
-\begin{enumerate}
-    \item $f$ je spojité.
-    \item $\forall x \in X_1$ a $\forall$ okolí $V$ bodu $f(x)$ existuje okolí $U$ bodu $x$ takové, že
-        $f[U] \subseteq V$.
-    \item $\forall$ otevřenou $U$ v $X_2$ je vzor $f^{-1}[U]$ otevřený v $X_1$.
-    \item $\forall$ uzavřenou $A$ v $X_2$ je vzor $f^{-1}[U]$ uzavřený v $X_1$.
-    \item $\forall A \subseteq X_1$ je $f[\overline{A}] \subseteq \overline{f[A]}$
-\end{enumerate}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Silně ekvivalentní metriky}
-\hspace{1.2mm}
-Buďte $d_1, d_2$ metriky. $d_1$ a $d_2$ na téže množině jsou silně ekvivalentní, pokud
-\[\exists \alpha , \beta > 0: \alpha d_1(x,y) \leq d_2(x,y) \leq \beta d_1(x,y)\]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Vzory a obrazy}
@@ -181,14 +160,35 @@ Platí:
 \noindent
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Vlastnosti zobrazení mezi metrickými prostory}
+\hspace{1.2mm}
+Buďte $(X_1, d_1)$ a $(X_2, d_2)$ metrické prostory a buď zobrazení $f: X_1 \to X_2$. Následující tvrzení
+jsou potom ekvivalentní:
+\begin{enumerate}
+    \item $f$ je spojité.
+    \item $\forall x \in X_1$ a $\forall$ okolí $V$ bodu $f(x)$ existuje okolí $U$ bodu $x$ takové, že
+        $f[U] \subseteq V$.
+    \item $\forall$ otevřenou $U$ v $X_2$ je vzor $f^{-1}[U]$ otevřený v $X_1$.
+    \item $\forall$ uzavřenou $A$ v $X_2$ je vzor $f^{-1}[A]$ uzavřený v $X_1$.
+    \item $\forall A \subseteq X_1$ je $f[\overline{A}] \subseteq \overline{f[A]}$
+\end{enumerate}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Silně ekvivalentní metriky}
+\hspace{1.2mm}
+Buďte $d_1, d_2$ metriky. $d_1$ a $d_2$ na téže množině jsou silně ekvivalentní, pokud
+\[\exists \alpha , \beta > 0: \alpha d_1(x,y) \leq d_2(x,y) \leq \beta d_1(x,y)\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Reálná funkce o $n$ proměnných}
 \hspace{1.2mm}
 \[f: D \rightarrow \mathbb{R}, D \subseteq \mathbb{E}_n\]
 
 \noindent
 \hspace{1.2mm}
-Podobně jako ve funkcích jedné proměnné se nemůžeme omezit na případy, kdy definiční obor je celý prostor $\mathbb{E}_n$. V 
-Případě funkcí jedné proměnné byly definiční obory obvykle intervaly nebo jednoduchá sjednocení intervalů. Tady budou definiční
+Podobně jako ve funkcích jedné proměnné se nemůžeme omezit na případy, kdy definiční obor je celý prostor $\mathbb{E}_n$.  
+V případě funkcí jedné proměnné byly definiční obory obvykle intervaly nebo jednoduchá sjednocení intervalů. Tady budou definiční
 obory $D$ složitější, často (ale né vždy) otevřené množiny v $\mathbb{E}_n$.
 
 O $D$ se často mluví jako o oblasti na níž je funkce definovaná. To není termín (ve specifických kontextech slovo \uv{oblast} termín 
@@ -218,7 +218,7 @@ Jak to vypadá:
 \includegraphics[width=9cm,height=4.8cm]{ipkm.png}
 \end{center}
 
-Tedy pokud vím, že $(x_1,x_2,x_3)\in \prod (x_i,d_i)$, Pak
+Tedy pokud víme, že $(x_1,x_2,x_3)\in \prod (x_i,d_i)$, Pak
 \[f(y) = (f_1(y),f_2(y),f_3(y))\]
 \[(p_1\circ f)(y) = p_1(f(y)) = p_1(f_1(y),f_2(y),f_3(y))=f_1(y)\]
 \[(p_2\circ f)(y) = ... = f_2(y)\]

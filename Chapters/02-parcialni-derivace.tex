@@ -16,7 +16,7 @@ Pro $f(x_1,...,x_n)$ vezmeme
 \[\lim_{h\rightarrow 0}\frac{f(x_1,...,x_{k-1},x_k+h,x_{k+1},...x_n) - f(x_1,..)}{h}.\]
 \hspace{1.2mm}
 Označení
-\[\frac{\partial f(x_1,...,(x_n)}{\partial x_k} \textrm{ nebo } \frac{\partial f}{\partial x_k} (x_1,...,x_n),\]
+\[\frac{\partial f(x_1,...,(x_n))}{\partial x_k} \textrm{ nebo } \frac{\partial f}{\partial x_k} (x_1,...,x_n),\]
 \hspace{1.2mm}
 Pro $f(x,y)$ píšeme
 \[\frac{\partial f(x,y)}{\partial x} \textrm{ a } \frac{\partial f(x,y)}{\partial y}, \textrm{ atd.}\]
@@ -79,7 +79,7 @@ To bude místo absolutní hodnoty, místo $h$ bude $n$-tice blízká nule.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Definice}
 \hspace{1.2mm}
-Funkce $f$ má \textit{totální diferenciál} v bodě \textbf{x} existuje-li funkce $\mu$ spojitá v okolí $U$ bodu $\textbf{o} \in \mathbb{R}^n$ taková, že $\mu(\textbf{o}) = 0$
+Funkce $f$ má \textit{totální diferenciál} v bodě \textbf{a} existuje-li funkce $\mu$ spojitá v okolí $U$ bodu $\textbf{o} \in \mathbb{R}^n$ taková, že $\mu(\textbf{o}) = 0$
 a čísla $A_1,...,A_n$ pro která
 
 \[f(\textbf{a}+\textbf{h}) - f(\textbf{a}) = \sum^n_{k=1}A_kh_k+||\textbf{h}||\mu(\textbf{h}).\]
@@ -126,7 +126,7 @@ Buď
 \noindent
 \hspace{1.2mm}
 Podle Lagrangeovy věty existují $0 \leq \Theta_k \leq 1$ takové, že
-\[f(\textbf{a}+\textbf{h}^{(k-1)})-f(\textbf{a}+\textbf{h}^{(k)}) = \frac{\partial f(a_1,...,a_{k-1},a_k+ \theta_kh_k,a_{k+1},...,a_n)}{\partial x_k}h_k\]
+\[f(\textbf{a}+\textbf{h}^{(k-1)})-f(\textbf{a}+\textbf{h}^{(k)}) = \frac{\partial f(a_1,...,a_{k-1},a_k+ \Theta_kh_k,a_{k+1},...,a_n)}{\partial x_k}h_k\]
 a můžeme pokračovat
 \begin{align*} 
 \begin{split}
@@ -162,7 +162,7 @@ Položíme
 Aritmetická pravidla jsou stejná jako pro obyčejné derivace (tady totiž obyčejnými derivacemi jsou).
 Trochu jinak tomu je u pravidla pro skládání. Pro derivace jedné proměnné se dokazuje z formule
 \[ f(a+h) - f(a) = Ah + |h|\mu (h) \]
-tedy z diferenciálu (který je pro ně totéž jako existence derivace). Pravidlo pro skládání v
+tedy z diferenciálu (který je pro ně totéž jako existence derivace).
 Pravidlo pro skládání v nejjednodušší podobě následuje.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -201,7 +201,7 @@ dějí derivace vnitřních funkcí. Proto by tady jen parciálni derivace nesta
 Nechť má $f(\textbf{x})$ \textit{totální diferenciál} v bodě \textbf{a}. Nechť mají funkce $g_k(t_1,...,t_r)$ parciální 
 derivace v \textbf{b} $= (b_1,...,b_r)$ a nechť je $g_k(\textbf{b}) = a_k$ pro $k = 1,...,n.$ Potom má funkce
 \[(f\circ \textbf{g})(t_1,...,t_r) = f(\textbf{g}(t)) = f(g_1(t),...,g_n(t))\]
-všechny parciální derivace v b, a platí 
+všechny parciální derivace v \textbf{b}, a platí 
 \[\frac{\partial (f \circ \textbf{g})(\textbf{b})}{\partial t_j} = \sum^n_{k=1}\frac{\partial f(\textbf{a})}{\partial x_k}
 \cdot \frac{\partial g_k(\textbf{b})}{\partial t_j}.\]
 
@@ -209,7 +209,7 @@ Skládali jsme
 
 \[\mathbb{E}_k \xrightarrow{\mathbf{g}} \mathbb{E}_n \xrightarrow{\textit{f}} \mathbb{R} \]
 Skládejme místo $f$ $m$-tici funkcí
-$\mathbf{f} = (f_1,...,f_m)$, tedy $\mathbf{f}: \mathbb{E}_n \rightarrow \mathbb{E}_M$
+$\mathbf{f} = (f_1,...,f_m)$, tedy $\mathbf{f}: \mathbb{E}_n \rightarrow \mathbb{E}_m$
 \[\mathbb{E}_k \xrightarrow{\mathbf{g}} \mathbb{E}_n \xrightarrow{\textit{f}} \mathbb{E}_m \]
 Pravidlo z předchozí věty dá tedy
 \[\frac{\partial (f_i \circ \mathbf{g})(b)}{\partial t_j} = \sum^n_{k=1} \frac{\partial f_i(\mathbf{a})}{\partial x_k}
@@ -252,7 +252,7 @@ a pro $u = \psi (x)$ a $ v = \phi (x) $ platí:
 \hspace{1.2mm}
 \noindent
 Nechť má $f$ spojité parciální derivace v konvexní otevřené množině $U \subseteq \mathbb{E}_{n}$.
-Potom pro libovolné dva body $x,y \in D \exists 0 \leq \theta \leq 1$ takové, že:
+Potom pro libovolné dva body $x,y \in U$ $\exists 0 \leq \theta \leq 1$ takové, že:
 \[ f(\mathbf{y}) - f(\mathbf{x}) =
 \sum^{n}_{j=1} \frac{\partial f(\mathbf{x} + \theta (\mathbf{y}-\mathbf{x}))}{\partial x_j}(y_j - x_j) \]
 

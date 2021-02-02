@@ -106,30 +106,21 @@ Jsou-li si rovny, máme Riemannův integrál funkce $f$ přes $J$; značení:
 nebo
 \[\int_J f(x_1,...,x_n)dx_1 dx_2\cdot \cdot \cdot dx_n\]
 
-\textbf{Tvrzení:} Riemannův integrál $\int_J f(\textbf{x})d\textbf{x}$ existuje právě když $\forall \varepsilon > 0 \exists$ rozdělení $P : $
-\[S_J(f,P) - s_J(f,P) < \varepsilon.\]
-\vspace{5mm}
-\noindent
-\textbf{Důkaz:} nerovnost dává
-\[S_J(f,P) < \varepsilon + s_J(f,P)\]
-a z toho máme
-\[\overline{\int} \leq S_J(f,P) < \varepsilon + s_J(f,P) \leq \varepsilon + \underline{\int} \leq \varepsilon + \overline{\int};\]
-kde $\varepsilon$ může být libovolně malé.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Tvrzení o existenci Riemannova integrálu}
 \hspace{1.2mm}
 Riemannův integrál $\int_{J} f(\mathbf{x}) \,d\mathbf{x}$ existuje právě když
-$\forall \epsilon > 0$ existuje rozdělení $P$ takové, že
-\[ S_J(f,P) - s_J(f,P) < \epsilon \]
+$\forall \varepsilon > 0$ existuje rozdělení $P$ takové, že
+\[ S_J(f,P) - s_J(f,P) < \varepsilon \]
 
 \vspace{5mm}
 \noindent
 \textbf{Důkaz:}
-Nerovnost dává \[ S_J(f,P) < \epsilon + s_J(f,P) \]
+Nerovnost dává \[ S_J(f,P) < \varepsilon + s_J(f,P) \]
 z toho dostaneme
-\[ \overline{\int} \leq S_J(f,P) \leq \epsilon + s_J(f,P) \leq \epsilon + \underline{\int} \leq
-\epsilon + \overline{\int}\]
-pro libovolně malé $\epsilon$
+\[ \overline{\int} \leq S_J(f,P) \leq \varepsilon + s_J(f,P) \leq \varepsilon + \underline{\int} \leq
+\varepsilon + \overline{\int}\]
+pro libovolně malé $\varepsilon$
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Věta: Každá spojitá funkce na n-rozměrnem kompaktním intervalu má Riemannův integrál}
@@ -142,25 +133,25 @@ $\int_{J}f$.
 \textbf{Důkaz:}
 V $\mathbb{E}_n$ budeme používat vzdálenost $\sigma$ definovanou předpisem
 \[ \sigma (\mathbf{x}, \mathbf{y}) = \max_{i} |x_i - y_i| \]
-Jelikož je $f$ stejnoměrně spojitá, můžeme pro $\epsilon > 0$ zvolit $\delta > 0$ takové, že
+Jelikož je $f$ stejnoměrně spojitá, můžeme pro $\varepsilon > 0$ zvolit $\delta > 0$ takové, že
 \[ \sigma (\mathbf{x}, \mathbf{y}) < \delta \Rightarrow
-|f(\mathbf{x} - f(\mathbf{y}))| < \frac{\epsilon}{\textrm{vol}(J)} \]
+|f(\mathbf{x} - f(\mathbf{y}))| < \frac{\varepsilon}{\textrm{vol}(J)} \]
 
 \noindent
 \hspace{1.2mm}
-Připomeňme si jemnost $\mu (P)$. Je-li $\mu (P) < \delta$ je $\textrm{diam}(B) < \delta$ pro všechny
+Připomeňme si jemnost $\mu (P)$. Je-li $\mu (P) < \delta$, pak je $\textrm{diam}(B) < \delta$ pro všechny
 $ B \in \mathcal{B}(P) $ a tedy
 \begin{align*}
     M(f, B) - m(f, B) &= \sup\{ f(\mathbf{x})|\mathbf{x} \in B \} -
     \inf\{ f(\mathbf{x})|\mathbf{x} \in B\}\leq\\
     &\leq \sup\{ |f(\mathbf{x}) - f(\mathbf{y})|: \mathbf{x}, \mathbf{y} \in B \}
-    = \frac{\epsilon}{\textrm{vol}(J)}
+    = \frac{\varepsilon}{\textrm{vol}(J)}
 \end{align*}
 takže
 \begin{align*}
     S(f,P) - s(f,P) &= \sum \{ (M(f,B) - m(f,B))\cdot \textrm{vol}(B)|B\in \mathcal{B}(P) \}\leq\\
-    &\leq \frac{\epsilon}{\textrm{vol}(J)}\sum \{ \textrm{vol}(B)| B\in \mathcal{B}(P) \}
-    = \frac{\epsilon}{\textrm{vol}(J)}\textrm{vol}(J) = \epsilon
+    &\leq \frac{\varepsilon}{\textrm{vol}(J)}\sum \{ \textrm{vol}(B)| B\in \mathcal{B}(P) \}
+    = \frac{\varepsilon}{\textrm{vol}(J)}\textrm{vol}(J) = \varepsilon
 \end{align*}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -202,7 +193,7 @@ Položme
 Dokážeme, že $\int_{J'} F$ existuje a že
 \[ \int_{J} f = \int_{J'} F \]
 Zvolme rozdělení $P$ intervalu $J$ tak, aby
-\[ \int f - \epsilon \leq s(f,P) \leq S(f,P) \leq \int f + \epsilon \]
+\[ \int f - \varepsilon \leq s(f,P) \leq S(f,P) \leq \int f + \varepsilon \]
 Toto rozdělení je tvořeno rozděleními $P'$ intervalu $J'$ a $P''$ intervalu $J''$. Máme
 \[ \mathcal{B}(P) = \{ B' \times B'' | B' \in \mathcal{B}(P'), B'' \in \mathcal{B}(P'') \} \]
 a každá cihla $P$ se objeví jako právě jedno $B' \times B''$. Potom je
@@ -224,7 +215,7 @@ a tedy
 a podobně
 \[ s(f,P) \leq s(F,P') \]
 Máme tedy
-\[ \int_{J} f - \epsilon \leq s(F,P') \leq \int_{J'} F \leq S(F,P) \leq \int_{J} f + \epsilon \]
+\[ \int_{J} f - \varepsilon \leq s(F,P') \leq \int_{J'} F \leq S(F,P) \leq \int_{J} f + \varepsilon \]
 a $\int_{J'} F$ je roven $\int_{J} f$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
