@@ -12,11 +12,11 @@
 \BOOKMARK [2][-]{subsection.1.8}{Okol\355}{section.1}% 12
 \BOOKMARK [2][-]{subsection.1.9}{Otevren\341 a uzavren\341 mno\236ina}{section.1}% 13
 \BOOKMARK [2][-]{subsection.1.10}{Uz\341ver}{section.1}% 14
-\BOOKMARK [2][-]{subsection.1.11}{Vlastnosti zobrazen\355 mezi metrick\375mi prostory}{section.1}% 15
-\BOOKMARK [2][-]{subsection.1.12}{Silne ekvivalentn\355 metriky}{section.1}% 16
-\BOOKMARK [2][-]{subsection.1.13}{Vzory a obrazy}{section.1}% 17
-\BOOKMARK [3][-]{subsubsection.1.13.1}{Obraz}{subsection.1.13}% 18
-\BOOKMARK [3][-]{subsubsection.1.13.2}{Vzor}{subsection.1.13}% 19
+\BOOKMARK [2][-]{subsection.1.11}{Vzory a obrazy}{section.1}% 15
+\BOOKMARK [3][-]{subsubsection.1.11.1}{Obraz}{subsection.1.11}% 16
+\BOOKMARK [3][-]{subsubsection.1.11.2}{Vzor}{subsection.1.11}% 17
+\BOOKMARK [2][-]{subsection.1.12}{Vlastnosti zobrazen\355 mezi metrick\375mi prostory}{section.1}% 18
+\BOOKMARK [2][-]{subsection.1.13}{Silne ekvivalentn\355 metriky}{section.1}% 19
 \BOOKMARK [2][-]{subsection.1.14}{Re\341ln\341 funkce o n promenn\375ch}{section.1}% 20
 \BOOKMARK [2][-]{subsection.1.15}{Souciny}{section.1}% 21
 \BOOKMARK [2][-]{subsection.1.16}{Veta o spojit\375ch zobrazen\355ch}{section.1}% 22
@@ -59,8 +59,8 @@
 \BOOKMARK [3][-]{subsubsection.4.1.1}{Obecn\375 pr\355klad}{subsection.4.1}% 59
 \BOOKMARK [3][-]{subsubsection.4.1.2}{Pr\355klad pro F\(x,y\) = x2 + y2 - 1}{subsection.4.1}% 60
 \BOOKMARK [2][-]{subsection.4.2}{Veta o implicitn\355 funkci}{section.4}% 61
-\BOOKMARK [2][-]{subsection.4.3}{Veta o implicitn\355ch funkc\355ch}{section.4}% 62
-\BOOKMARK [2][-]{subsection.4.4}{Definice Jacobiho determinantu}{section.4}% 63
+\BOOKMARK [2][-]{subsection.4.3}{Definice Jacobiho determinantu}{section.4}% 62
+\BOOKMARK [2][-]{subsection.4.4}{Veta o implicitn\355ch funkc\355ch}{section.4}% 63
 \BOOKMARK [1][-]{section.5}{Extr\351my}{}% 64
 \BOOKMARK [2][-]{subsection.5.1}{Veta o hled\341n\355 extr\351mu funkc\355}{section.5}% 65
 \BOOKMARK [2][-]{subsection.5.2}{Definice Regul\341rn\355ho zobrazen\355}{section.5}% 66
