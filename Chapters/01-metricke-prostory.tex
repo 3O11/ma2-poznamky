@@ -35,7 +35,7 @@ Pozor: trojúhelníková nerovnost v $(\mathbb{C}, |x-y|)$ není tak triviální
 Definujeme jako metrický prostor $(\mathbb{R}^n,d)$, kde $d$:
 \[d((x_1,...,x_n),(y_1,...,y_n)) = \sqrt{\sum_i(x_i-y_i)^2}\]
 
-Pro nás zvlášť důležitý, známy v podobě vektorového prostoru $\mathbb{R}^n$ se skalárním součinem $\langle \textbf{u} | v \rangle$ a normou
+Pro nás zvlášť důležitý, známý v podobě vektorového prostoru $\mathbb{R}^n$ se skalárním součinem $\langle \textbf{u} | v \rangle$ a normou
 $\|\textbf{u}\| = \sqrt{\textbf{uu}}$ a vzdáleností $d(\textbf{u},v) = ||\textbf{u}-v||$
 \noindent
 
@@ -63,8 +63,8 @@ $f(x) = x$ je spojité zobrazení
 \hspace{1.2mm}
 \[ (X,d) \to (X,d) \]
 
-\subsubsection{Vložení podprostoru}
-je spojité zobrazení 
+\subsubsection{Složení podprostorů}
+je spojité zobrazení
 \hspace{1.2mm}
 \[ f_1\colon (X_1,d_1)\times(X_2,d_2) \rightarrow (X_1,d_1) \]
 \[\forall x\in X_1 \forall y \in X_2 : f_1(x,y) = x\]
@@ -88,18 +88,27 @@ posloupnost $(f(x_n))_n$ konverguje v $(X_2,d_2)$ a platí $\lim_n f(x_n) = f(\l
 
 \noindent
 \hspace{1.2mm}
-\textbf{Důkaz:}
+\textbf{Důkaz ($1\implies2$):}
 Buď $f$ spojitá a nechť $\lim_nx_n = x$. Pro $\varepsilon > 0$ volme ze spojitosti $\delta > 0$
-tak, aby $\forall x,y \in X_1 : d_1(x,y) <\delta \implies d_2(f(y),f(x)) <\varepsilon$ pro $d_1(x,y) < \delta$.
-Podle definice konvergence posloupnosti existuje $n_0$ takové, že pro $n\leq n_0$ je $d_1(x_n,x) < \delta$. Tedy je-li $n \leq n_0$
+tak, aby $\forall x,y \in X_1 : d_1(x,y) <\delta \implies d_2(f(x),f(y)) <\varepsilon$.
+Podle definice konvergence posloupnosti existuje $n_0$ takové, že pro $n \ge n_0$ je $d_1(x_n,x) < \delta$. Tedy je-li $n \ge n_0$
 máme $d_2(f(x_n),f(x)) < \varepsilon$ a potom $\lim_n f(x_n) = f(\lim_n x_n)$.
+
+\noindent
+\hspace{1.2mm}
+\textbf{Důkaz ($\lnot 1 \implies \lnot 2$):} Nechť $f$ není spojitá.
+Potom existují $x \in X_1$ a $\varepsilon_0 > 0$ takové, že pro každé $\delta > 0$ existuje $x_\delta$ takové, že
+
+$$d_1(x, x_\delta) < \delta \qquad \text{ale} \qquad d_2(f(x), f(x_\delta) \ge \varepsilon_0$$
+
+Položme $x_n = x_{1/n}$. Potom $\lim_n x_n = x$ ale $(f(x_n))_n$ nemůže konvergovat k $f(x)$.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Okolí}
 \hspace{1.2mm}
 Nechť $(X,d)$ je metrický prostor, $x\in X$, pak
-$\Omega (x,\varepsilon) = \{ y | d(x,y) < \varepsilon \}$
+$\Omega (x,\varepsilon) = \{ y\ |\ d(x,y) < \varepsilon \}$
 
 formulaci $\Omega (x,\varepsilon)$ se říká otevřená koule s poloměrem $\varepsilon$ okolo $x$.
 \vspace{5mm}
@@ -124,7 +133,7 @@ v $X$ a $\lim_n x_n \in V$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Uzávěr}
 \hspace{1.2mm}
-\textbf{Uzávěr:} Nechť $(X,d)$ je metrický prostor, $A \subseteq X, x\in X$, pak 
+\textbf{Uzávěr:} Nechť $(X,d)$ je metrický prostor, $A \subseteq X, x\in X$, pak vzdálenost bodu $x$ od množiny $A$ je
 \[d(x,A) = \inf\{d(x,a)\mid a \in A\}\]
 a uzávěrem rozumíme $\overline{A} : \{x \mid d(x,A) = 0\}$
 
@@ -136,13 +145,13 @@ $f: X \rightarrow Y, A \subseteq X, B \subseteq Y$
 \subsubsection{Obraz}
 \hspace{1.2mm}
 \underline{Obraz} podmnožiny $A\subseteq X$ v $Y$:
-\[f[A] = \{f(x) | x \in A\}\]
+\[f[A] = \{f(x) \mid x \in A\}\]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Vzor}
 \hspace{1.2mm}
 \underline{Vzor} podmnožiny $B\subseteq Y$ v $X$:
-\[f^{-1}[B] = \{x | f(x) \in B\}\]
+\[f^{-1}[B] = \{x \mid x \in A: f(x) \in B\}\]
 \[X \underset{f^{-1}[-]}{\stackrel{f[-]}{\rightleftarrows}} Y\]
 \hspace{1.2mm}
 Platí:
@@ -151,7 +160,7 @@ Platí:
 
 \noindent
 \hspace{1.2mm}
-\textbf{Pozor:} $f^{-1}$ má dvá významy:
+\textbf{Pozor:} $f^{-1}$ má dva významy:
 \begin{itemize}
     \item inverze $f^{-1}:Y \rightarrow X$, nemusí existovat
     \item část v symbolu $f^{-1}[-]$, má smysl vždy
@@ -189,7 +198,7 @@ Buďte $d_1, d_2$ metriky. $d_1$ a $d_2$ na téže množině jsou silně ekvival
 \hspace{1.2mm}
 Podobně jako ve funkcích jedné proměnné se nemůžeme omezit na případy, kdy definiční obor je celý prostor $\mathbb{E}_n$.  
 V případě funkcí jedné proměnné byly definiční obory obvykle intervaly nebo jednoduchá sjednocení intervalů. Tady budou definiční
-obory $D$ složitější, často (ale né vždy) otevřené množiny v $\mathbb{E}_n$.
+obory $D$ složitější, často (ale ne vždy) otevřené množiny v $\mathbb{E}_n$.
 
 O $D$ se často mluví jako o oblasti na níž je funkce definovaná. To není termín (ve specifických kontextech slovo \uv{oblast} termín 
 je, tady ne).
@@ -197,7 +206,7 @@ je, tady ne).
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Součiny}
 \hspace{1.2mm}
-Pro $(X_1,d_i), i = 1,...,n$ definujeme na kartézskem součinu $\prod^n_{i=1}X_i$ metriku
+Pro $(X_1,d_i), i = 1,...,n$ definujeme na kartézském součinu $\prod^n_{i=1}X_i$ metriku
 \[d((x_1,...,x_n),(y_1,...,y_n)) = \max_i d_i(x_i,y_i)\]
 Získaný
 \[\prod^n_{i=1}(X_i,d_i)\]
@@ -210,7 +219,7 @@ se nazývá součin prostorů $(X_i, d_i)$. Píše se též
 \item Projekce $p_j = ((x_i)_i \mapsto x_j) : \prod^n_{i=1}(X_i,d_i) \rightarrow (X_j,d_j)$ jsou spojitá zobrazení.
 
 \item Buďte $f_j:(Y,d') \rightarrow (X_j,d_j)$ libovolná spojitá zobrazení. Potom jednoznačně určené zobrazení 
-$f:(Y,d') \rightarrow \prod^n_{i=1}(X_i,d_i)$ splňujíci $p_j \circ f = f_j$, totiž zobrazení definované předpisem
+$f:(Y,d') \rightarrow \prod^n_{i=1}(X_i,d_i)$ splňující $p_j \circ f = f_j$, totiž zobrazení definované předpisem
 $f(y) = (f_1(y),...,f_n(y))$, je spojité.
 \end{enumerate}
 Jak to vypadá:
