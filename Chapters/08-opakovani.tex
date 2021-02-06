@@ -6,19 +6,22 @@
 \section{Opakování}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Riemannův integrál v jedné proměnné}
-\hspace{1.2mm}
-\textit{Rozdělení} intervalu $\left<a,b\right> : $ posloupnost 
+
+\noindent
+\textbf{Rozdělení} intervalu $\left<a,b\right>$ je posloupnost 
 \[P : a = t_0 < t_1 < \cdot \cdot \cdot < t_{n-1} < t_n = b.\]
 
-
-{\normalsize
-\textit{Zjemnění:
-\[P' : a = t'_0 < t'_1 < \cdot \cdot \cdot < t'_{n-1} < t'_m = b\]
-\[\text{kde }\{t_j: j = 1,...,n-1\}\subseteq \{t'_j : j = 1,...,m-1\}.\]
-}}
-\textit{Jemnost rozdělení} $P: \mu(P) = \max_j(t_j-t_{j-1}).$
 \noindent
-Pro omezenou $f:J=\left<a,b\right> \rightarrow \mathbf{R} $ a $P$ definujeme dolní a horní součty
+\textbf{Zjemnění} rozkladu $P$ je rozklad $P'$ takový, že
+	\[P' : a = t'_0 < t'_1 < \cdot \cdot \cdot < t'_{m-1} < t'_m = b\]
+	\[\text{kde }\{t_j: j = 1,...,n-1\}\subseteq \{t'_j : j = 1,...,m-1\}.\] {
+}
+
+\noindent
+\textbf{Jemnost} rozkladu $P$ je $$\mu(P) = \max_j(t_j-t_{j-1}).$$
+
+\noindent
+Pro omezenou $f:J=\left<a,b\right> \rightarrow \mathbf{R} $ a $P$ definujeme \textbf{dolní} a \textbf{horní součty}
 \begin{align*}
     s(f,P) = & \sum^n_{j=1} m_j(t_j-t_{j-1}) \text{ resp.}\\
     S(f,P) = & \sum^n_{j=1} M_j(t_j-t_{j-1})
@@ -36,16 +39,14 @@ kde
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Riemannův integrál}
-\hspace{1.2mm}
-$\underline{\int}^b_{ a} f(x)dx = \text{sup}\{s(f,P) : P \text{ rozdělení}\}$ a
-$\overline{\int}^b_{ a} f(x)dx = \text{inf}\{S(f,P) : P \text{ rozdělení}\}$ 
+\noindent
+\textbf{Dolní/horní Riemannův integrál} $f$ přes $\left<a,b\right>$ jsou výrazy:
+$$\underline{\int}^b_{ a} f(x)dx = \text{sup}\{s(f,P) : P \text{ rozdělení}\} \qquad \text{a}\qquad
+\overline{\int}^b_{ a} f(x)dx = \text{inf}\{S(f,P) : P \text{ rozdělení}\}$$ 
 
-Prvnímu se říka dolní Riemannův integrál $f$ přes $\left<a,b\right>$, druhé je horní Riemannův integrál.
-
-Je li $\underline{\int}^b_a f(x) dx = \overline{\int}^b_a f(x) dx$ označujeme společnou hodnotu
+Jsou-li si rovny, mluvíme o \textbf{Riemannově integrálu} funkce $f$ přes $\left<a,b\right>$:
 \[\int^b_a f(x) dx\]
 
-a nazýváme ji Riemannův integrál funkce $f$ přes $\left<a,b\right>$.
 \noindent
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Tvrzení o existenci Riemannova integrálu}
@@ -57,7 +58,7 @@ Riemannův integrál $\int^b_a f(x) dx$ existuje právě když $\forall \varepsi
 \noindent
 \textbf{Důkaz:} 
 \begin{enumerate}
-    \item Nechť $\int^b_a f(x) dx$ existuje a nechť $\varepsilon > 0$. Potom existují rozdělení $P_1$ a $P_2$ takové, že
+	\item[$\Rightarrow$:] Nechť $\int^b_a f(x) dx$ existuje a nechť $\varepsilon > 0$. Potom existují rozdělení $P_1$ a $P_2$ takové, že
     \begin{center}
         \begin{tabular}{ c c c }
             $S(f,P_1) < \int^b_a f(x) dx + \frac{\varepsilon}{2}$ & a & $s(f,P_2) > \int^b_a f(x) dx - \frac{\varepsilon}{2}$  \\
@@ -65,7 +66,7 @@ Riemannův integrál $\int^b_a f(x) dx$ existuje právě když $\forall \varepsi
     \end{center}
     Potom je pro společné zjemnění $P$ těch dvou $P_1,P_2$
     \[S(f,P) - s(f,P) < \int^b_a f(x)dx + \frac{\varepsilon}{2} - \int^b_a f(x)dx + \frac{\varepsilon}{2} = \varepsilon.\]
-    \item Nechť druhé tvrzení platí. Zvolme $\varepsilon > 0 : S(f,P) - s(f,P) < \varepsilon.$ Potom je 
+    \item[$\Leftarrow$:] Nechť druhé tvrzení platí. Zvolme $\varepsilon > 0 : S(f,P) - s(f,P) < \varepsilon.$ Potom je 
     \[\overline{\int}^b_a f(x)dx \leq S(f,P) < s(f,P) + \varepsilon \leq \underline{\int}^b_a f(x)dx + \varepsilon,\]
     a jelikož $\varepsilon$ bylo libovolně malé, vidíme, že $\overline{\int}^b_a f(x)dx = \underline{\int}^b_a f(x)dx.$
 \end{enumerate}
@@ -77,6 +78,7 @@ Riemannův integrál $\int^b_a f(x) dx$ existuje právě když $\forall \varepsi
 \hspace{1.2mm}
 Pro každou spojitou $f : \left<a,b\right> \rightarrow \mathbb{R}$ Riemannův integrál $\int^b_a f$ existuje.
 \vspace{5mm}
+
 \noindent
 \textbf{Důkaz:} Pro $\varepsilon > 0 $ zvolme $\delta > 0$ tak, aby 
 \[\forall x,y : |x-y| < \delta \implies |f(x) - f(y)| < \frac{\varepsilon}{b-a}.\]
