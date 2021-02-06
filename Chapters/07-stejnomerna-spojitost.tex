@@ -5,11 +5,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Stejnoměrná spojitost}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Definice stejnoměrné spojitosti}
-\hspace{1.2mm}
-
-Řekneme, že $f : (X,d) \rightarrow (Y,d')$ je stejnoměrně spojité, je-li
-\[\forall \varepsilon > 0 \exists \delta > 0 : \forall x,y : d(x,y) < \delta \implies d'(f(x),f(y)) < \varepsilon\].
+Řekneme, že $f : (X,d) \rightarrow (Y,d')$ je \textbf{stejnoměrně spojité}, je-li
+\[\forall \varepsilon > 0 \exists \delta > 0 : \forall x,y : d(x,y) < \delta \implies d'(f(x),f(y)) < \varepsilon\]
 \noindent
 \textbf{Příklad:}
 
@@ -26,13 +23,13 @@ pro spojité reálné funkce na kompaktních intervalech.
 
 \vspace{5mm}
 \noindent
-\textbf{Důkaz:} Nechť $f : (X,d) \rightarrow (Y,d')$ není stejnoměrně spojité. Potom $\exists \varepsilon > 0 : \forall n \exists x_n, y_n :$
+\textbf{Důkaz:} Nechť $f : (X,d) \rightarrow (Y,d')$ není stejnoměrně spojité. Potom $\exists \varepsilon > 0 : \forall n\ \exists x_n, y_n :$
 \[d(x_n,y_n) < \frac{1}{n}\]
 ale
 \[d'(f(x_n),f(y_n)) \geq \varepsilon.\]
 
-Zvolme konvergentní podposloupnost $(x_{k_n})_n$ posloupnosti $(x_n)_n$. Označme $a = lim_n x_{k_n}.$ Potom podle $d(x_n,y_n) < \frac{1}{n}$ je též 
-$a = lim_n y_{k_n}.$ Podle $d'(f(x_n),f(y_n)) \geq \varepsilon$ nemůže být $f(a) = lim_n f(x_{k_n})$ a zároveň $f(a) = lim_n f(y_{k_n})$, 
+Zvolme konvergentní podposloupnost $(x_{k_n})_n$ posloupnosti $(x_n)_n$. Označme $a = \lim_n x_{k_n}.$ Potom podle $d(x_n,y_n) < \frac{1}{n}$ je též 
+$a = \lim_n y_{k_n}.$ Podle $d'(f(x_n),f(y_n)) \geq \varepsilon$ nemůže být $f(a) = \lim_n f(x_{k_n})$ a zároveň $f(a) = \lim_n f(y_{k_n})$, 
 a tedy $f$ není ani spojité.
 
 \end{document}
