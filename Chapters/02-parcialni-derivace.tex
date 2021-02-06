@@ -16,7 +16,7 @@ Pro $f(x_1,...,x_n)$ vezmeme
 \[\lim_{h\rightarrow 0}\frac{f(x_1,...,x_{k-1},x_k+h,x_{k+1},...x_n) - f(x_1,..)}{h}.\]
 \hspace{1.2mm}
 Označení
-\[\frac{\partial f(x_1,...,(x_n))}{\partial x_k} \textrm{ nebo } \frac{\partial f}{\partial x_k} (x_1,...,x_n),\]
+\[\frac{\partial f(x_1,...,x_n)}{\partial x_k} \textrm{ nebo } \frac{\partial f}{\partial x_k} (x_1,...,x_n),\]
 \hspace{1.2mm}
 Pro $f(x,y)$ píšeme
 \[\frac{\partial f(x,y)}{\partial x} \textrm{ a } \frac{\partial f(x,y)}{\partial y}, \textrm{ atd.}\]
@@ -79,10 +79,14 @@ To bude místo absolutní hodnoty, místo $h$ bude $n$-tice blízká nule.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Definice}
 \hspace{1.2mm}
-Funkce $f$ má \textit{totální diferenciál} v bodě \textbf{a} existuje-li funkce $\mu$ spojitá v okolí $U$ bodu $\textbf{o} \in \mathbb{R}^n$ taková, že $\mu(\textbf{o}) = 0$
+Funkce $f$ má \textit{totální diferenciál} v bodě \textbf{a}, existuje-li funkce $\mu$ spojitá v okolí $U$ bodu $\textbf{o} \in \mathbb{R}^n$ taková, že $\mu(\textbf{o}) = 0$
 a čísla $A_1,...,A_n$ pro která
 
 \[f(\textbf{a}+\textbf{h}) - f(\textbf{a}) = \sum^n_{k=1}A_kh_k+||\textbf{h}||\mu(\textbf{h}).\]
+
+S použitím skalárního součinu jde též zapsat jako
+
+$$f(\textbf{a} + \textbf{h}) - f(\textbf{a}) = \textbf{Aa} + ||\textbf{h}|| \mu (\textbf{h})$$
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Tvrzení o spojitosti funkce a totálním diferenciálu}
@@ -168,11 +172,11 @@ Pravidlo pro skládání v nejjednodušší podobě následuje.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Věta pro derivaci složených funkcí o více proměnných}
 \hspace{1.2mm}
-Nechť má $f(\textbf{x})$ totální diferenciál v bodě \textbf{a}. Nechť mají $g_k(t)$ derivace v bodě b a nechť je $g_k(b) = a_k$ pro 
+Nechť má $f(\textbf{x})$ totální diferenciál v bodě \textbf{a}. Nechť mají $g_k(t)$ derivace v bodě $b$ a nechť je $g_k(b) = a_k$ pro 
 $k = 1,...n.$ Položme
 \[F(t) = f(\textbf{g}(t)) = f(g_1(t),...g_n(t)).\]
 
-Potom má $F$ derivaci v b, totiž 
+Potom má $F$ derivaci v $b$, totiž 
 \[F'(b) = \sum^n_{k=1}\frac{\partial f(\textbf{a})}{\partial x_k} \cdot g'_k(b).\]
 
 Důkaz:
@@ -183,7 +187,7 @@ Důkaz:
  &=\sum^n_{k=1}A_k\frac{g_k(b+h)-g_k(b)}{h} + \mu(\textbf{g}(b+h) - \textbf{g}(b)) \max_k\frac{|g_k(b+h)-g_k(b)|}{h}.
 \end{align*}
 
-Máme $lim_{h \rightarrow 0} \mu(\textbf{g}(b+h)-\textbf{g}(b)) = 0$ jelikož jsou funkce $g_k$ spojité v $b$. 
+Máme $\lim_{h \rightarrow 0} \mu(\textbf{g}(b+h)-\textbf{g}(b)) = 0$ jelikož jsou funkce $g_k$ spojité v $b$. 
 Jelikož funkce $g_k$ mají derivace, jsou $\max_k \frac{|g_k(b+h) - g_k(b)|}{h}$ omezené v dostatečně malém okolí nuly. Limita 
 poslední sčítance je tedy nula a máme
 
@@ -191,8 +195,8 @@ poslední sčítance je tedy nula a máme
 \[= \sum^n_{k = 1}A_k\lim_{h \rightarrow 0} \frac{g_k(b+h) - g_k(b)}{h} = \sum^n_{k = 1}\frac{\partial f(\textbf{a})}{\partial x_k}g'_k(b)\]
 
 \hspace{1.2mm}
-Co se děje geometricky: Tečná nadrovina vyjádřená diferenciálem vnější funkce $f$ nemá žádny důvod preferovat hlavní osy v nichž se 
-dějí derivace vnitřních funkcí. Proto by tady jen parciálni derivace nestačily. 
+Co se děje geometricky: Tečná nadrovina vyjádřená diferenciálem vnější funkce $f$ nemá žádný důvod preferovat hlavní osy, v nichž se 
+dějí derivace vnitřních funkcí. Proto by tady jen parciální derivace nestačily.
 \noindent
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -282,7 +286,7 @@ jsou spojité v nějakém okolí bodu $(x,y)$. Potom:
 \[ \frac{\partial ^2 f(x,y)}{\partial x \partial y} = \frac{\partial ^2 f(x,y)}{\partial y \partial x} \]
 
 \noindent
-\textbf{Důkaz:} Pokusíme se spočíst obě derivace v jednom kroku, tedy počítejme limitu $lim_{h\rightarrow 0} F(h)$ funkce
+\textbf{Důkaz:} Pokusíme se spočíst obě derivace v jednom kroku, tedy počítejme limitu $\lim_{h\rightarrow 0} F(h)$ funkce
 \[F(h) = \frac{f(x+h,y+h) - f(x,y+h) - f(x+h,y) + f(x,y)}{h^2}\]
 Položíme li 
 
@@ -315,8 +319,8 @@ Potom znovu, podle L. formule,
 pro nějaká $\theta_1,\theta_2$ mezi 0 a 1.
 
 Druhá, $\frac{1}{h^2}(\varphi_h(x+h) - \varphi_h(x)))$ dá podobně
-\[F(h) = \frac{\partial }{\partial y}\left(\frac{\partial f(x+\theta_4h,y + \theta_2h}{\partial x}\right)\]
-Obě $\frac{\partial }{\partial y}(\frac{\partial f}{\partial x})$ a $\frac{\partial }{\partial x}(\frac{\partial f}{\partial y})$ jsou spojité ($x,y$), a $lim_{h\rightarrow 0} F(h)$ můžeme počítat z kteréhokoli výrazu (první nebo druhá):
+\[F(h) = \frac{\partial }{\partial y}\left(\frac{\partial f(x+\theta_4h,y + \theta_3h}{\partial x}\right)\]
+Obě $\frac{\partial }{\partial y}(\frac{\partial f}{\partial x})$ a $\frac{\partial }{\partial x}(\frac{\partial f}{\partial y})$ jsou spojité ($x,y$), a $\lim_{h\rightarrow 0} F(h)$ můžeme počítat z kteréhokoli výrazu (první nebo druhá):
 
 \[\lim_{h\rightarrow 0}F(h) = \frac{\partial ^2 f(x,y)}{\partial x \partial y} 
                             = \frac{\partial ^2 f(x,y)}{\partial y \partial x}.\]
