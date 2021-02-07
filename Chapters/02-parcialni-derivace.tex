@@ -251,8 +251,11 @@ a pro $u = \psi (x)$ a $ v = \phi (x) $ platí:
 \frac{1}{\psi (x)} \phi '(x) + \frac{1}{\psi (x)^2}\psi '(x) =
 \frac{\psi (x)\phi '(x) - \phi (x)\psi '(x)}{\psi (x)^2} \]
 
+
+\subsection{Lagrangeova věta v jedné proměnné}\label{lagrange1}
+\textbf{Věta} (pro připomenutí): Nechť $f$ je spojitá funkce na intervalu $[a, b]$ a má na $(a, b)$ derivaci. Pak existuje bod $c \in (a, b)$ t. ž. tečna v bodě $c$ je rovná přímce procházející $(a, f(a))$ a $(b, f(b))$: $$f'(c) = \frac{f(b) - f(a)}{b - a} \qquad \text{nebo alternativně} \qquad f(b) - f(a) = f'(c)(b - a)$$
+
 \subsection{Lagrangeova věta ve více proměnných}
-%-> možno by bolo dobré doplniť aj vetou pre jednu premennú
 \hspace{1.2mm}
 \noindent
 Nechť má $f$ spojité parciální derivace v konvexní otevřené množině $U \subseteq \mathbb{E}_{n}$.
@@ -262,12 +265,13 @@ Potom pro libovolné dva body $x,y \in U$ $\exists 0 \leq \theta \leq 1$ takové
 
 \noindent
 \textbf{Důkaz:}
-Mějme $\mathbf{g}$, pro které platí $g_j(t) = x_j + t(y_j - x_j)$.
+Položme $F(t) = f(\mathbf{x} + t(\mathbf{y} - \mathbf{x}))$ a $\mathbf{g}$ t. ž. $g_j(t) = x_j + t(y_j - x_j)$.
 Potom máme $F(t) = f \circ \mathbf{g} = f(\mathbf{x} + t(\mathbf{y}-\mathbf{x}))$ a
 \[ F'(t) = \sum^{n}_{j=1} \frac{\partial f(\mathbf{g}(t))}{\partial x_j}g_j'(t) =
 \sum^{n}_{j=1} \frac{\partial f(\mathbf{g}(t))}{\partial x_j}(y_j - x_j)  \]
 Podle Lagrangeovy věty $\exists \theta : 0 \leq \theta \leq 1$:
 \[ f(\mathbf{y}) - f(\mathbf{x}) = F(1) - F(0) = F'(\theta) \]
+
 
 \noindent
 \textbf{Poznámka:}
@@ -288,12 +292,12 @@ jsou spojité v nějakém okolí bodu $(x,y)$. Potom:
 \noindent
 \textbf{Důkaz:} Pokusíme se spočíst obě derivace v jednom kroku, tedy počítejme limitu $\lim_{h\rightarrow 0} F(h)$ funkce
 \[F(h) = \frac{f(x+h,y+h) - f(x,y+h) - f(x+h,y) + f(x,y)}{h^2}\]
-Položíme li 
+Položíme-li 
 
 \begin{align*} 
 \begin{split}
 \varphi_h(y) & = f(x+h,y) - f(x,y)\text{ a}\\
-\psi_k(x) & = f(x,y+k) - f(x,y),
+\psi_h(x) & = f(x,y+h) - f(x,y),
 \end{split}
 \end{align*}
 dostaneme pro $F(h)$ dva výrazy:
@@ -307,13 +311,13 @@ F(h) & = \frac{1}{h^2} (\psi_h(x+h)-\psi_h(x)).
 První: Funkce $\varphi_h$ má derivaci (podle $y$, jinou proměnnou nemá)
 \[\varphi'_h(y)=\frac{\partial f(x+h,y)}{\partial y}-\frac{\partial f(x,y)}{\partial y}\]
 
-a tedy podle Lagrangeovy formule
+a tedy podle Lagrangeovy formule \ref{lagrange1} (druhý tvar, rozdíl je $y + h - y = h$):
 \begin{align*}
     F(h) & = \frac{1}{h^2}(\varphi_h(y+h)-\varphi_h(y)) = \frac{1}{h}\varphi'_h(y+\theta_1h)\\
     & = \frac{\partial f(x+h,y+\theta_1h)}{\partial y} -\frac{\partial f(x,y+\theta_1h)}{\partial y}.
 \end{align*}
 
-Potom znovu, podle L. formule,
+Potom znovu podle Lagrangeovy formule
 \[F(h) = \frac{\partial }{\partial x}\left(\frac{\partial f(x+\theta_2h,y+\theta_1h}{\partial y}\right)\]
 
 pro nějaká $\theta_1,\theta_2$ mezi 0 a 1.
