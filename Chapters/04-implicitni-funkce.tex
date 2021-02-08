@@ -4,49 +4,34 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Implicitní funkce}
-\hspace{1.2mm}
-\noindent
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Ilustrační příklady}
 
-\subsubsection{Obecný příklad}
-\noindent
-\hspace{1.2mm}
-Mějme spojité reálné funkce $F_i(x_1, ... , x_m, y_1, ... , y_n)$ pro každé $i \in \{1, ..., n\}$
-v $n + m$
-proměnných. Určuje systém rovnic
-\[ F_1(x_1, ... , x_m, y_1, ... , y_n) = 0 \]
-\[ \vdots \hspace{15mm} \vdots \hspace{15mm} \vdots \]
-\[ F_n(x_1, ... , x_m, y_1, ... , y_n) = 0 \]
-v nějakém smyslu funkce
-\[ f_i \equiv y_i(x_1, ... , x_m) \]
-pro $i \in \{ 1, ... , n \}$? Pokud ano, jak a kde je určuje a jaké mají funkce vlastnosti?
+\begin{example}[Obecný]
+	Mějme spojité reálné funkce $F_i(x_1, ... , x_m, y_1, ... , y_n)$ pro každé $i \in \{1, ..., n\}$
+	v $n + m$
+	proměnných. Určuje systém rovnic
+	\[ F_1(x_1, ... , x_m, y_1, ... , y_n) = 0 \]
+	\[ \vdots \hspace{15mm} \vdots \hspace{15mm} \vdots \]
+	\[ F_n(x_1, ... , x_m, y_1, ... , y_n) = 0 \]
+	v nějakém smyslu funkce
+	\[ f_i \equiv y_i(x_1, ... , x_m) \]
+	pro $i \in \{ 1, ... , n \}$? Pokud ano, jak a kde je určuje a jaké mají funkce vlastnosti?
+\end{example}
 
-\vspace{5mm}
-\noindent
-\hspace{1.2mm}
-Konkrétněji viz následující příklad.
-
-\subsubsection{Příklad pro $F(x,y) = x^2 + y^2 - 1$}
-\noindent
-\hspace{1.2mm}
-Mějme $F(x,y) = x^2 + y^2 - 1$, neboli rovnici \[ x^2 + y^2 = 1 \]
-
-\noindent
-\hspace{1.2mm}
-Několik pozorování:
-\begin{itemize}
-    \item Pro některá $x_0$ jako například $x_0 < -1$ řešení neexistuje, o funkci $y(x)$ nemluvě.
-    \item Přestože řešení v nějakém okolí $x_0$ existuje, nemůžeme v nějakých situacích hovořit o funkci.
-    Potřebujeme kolem řešení $(x_0, y_0)$ vymezit okolí jak $x_0$, tak $y_0$.
-    \item Máme také případy, jako ten, kdy $x_0 = 1$, kde je v okolí mnoho řešení, ale žádný(ani
-    jednostranný) interval, kde by $y$ bylo jednoznačné.
-\end{itemize}
-
-\noindent
-\hspace{1.2mm}
-V případě $F(x,y)$ už zádná další situace nenastane.
+\begin{example}[$F(x,y) = x^2 + y^2 - 1$]
+	Mějme $F(x,y) = x^2 + y^2 - 1$, neboli rovnici \[ x^2 + y^2 = 1 \]
+	Několik pozorování:
+	\begin{itemize}
+	    \item Pro některá $x_0$ jako například $x_0 < -1$ řešení neexistuje, o funkci $y(x)$ nemluvě.
+	    \item Přestože řešení v nějakém okolí $x_0$ existuje, nemůžeme v nějakých situacích hovořit o funkci.
+	    Potřebujeme kolem řešení $(x_0, y_0)$ vymezit okolí jak $x_0$, tak $y_0$.
+	    \item Máme také případy, jako ten, kdy $x_0 = 1$, kde je v okolí mnoho řešení, ale žádný(ani
+	    jednostranný) interval, kde by $y$ bylo jednoznačné.
+	\end{itemize}
+	V případě $F(x,y)$ už zádná další situace nenastane.
+\end{example}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Věta o implicitní funkci}

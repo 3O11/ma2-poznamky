@@ -42,6 +42,13 @@
 \newtheorem*{intuition}{Intuice}
 \newtheorem*{remark}{Poznámka}
 \newtheorem*{consequence}{Důsledek}
+\newtheorem*{observation}{Pozorování}
+
+% ošklivý hack k tomu, aby environment 'definitionnodot' neměl na konci . nebo :
+% hodí se, když chceme Dělat něco jako „Definice (Riemannův integrál) je funkce...“
+\newtheoremstyle{nontheoremstylenodot}{1em}{1em}{}{}{\bfseries}{}{.3em}{}
+\theoremstyle{nontheoremstylenodot}
+\newtheorem*{definitionnodot}{Definice}
 
 \theoremstyle{theoremstyle}
 \newtheorem*{theorem}{Věta}
