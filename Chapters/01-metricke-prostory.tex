@@ -3,200 +3,174 @@
 
 \begin{document}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Metrické prostory}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Definice metrického prostoru}
-\hspace{1.2mm}
-Metrický prostor : Nechť $X$ je množina,  $d: X \times X \rightarrow \mathbb{R}$ funkce t. ž. platí:
 
-\begin{itemize}
-\item{$\forall x,y \in X : d(x,y) \geq 0, d(x,y) = 0 \iff x = y$ }
-\item{$\forall x,y \in X : d(x,y) = d(y,x)$}
-\item{$\forall x,y \in X : d(x,z) \leq d(x,y) + d(y,z)$ (trojúhelníková nerovnost)}
-\end{itemize}
-pak $(X,d)$ je metrický prostor.
+\begin{definition}[Metrický prostor]
+	Nechť $X$ je množina,  $d: X \times X \rightarrow \mathbb{R}$ funkce t. ž. platí:
+	
+	\begin{itemize}
+	\item{$\forall x,y \in X : d(x,y) \geq 0, \quad d(x,y) = 0 \iff x = y$ }
+	\item{$\forall x,y \in X : d(x,y) = d(y,x)$}
+	\item{$\forall x,y \in X : d(x,z) \leq d(x,y) + d(y,z)$ (trojúhelníková nerovnost)}
+	\end{itemize}
+	pak $(X,d)$ je metrický prostor.
+\end{definition}
 
-\noindent
-\hspace{1.2mm}
-Příklady:
-\begin{align*} 
-    (\mathbb{R}, |x-y|) &,\\
-    (\mathbb{C},|x-y|) &,\\
-    (G,d) &, G \text{ je orientovaný souvislý graf, } d \text{ je délka nejdelší cesty}\\
-\end{align*}
+\begin{example}
+	Zde je několik metrických prostorů:
+	\begin{align*} 
+	    (\mathbb{R}, |x-y|) &,\\
+	    (\mathbb{C},|x-y|) &,\\
+	    (G,d) &, G \text{ je orientovaný souvislý graf, } d \text{ je délka nejdelší cesty}
+	\end{align*}%
+	Pozor: trojúhelníková nerovnost v $(\mathbb{C}, |x-y|)$ není tak triviální jako v $\mathbb{R}$.
+\end{example}
 
-\hspace{1.2mm}
-Pozor: trojúhelníková nerovnost v $(\mathbb{C}, |x-y|)$ není tak triviální jako v $\mathbb{R}$.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\subsection{Euklidovský prostor $\mathbb{E}_n$}
-\hspace{1.2mm}
+\begin{definition}[Euklidovský prostor $\mathbb{E}_n$]
 Definujeme jako metrický prostor $(\mathbb{R}^n,d)$, kde $d$:
 \[d((x_1,...,x_n),(y_1,...,y_n)) = \sqrt{\sum_i(x_i-y_i)^2}\]
-
 Pro nás zvlášť důležitý, známý v podobě vektorového prostoru $\mathbb{R}^n$ se skalárním součinem $\langle \textbf{u} | v \rangle$ a normou
 $\|\textbf{u}\| = \sqrt{\textbf{uu}}$ a vzdáleností $d(\textbf{u},v) = ||\textbf{u}-v||$
-\noindent
+\end{definition}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Diskrétní prostor}
-\hspace{1.2mm}
-Definujeme jako $(X,d)$, kde $d(x,y) = 1$ pro $x \neq y$
-\noindent
+\begin{definition}[Diskrétní prostor]
+	Definujeme jako $(X,d)$, kde $d(x,y) = 1$ pro $x \neq y$
+\end{definition}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Podprostor}
-\hspace{1.2mm}
-Buď $(X, d)$ metrický prostor. Pak $(Y, d')$ je podprostor, kde $Y \subseteq X$ a $\forall x,y \in Y : d'(x,y) = d(x,y)$.
+\begin{definition}[Podprostor]
+	Buď $(X, d)$ metrický prostor. Pak $(Y, d')$ je podprostor, kde $Y \subseteq X$ a $\forall x,y \in Y : d'(x,y) = d(x,y)$.
+\end{definition}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Spojité zobrazení}
-\hspace{1.2mm}
-$f \colon (X,d) \to (Y, d')$ je spojité zobrazení, pokud
-\[ \forall x, y \in X, \forall \varepsilon > 0 \exists \delta > 0:
-d(x,y) < \delta \Rightarrow d'(f(x), f(y)) < \varepsilon \]
+\begin{definition}[Spojité zobrazení]
+	$f \colon (X,d) \to (Y, d')$ je spojité zobrazení, pokud
+	\[ \forall x, y \in X, \forall \varepsilon > 0 \exists \delta > 0:
+	d(x,y) < \delta \Rightarrow d'(f(x), f(y)) < \varepsilon \]
+\end{definition}
 
 \subsection{Triviality}
-\subsubsection{Identické zobrazení}
-$f(x) = x$ je spojité zobrazení
-\hspace{1.2mm}
-\[ (X,d) \to (X,d) \]
 
-\subsubsection{Vložení podprostorů}
-je spojité zobrazení
-\hspace{1.2mm}
-\[ f_1\colon (X_1,d_1)\times(X_2,d_2) \rightarrow (X_1,d_1) \]
-\[\forall x\in X_1 \forall y \in X_2 : f_1(x,y) = x\]
-\[f_2 \colon (X_1,d_1)\times(X_2,d_2) \rightarrow (X_2,d_2)\]
-\[\forall x\in X_1 \forall y \in X_2 : f_2(x,y) = y\]
-\[\text{obecně pro } j=1,...,n \text{ máme}\]
-\[f_j\colon\prod^n_{i=1}(X_i,d_i)\rightarrow(X_j,d_j)\]
-\[f_j(x_1,x_2,...,x_n) = x_j\]
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Složení spojitých zobrazení je spojité}
+\begin{definition}[Identické zobrazení]
+	$f(x) = x$ je spojité zobrazení
+	\[ (X,d) \to (X,d) \]
+\end{definition}
 
-\hspace{1.2mm}
-Pokud jsou $f: (X,d) \to (Y, d')$ a $g: (Y,d') \to (Z, d'')$ spojité, pak i
-\[ g \circ f: (X,d) \to (Z,d'') \] je spojité.
+\begin{definition}[Vložení podprostorů]
+	je spojité zobrazení
+	\hspace{1.2mm}
+	\[ f_1\colon (X_1,d_1)\times(X_2,d_2) \rightarrow (X_1,d_1) \]
+	\[\forall x\in X_1 \forall y \in X_2 : f_1(x,y) = x\]
+	\[f_2 \colon (X_1,d_1)\times(X_2,d_2) \rightarrow (X_2,d_2)\]
+	\[\forall x\in X_1 \forall y \in X_2 : f_2(x,y) = y\]
+	\[\text{obecně pro } j=1,...,n \text{ máme}\]
+	\[f_j\colon\prod^n_{i=1}(X_i,d_i)\rightarrow(X_j,d_j)\]
+	\[f_j(x_1,x_2,...,x_n) = x_j\]
+\end{definition}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Věta o konvergenci}
-\hspace{1.2mm}
-Zobrazení $f: (X_1,d_1) \rightarrow (X_2,d_2)$ je spojité právě když pro každou konvergentní $(x_n)_n$ v $(X_1,d_1)$ 
-posloupnost $(f(x_n))_n$ konverguje v $(X_2,d_2)$ a platí $\lim_n f(x_n) = f(\lim_n x_n)$.
+\subsection{Věty o metrických prostorech}
 
-\noindent
-\hspace{1.2mm}
-\textbf{Důkaz ($1\implies2$):}
-Buď $f$ spojitá a nechť $\lim_nx_n = x$. Pro $\varepsilon > 0$ volme ze spojitosti $\delta > 0$
-tak, aby $\forall x,y \in X_1 : d_1(x,y) <\delta \implies d_2(f(x),f(y)) <\varepsilon$.
-Podle definice konvergence posloupnosti existuje $n_0$ takové, že pro $n \ge n_0$ je $d_1(x_n,x) < \delta$. Tedy je-li $n \ge n_0$
-máme $d_2(f(x_n),f(x)) < \varepsilon$ a potom $\lim_n f(x_n) = f(\lim_n x_n)$.
+\begin{theorem}[Složení spojitých zobrazení je spojité]
+	Pokud jsou $f: (X,d) \to (Y, d')$ a $g: (Y,d') \to (Z, d'')$ spojité, pak i
+	\[ g \circ f: (X,d) \to (Z,d'') \] je spojité.
+\end{theorem}
 
-\noindent
-\hspace{1.2mm}
-\textbf{Důkaz ($\lnot 1 \implies \lnot 2$):} Nechť $f$ není spojitá.
-Potom existují $x \in X_1$ a $\varepsilon_0 > 0$ takové, že pro každé $\delta > 0$ existuje $x_\delta$ takové, že
+\begin{theorem}[Věta o konvergenci]
+	Zobrazení $f: (X_1,d_1) \rightarrow (X_2,d_2)$ je spojité právě když pro každou konvergentní $(x_n)_n$ v $(X_1,d_1)$ 
+	posloupnost $(f(x_n))_n$ konverguje v $(X_2,d_2)$ a platí $\lim_n f(x_n) = f(\lim_n x_n)$.
+\end{theorem}
 
-$$d_1(x, x_\delta) < \delta \qquad \text{ale} \qquad d_2(f(x), f(x_\delta) \ge \varepsilon_0$$
-
-Položme $x_n = x_{1/n}$. Potom $\lim_n x_n = x$ ale $(f(x_n))_n$ nemůže konvergovat k $f(x)$.
+\begin{proof}
+	\begin{itemize}
+		\item[$1 \Rightarrow 2$] Buď $f$ spojitá a nechť $\lim_nx_n = x$. Pro $\varepsilon > 0$ volme ze spojitosti $\delta > 0$
+		tak, aby $\forall x,y \in X_1 : d_1(x,y) <\delta \implies d_2(f(x),f(y)) <\varepsilon$.
+		Podle definice konvergence posloupnosti existuje $n_0$ takové, že pro $n \ge n_0$ je $d_1(x_n,x) < \delta$. Tedy je-li $n \ge n_0$
+		máme $d_2(f(x_n),f(x)) < \varepsilon$ a potom $\lim_n f(x_n) = f(\lim_n x_n)$.
+		\item[$\lnot 1  \Rightarrow  \lnot 2$] Nechť $f$ není spojitá.
+		Potom existují $x \in X_1$ a $\varepsilon_0 > 0$ takové, že pro každé $\delta > 0$ existuje $x_\delta$ takové, že
+		$$d_1(x, x_\delta) < \delta \qquad \text{ale} \qquad d_2(f(x), f(x_\delta) \ge \varepsilon_0$$
+		Položme $x_n = x_{1/n}$. Potom $\lim_n x_n = x$ ale $(f(x_n))_n$ nemůže konvergovat k $f(x)$.
+	\end{itemize}
+\end{proof}
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Okolí}
-\hspace{1.2mm}
-Nechť $(X,d)$ je metrický prostor, $x\in X$, pak
-$\Omega (x,\varepsilon) = \{ y\ |\ d(x,y) < \varepsilon \}$
 
-formulaci $\Omega (x,\varepsilon)$ se říká otevřená koule s poloměrem $\varepsilon$ okolo $x$.
-\vspace{5mm}
+\subsection{Okolí, množiny, uzávěry}
+\begin{definition}[Okolí]
+	Nechť $(X,d)$ je metrický prostor, $x\in X$, pak
+	$$\Omega (x,\varepsilon) = \{ y\ |\ d(x,y) < \varepsilon \}$$
+	Formulaci $\Omega (x,\varepsilon)$ se říká otevřená koule s poloměrem $\varepsilon$ okolo $x$.
+\end{definition}
 
-\noindent
-\hspace{1.2mm}
-\textbf{Užití:}
-$"\textrm{U je okolí } x" \equiv \exists \varepsilon > 0, \Omega (x,\varepsilon) \subseteq U $
+\begin{example} [Použití okolí]
+	$"\textrm{U je okolí } x" \equiv \exists \varepsilon > 0, \Omega (x,\varepsilon) \subseteq U $
+\end{example}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Otevřená a uzavřená množina}
-\hspace{1.2mm}
-$U \subseteq (X,d)$ je \textbf{otevřená}, pokud je okolím \textit{každého} svého bodu.
+\begin{definition}[Otevřená množina]
+	$U \subseteq (X,d)$ je otevřená, pokud je okolím \textit{každého} svého bodu.
+\end{definition}
 
-\vspace{5mm}
+\begin{definition}[Uzavřená množina]
+	$V \subseteq (X,d)$ je uzavřená, pokud $\forall (x_n)_n \subseteq V$ je konvergentní
+	v $X$ a $\lim_n x_n \in V$.
+\end{definition}
 
-\noindent
-\hspace{1.2mm}
-$V \subseteq (X,d)$ je \textbf{uzavřená}, pokud $\forall (x_n)_n \subseteq V$ je konvergentní
-v $X$ a $\lim_n x_n \in V$.
+\begin{definition}[Vzdálenost od množiny]
+	Nechť $(X,d)$ je metrický prostor, $A \subseteq X, x\in X$, pak vzdálenost bodu $x$ od množiny $A$ je
+	\[d(x,A) = \inf\{d(x,a)\mid a \in A\}\]
+\end{definition}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Uzávěr}
-\hspace{1.2mm}
-\textbf{Uzávěr:} Nechť $(X,d)$ je metrický prostor, $A \subseteq X, x\in X$, pak vzdálenost bodu $x$ od množiny $A$ je
-\[d(x,A) = \inf\{d(x,a)\mid a \in A\}\]
-a uzávěrem rozumíme $\overline{A} : \{x \mid d(x,A) = 0\}$
+\begin{definition}[Uzávěr]
+	$\overline{A} : \{x \mid d(x,A) = 0\}$
+\end{definition}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Vzory a obrazy}
-\hspace{1.2mm}
-$f: X \rightarrow Y, A \subseteq X, B \subseteq Y$
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Obraz}
-\hspace{1.2mm}
-\underline{Obraz} podmnožiny $A\subseteq X$ v $Y$:
-\[f[A] = \{f(x) \mid x \in A\}\]
+Pro zbytek sekce nechť $f: X \rightarrow Y, A \subseteq X, B \subseteq Y$.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Vzor}
-\hspace{1.2mm}
-\underline{Vzor} podmnožiny $B\subseteq Y$ v $X$:
-\[f^{-1}[B] = \{x \mid x \in A: f(x) \in B\}\]
-\[X \underset{f^{-1}[-]}{\stackrel{f[-]}{\rightleftarrows}} Y\]
-\hspace{1.2mm}
-Platí:
-\[f[A] \subseteq B \equiv A \subseteq f^{-1}[B],\]
-\[f[f^{-1}[B]] \subseteq B\]
-\[f^{-1}[f[A]] \supseteq A\]
+\begin{definition}[Obraz]
+	Obraz podmnožiny $A\subseteq X$ v $Y$:
+	\[f[A] = \{f(x) \mid x \in A\}\]
+\end{definition}
 
-\noindent
-\hspace{1.2mm}
-\textbf{Pozor:} $f^{-1}$ má dva významy:
-\begin{itemize}
-    \item inverze $f^{-1}:Y \rightarrow X$, nemusí existovat
-    \item část v symbolu $f^{-1}[-]$, má smysl vždy
- 
-\end{itemize}
-\noindent
+\begin{definition}[Vzor]
+	Vzor podmnožiny $B\subseteq Y$ v $X$:
+	\[f^{-1}[B] = \{x \mid x \in A: f(x) \in B\}\]
+	\[X \underset{f^{-1}[-]}{\stackrel{f[-]}{\rightleftarrows}} Y\]
+	Pozor, $f^{-1}$ má dva významy:
+	\begin{itemize}
+		\item inverze $f^{-1}:Y \rightarrow X$, nemusí existovat
+		\item část v symbolu $f^{-1}[-]$, má smysl vždy
+	\end{itemize}
+\end{definition}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Vlastnosti zobrazení mezi metrickými prostory}
-\hspace{1.2mm}
-Buďte $(X_1, d_1)$ a $(X_2, d_2)$ metrické prostory a buď zobrazení $f: X_1 \to X_2$. Následující tvrzení
-jsou potom ekvivalentní:
-\begin{enumerate}
-    \item $f$ je spojité.
-    \item $\forall x \in X_1$ a $\forall$ okolí $V$ bodu $f(x)$ existuje okolí $U$ bodu $x$ takové, že
-        $f[U] \subseteq V$.
-    \item $\forall$ otevřenou $U$ v $X_2$ je vzor $f^{-1}[U]$ otevřený v $X_1$.
-    \item $\forall$ uzavřenou $A$ v $X_2$ je vzor $f^{-1}[A]$ uzavřený v $X_1$.
-    \item $\forall A \subseteq X_1$ je $f[\overline{A}] \subseteq \overline{f[A]}$
-\end{enumerate}
+\begin{lemma}[Vztahy vzorů a obrazů]
+	\[f[A] \subseteq B \equiv A \subseteq f^{-1}[B],\]
+	\[f[f^{-1}[B]] \subseteq B\]
+	\[f^{-1}[f[A]] \supseteq A\]
+\end{lemma}
 
+\begin{theorem}[Vlastnosti zobrazení mezi metrickými prostory]
+	Buďte $(X_1, d_1)$ a $(X_2, d_2)$ metrické prostory a buď zobrazení $f: X_1 \to X_2$. Následující tvrzení
+	jsou potom ekvivalentní:
+	\begin{enumerate}
+	    \item $f$ je spojité.
+	    \item $\forall x \in X_1$ a $\forall$ okolí $V$ bodu $f(x)$ existuje okolí $U$ bodu $x$ takové, že
+	        $f[U] \subseteq V$.
+	    \item $\forall$ otevřenou $U$ v $X_2$ je vzor $f^{-1}[U]$ otevřený v $X_1$.
+	    \item $\forall$ uzavřenou $A$ v $X_2$ je vzor $f^{-1}[A]$ uzavřený v $X_1$.
+	    \item $\forall A \subseteq X_1$ je $f[\overline{A}] \subseteq \overline{f[A]}$
+	\end{enumerate}
+\end{theorem}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Silně ekvivalentní metriky}
-\hspace{1.2mm}
-Buďte $d_1, d_2$ metriky. $d_1$ a $d_2$ na téže množině jsou silně ekvivalentní, pokud
-\[\exists \alpha , \beta > 0: \alpha d_1(x,y) \leq d_2(x,y) \leq \beta d_1(x,y)\]
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{definition}[Silně ekvivalentní metriky]
+	Buďte $d_1, d_2$ metriky. $d_1$ a $d_2$ na téže množině jsou silně ekvivalentní, pokud
+	\[\exists \alpha , \beta > 0: \alpha d_1(x,y) \leq d_2(x,y) \leq \beta d_1(x,y)\]
+\end{definition}
+
 \subsection{Reálná funkce o $n$ proměnných}
-\hspace{1.2mm}
 \[f: D \rightarrow \mathbb{R}, D \subseteq \mathbb{E}_n\]
 
-\noindent
-\hspace{1.2mm}
 Podobně jako ve funkcích jedné proměnné se nemůžeme omezit na případy, kdy definiční obor je celý prostor $\mathbb{E}_n$.  
 V případě funkcí jedné proměnné byly definiční obory obvykle intervaly nebo jednoduchá sjednocení intervalů. Tady budou definiční
 obory $D$ složitější, často (ale ne vždy) otevřené množiny v $\mathbb{E}_n$.
@@ -206,13 +180,15 @@ je, tady ne).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Součiny}
-\hspace{1.2mm}
-Pro $(X_1,d_i), i = 1,...,n$ definujeme na kartézském součinu $\prod^n_{i=1}X_i$ metriku
-\[d((x_1,...,x_n),(y_1,...,y_n)) = \max_i d_i(x_i,y_i)\]
-Získaný
-\[\prod^n_{i=1}(X_i,d_i)\]
-se nazývá součin prostorů $(X_i, d_i)$. Píše se též 
-\[(X_1,d_1) \times \cdots \times (X_n,d_n).\]
+
+\begin{definition}[Součin]
+	Pro $(X_1,d_i), i = 1,...,n$ definujeme na kartézském součinu $\prod^n_{i=1}X_i$ metriku
+	\[d((x_1,...,x_n),(y_1,...,y_n)) = \max_i d_i(x_i,y_i)\]
+	Získaný
+	\[\prod^n_{i=1}(X_i,d_i)\]
+	se nazývá součin prostorů $(X_i, d_i)$. Píše se též 
+	\[(X_1,d_1) \times \cdots \times (X_n,d_n).\]
+\end{definition}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Věta o spojitých zobrazeních}

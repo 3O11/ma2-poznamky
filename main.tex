@@ -1,12 +1,12 @@
 \documentclass[11pt]{article}
 
-
 \usepackage[czech]{babel}
 \usepackage{a4wide}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{fancyhdr}
 \usepackage{amssymb}
+\usepackage{amsthm}
 \usepackage{amsmath}
 \usepackage{mathtools}
 \usepackage{mleftright}
@@ -31,6 +31,21 @@
 
 \DeclareMathOperator{\rank}{rank}
 \DeclareMathOperator{\Span}{span}
+
+\newtheoremstyle{nontheoremstyle}{1em}{1em}{}{}{\bfseries}{:}{.5em}{}
+\newtheoremstyle{theoremstyle}{1em}{1em}{\it}{}{\bfseries}{:}{.5em}{}
+
+\theoremstyle{nontheoremstyle}
+\newtheorem*{definition}{Definice}
+\newtheorem*{example}{Příklad}
+\renewenvironment{proof}{{\noindent\bfseries Důkaz:}}{\qed}
+\newtheorem*{intuition}{Intuice}
+\newtheorem*{remark}{Poznámka}
+\newtheorem*{consequence}{Důsledek}
+
+\theoremstyle{theoremstyle}
+\newtheorem*{theorem}{Věta}
+\newtheorem*{lemma}{Tvrzení}
 
 \titleformat{\section} {\normalfont\fontsize{16}{15}\bfseries}{\thesection}{1em}{}
 \titleformat{\subsection} {\normalfont\fontsize{14}{15}\bfseries}{\thesubsection}{1em}{}
