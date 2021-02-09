@@ -203,6 +203,19 @@ a pro $u = \psi (x)$ a $ v = \phi (x) $ platí:
 	Nechť $f$ je spojitá funkce na intervalu $[a, b]$ a má na $(a, b)$ derivaci. Pak existuje bod $c \in (a, b)$ t. ž. tečna v bodě $c$ je rovná přímce procházející $(a, f(a))$ a $(b, f(b))$: $$f'(c) = \frac{f(b) - f(a)}{b - a} \qquad \text{nebo ekvivalentně} \qquad f(b) - f(a) = f'(c)(b - a)$$
 \end{theorem}
 
+\begin{definition}[Konvexní podmnožina]
+	Podmnožina $U \subseteq \mathrm{E}_n$ je konvexní, pokud
+	$$\forall \mathbf{x}, \mathbf{y} \in U \quad \implies \quad \forall t, 0 \le t \le 1, (1 - t) \mathbf{x} + t \mathbf{y} = \mathbf{x} + t( \mathbf{y} - \mathbf{x}) \in U$$
+\end{definition}
+
+\begin{figure}[h]
+	\centering
+	\subfloat[\centering Konvexní]{{\includegraphics[width=5cm]{02.convex} }}%
+	\hspace{5em}
+	\subfloat[\centering Nekonvexní]{{\includegraphics[width=5cm]{02.non-convex} }}%
+	\caption*{Příklad konvexní a nekonvexní podmnožiny $\mathrm{E}_n$}%
+\end{figure}
+
 \begin{theorem}[Lagrangeova věta ve více proměnných] \label{lagrange1}
 	Nechť má $f$ spojité parciální derivace v konvexní otevřené množině $U \subseteq \mathbb{E}_{n}$.
 	Potom pro libovolné dva body $x,y \in U$ $\exists 0 \leq \theta \leq 1$ takové, že:
