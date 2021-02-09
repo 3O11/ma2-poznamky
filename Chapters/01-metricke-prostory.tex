@@ -57,7 +57,6 @@ $\|\textbf{u}\| = \sqrt{\textbf{uu}}$ a vzdáleností $d(\textbf{u},v) = ||\text
 
 \begin{definition}[Vložení podprostorů]
 	je spojité zobrazení
-	\hspace{1.2mm}
 	\[ f_1\colon (X_1,d_1)\times(X_2,d_2) \rightarrow (X_1,d_1) \]
 	\[\forall x\in X_1 \forall y \in X_2 : f_1(x,y) = x\]
 	\[f_2 \colon (X_1,d_1)\times(X_2,d_2) \rightarrow (X_2,d_2)\]
@@ -67,11 +66,16 @@ $\|\textbf{u}\| = \sqrt{\textbf{uu}}$ a vzdáleností $d(\textbf{u},v) = ||\text
 	\[f_j(x_1,x_2,...,x_n) = x_j\]
 \end{definition}
 
+\begin{definition}[Konvergence]
+	Posloupnost $(x_n)_n$ v metrickém prostoru $(X, d)$ konverguje k $x \in X$, pokud
+	$$\forall \varepsilon > 0\ \exists n_0: \forall n \ge n_0: d(x_n, x) < \varepsilon$$
+\end{definition}
+
 \subsection{Věty o metrických prostorech}
 
 \begin{theorem}[Složení spojitých zobrazení je spojité]
-	Pokud jsou $f: (X,d) \to (Y, d')$ a $g: (Y,d') \to (Z, d'')$ spojité, pak i
-	\[ g \circ f: (X,d) \to (Z,d'') \] je spojité.
+	Pokud jsou $f: (X_1,d_1) \to (X_2, d_2)$ a $g: (X_2,d_2) \to (X_3, d_3)$ spojité, pak i
+	\[ g \circ f: (X_1,d_1) \to (X_3,d_3) \] je spojité.
 \end{theorem}
 
 \begin{theorem}[Věta o konvergenci]
@@ -80,12 +84,13 @@ $\|\textbf{u}\| = \sqrt{\textbf{uu}}$ a vzdáleností $d(\textbf{u},v) = ||\text
 \end{theorem}
 
 \begin{proof}
+	\hfill %https://latex.org/forum/viewtopic.php?t=14853
 	\begin{itemize}
-		\item[$1 \Rightarrow 2$] Buď $f$ spojitá a nechť $\lim_nx_n = x$. Pro $\varepsilon > 0$ volme ze spojitosti $\delta > 0$
-		tak, aby $\forall x,y \in X_1 : d_1(x,y) <\delta \implies d_2(f(x),f(y)) <\varepsilon$.
+		\item[$\Rightarrow \phantom{\lnot}$] Buď $f$ spojitá a nechť $\lim_nx_n = x$. Pro $\varepsilon > 0$ volme ze spojitosti $\delta > 0$
+		tak, aby $d_1(x,y) <\delta \implies d_2(f(x),f(y)) <\varepsilon$.
 		Podle definice konvergence posloupnosti existuje $n_0$ takové, že pro $n \ge n_0$ je $d_1(x_n,x) < \delta$. Tedy je-li $n \ge n_0$
 		máme $d_2(f(x_n),f(x)) < \varepsilon$ a potom $\lim_n f(x_n) = f(\lim_n x_n)$.
-		\item[$\lnot 1  \Rightarrow  \lnot 2$] Nechť $f$ není spojitá.
+		\item[$\lnot \Rightarrow  \lnot$] Nechť $f$ není spojitá.
 		Potom existují $x \in X_1$ a $\varepsilon_0 > 0$ takové, že pro každé $\delta > 0$ existuje $x_\delta$ takové, že
 		$$d_1(x, x_\delta) < \delta \qquad \text{ale} \qquad d_2(f(x), f(x_\delta) \ge \varepsilon_0$$
 		Položme $x_n = x_{1/n}$. Potom $\lim_n x_n = x$ ale $(f(x_n))_n$ nemůže konvergovat k $f(x)$.
@@ -133,7 +138,7 @@ Pro zbytek sekce nechť $f: X \rightarrow Y, A \subseteq X, B \subseteq Y$.
 
 \begin{definition}[Vzor]
 	Vzor podmnožiny $B\subseteq Y$ v $X$:
-	\[f^{-1}[B] = \{x \mid x \in A: f(x) \in B\}\]
+	\[f^{-1}[B] = \{x \mid x \in X: f(x) \in B\}\]
 	\[X \underset{f^{-1}[-]}{\stackrel{f[-]}{\rightleftarrows}} Y\]
 	Pozor, $f^{-1}$ má dva významy:
 	\begin{itemize}
@@ -161,22 +166,17 @@ Pro zbytek sekce nechť $f: X \rightarrow Y, A \subseteq X, B \subseteq Y$.
 	\end{enumerate}
 \end{theorem}
 
-\subsection{Silně ekvivalentní metriky}
+\subsection{Ekvivalence metrik}
 
-\begin{definition}[Silně ekvivalentní metriky]
-	Buďte $d_1, d_2$ metriky. $d_1$ a $d_2$ na téže množině jsou silně ekvivalentní, pokud
-	\[\exists \alpha , \beta > 0: \alpha d_1(x,y) \leq d_2(x,y) \leq \beta d_1(x,y)\]
+\begin{definition}[Ekvivalentní metriky]
+	Metriky $d_1, d_2$ na téže množině jsou ekvivalentní, pokud $\mathrm{id}_X : \left(X, d_1\right) \to (X, d_2)$ je homeomorfismus. Získáme tím prostor, ve kterém jsou všechny topologické záležitosti (spojitost, uzavřenost, \ldots) zachovány.
 \end{definition}
 
-\subsection{Reálná funkce o $n$ proměnných}
-\[f: D \rightarrow \mathbb{R}, D \subseteq \mathbb{E}_n\]
 
-Podobně jako ve funkcích jedné proměnné se nemůžeme omezit na případy, kdy definiční obor je celý prostor $\mathbb{E}_n$.  
-V případě funkcí jedné proměnné byly definiční obory obvykle intervaly nebo jednoduchá sjednocení intervalů. Tady budou definiční
-obory $D$ složitější, často (ale ne vždy) otevřené množiny v $\mathbb{E}_n$.
-
-O $D$ se často mluví jako o oblasti na níž je funkce definovaná. To není termín (ve specifických kontextech slovo \uv{oblast} termín 
-je, tady ne).
+\begin{definition}[Silně ekvivalentní metriky]
+	Metriky $d_1$ a $d_2$ na téže množině jsou silně ekvivalentní, pokud
+	\[\exists \alpha , \beta > 0: \alpha d_1(x,y) \leq d_2(x,y) \leq \beta d_1(x,y)\]
+\end{definition}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Součiny}
@@ -192,25 +192,30 @@ je, tady ne).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Věta o spojitých zobrazeních}
-\begin{enumerate}
-\item Projekce $p_j = ((x_i)_i \mapsto x_j) : \prod^n_{i=1}(X_i,d_i) \rightarrow (X_j,d_j)$ jsou spojitá zobrazení.
+\begin{theorem}[O spojitých zobrazeních]
+	\hfill
+	\begin{enumerate}
+	\item Projekce $p_j = ((x_i)_i \mapsto x_j) : \prod^n_{i=1}(X_i,d_i) \rightarrow (X_j,d_j)$ jsou spojitá zobrazení.
+	
+	\item Buďte $f_j:(Y,d') \rightarrow (X_j,d_j)$ libovolná spojitá zobrazení. Potom jednoznačně určené zobrazení 
+	$f:(Y,d') \rightarrow \prod^n_{i=1}(X_i,d_i)$ splňující $p_j \circ f = f_j$, totiž zobrazení definované předpisem
+	$f(y) = (f_1(y),...,f_n(y))$, je spojité.
+	\end{enumerate}
+\end{theorem}
 
-\item Buďte $f_j:(Y,d') \rightarrow (X_j,d_j)$ libovolná spojitá zobrazení. Potom jednoznačně určené zobrazení 
-$f:(Y,d') \rightarrow \prod^n_{i=1}(X_i,d_i)$ splňující $p_j \circ f = f_j$, totiž zobrazení definované předpisem
-$f(y) = (f_1(y),...,f_n(y))$, je spojité.
-\end{enumerate}
-Jak to vypadá:
-\begin{center}
-\includegraphics[width=9cm,height=4.8cm]{ipkm.png}
-\end{center}
-
-Tedy pokud víme, že $(x_1,x_2,x_3)\in \prod (x_i,d_i)$, Pak
-\[f(y) = (f_1(y),f_2(y),f_3(y))\]
-\[(p_1\circ f)(y) = p_1(f(y)) = p_1(f_1(y),f_2(y),f_3(y))=f_1(y)\]
-\[(p_2\circ f)(y) = ... = f_2(y)\]
-\[(p_3\circ f)(y) = ... = f_3(y))\]
-Existuje přesně jedno $f$ takové, že 
-\[p_i \circ f = f_i\]
-a je spojité.
+\begin{intuition}
+	Jak to vypadá:
+	\begin{center}
+	\includegraphics[width=9cm,height=4.8cm]{ipkm.png}
+	\end{center}
+	Tedy pokud víme, že $(x_1,x_2,x_3)\in \prod (x_i,d_i)$, Pak
+	\[f(y) = (f_1(y),f_2(y),f_3(y))\]
+	\[(p_1\circ f)(y) = p_1(f(y)) = p_1(f_1(y),f_2(y),f_3(y))=f_1(y)\]
+	\[(p_2\circ f)(y) = ... = f_2(y)\]
+	\[(p_3\circ f)(y) = ... = f_3(y)\]
+	Existuje přesně jedno $f$ takové, že 
+	\[p_i \circ f = f_i\]
+	a je spojité.
+\end{intuition}
 
 \end{document}

@@ -16,9 +16,9 @@
 
 \begin{proof}
 	\begin{enumerate}
-	    \item Buď $Y$ uzavřený podprostor kompaktního $X$ a buď $(y_n)_n$ posloupnost v $Y$. Jako posloupnost v X má 
+	    \item[$\Rightarrow \phantom{\lnot} $] Buď $Y$ uzavřený podprostor kompaktního $X$ a buď $(y_n)_n$ posloupnost v $Y$. Jako posloupnost v X má 
 	    konvergentní podposloupnost s limitou a z uzavřenosti je konvergentní podposloupností a tato limita je v $Y$.
-	    \item Nechť $Y$ není uzavřený. Potom existuje posloupnost $(y_n)_n$ v $Y$ konvergentní v $X$ taková, že $y = \lim_n y_n \notin Y$. Potom $(y_n)_n$
+	    \item[$\lnot \Rightarrow \lnot $] Nechť $Y$ není uzavřený. Potom existuje posloupnost $(y_n)_n$ v $Y$ konvergentní v $X$ taková, že $y = \lim_n y_n \notin Y$. Potom $(y_n)_n$
 	    nemůže mít podposloupnost konvergentní v $Y$ protože každá její podposloupnost konverguje k $y$.
 	\end{enumerate}
 \end{proof}
@@ -74,7 +74,7 @@
 \begin{proof}
 	\begin{enumerate}
 		\item[$\Rightarrow$:] Že je uzavřený a omezený už víme (\ref{ch:komp=>uz}, \ref{ch:komp=>om}).
-		\item[$\Leftarrow$:] Buď nyní $Y \subseteq \mathbb{E}_n$ omezený a uzavřený. Jelikož je omezený, je pro dostatečně velký kompaktní interval
+		\item[$\Leftarrow$:] Buď nyní $Y \subseteq \mathbb{E}_n$ omezený a uzavřený. Jelikož je omezený, tak pro dostatečně velký kompaktní interval platí
 	    \[Y \subseteq J^n \subseteq \mathbb{E}_n.\]
 	    $J^n$ je kompaktní jako součin intervalů $\left<a_i,b_i\right>$, a jelikož je $Y$ uzavřený v $\mathbb{E}_n$ je též uzavřený
 	    v $J^n$ a tedy kompaktní.
@@ -92,7 +92,7 @@
 	Potom je $(y_{k_n})_n = (f(x_{k_n}))_n$ konvergentní podposloupnost $(x_n)_n$.
 \end{proof}
 
-\begin{lemma}[Maximum a minimum funkce na kompaktním prostoru]
+\begin{lemma}[Extrémy spojité funkce na kompaktním prostoru]
 	Buď $(X,d)$ kompaktní. Potom každá spojitá funkce $f:(X,d)\to \mathbb{R}$ nabývá maxima i minima (t.j. nejsou nekonečné).
 \end{lemma}
 

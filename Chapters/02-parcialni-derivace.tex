@@ -4,6 +4,18 @@
 
 \section{Parciální derivace}
 
+\begin{definition}[Reálná funkce o $n$ proměnných]
+	\[f: D \rightarrow \mathbb{R}, D \subseteq \mathbb{E}_n\]
+\end{definition}
+
+Podobně jako ve funkcích jedné proměnné se nemůžeme omezit na případy, kdy definiční obor je celý prostor $\mathbb{E}_n$.  
+V případě funkcí jedné proměnné byly definiční obory obvykle intervaly nebo jednoduchá sjednocení intervalů. Tady budou definiční
+obory $D$ složitější, často (ale ne vždy) otevřené množiny v $\mathbb{E}_n$.
+
+O $D$ se často mluví jako o oblasti na níž je funkce definovaná. To není termín (ve specifických kontextech slovo \uv{oblast} termín 
+je, tady ne).
+
+
 \subsection{Definice a značení}
 \begin{definition}[Parciální derivace]
 	Pro $f(x_1,...,x_n)$ vezmeme 
@@ -30,7 +42,7 @@ Budeme potřebovat něco silnejšího. Připomeňte si tvrzení ekvivalentní se
 \end{lemma}
 
 \begin{intuition}
-	$f(x+h) - f(x) = Ah$ vyjadřuje tečnu ke grafu funkce v bodě $(x,f(x)).$ a $|h|\cdot \mu(h)$ je jakási malá chyba.
+	$f(x+h) - f(x) = Ah$ vyjadřuje tečnu ke grafu funkce v bodě $(x,f(x))$ a $|h|\cdot \mu(h)$ je jakási malá chyba.
 	Mysleme podobně o funkci $f(x,y)$ a uvažujme plochu:
 	\[S = \{(t,u,f(t,u)) : (t,u) \in D\} \subseteq \mathbb{R}^3.\]
 	Dvě parciální derivace vyjadřují směry dvou tečných přímek k S v bodě $(x,y,f(x,y))$, ale \textit{ne tečnou rovinu},
@@ -38,14 +50,14 @@ Budeme potřebovat něco silnejšího. Připomeňte si tvrzení ekvivalentní se
 \end{intuition}
 
 \subsubsection{Definice totálního diferenciálu}
-Pro \textbf{x} $\in \mathbb{E}_n$ (místo absolutní hodnoty) definujeme \(||\textbf{x}||  = \max_i|x_i|\). Místo $h$ bude $n$-tice blízká nule.
+Pro \textbf{x} $\in \mathbb{E}_n$ (místo absolutní hodnoty) definujeme \(||\textbf{x}||  = \max_i|x_i|\). $h$ bude $n$-tice blízká nule.
 
 \begin{definition}[Totální diferenciál]
 	Funkce $f$ má totální diferenciál v bodě \textbf{a}, existuje-li funkce $\mu$ spojitá v okolí $U$ bodu $\textbf{o} \in \mathbb{R}^n$ taková, že $\mu(\textbf{o}) = 0$
 	a čísla $A_1,...,A_n$ pro která
 	\[f(\textbf{a}+\textbf{h}) - f(\textbf{a}) = \sum^n_{k=1}A_kh_k+||\textbf{h}||\mu(\textbf{h}).\]
 	S použitím skalárního součinu jde též zapsat jako
-	$$f(\textbf{a} + \textbf{h}) - f(\textbf{a}) = \textbf{Aa} + ||\textbf{h}|| \mu (\textbf{h})$$
+	$$f(\textbf{a} + \textbf{h}) - f(\textbf{a}) = \textbf{Ah} + ||\textbf{h}|| \mu (\textbf{h})$$
 \end{definition}
 
 \subsubsection{Věty o totálním diferenciálu}
@@ -63,7 +75,7 @@ Pro \textbf{x} $\in \mathbb{E}_n$ (místo absolutní hodnoty) definujeme \(||\te
 	\begin{enumerate}
 		\item Máme \[|f(\textbf{x}-\textbf{y})| \leq |\textbf{A}(\textbf{x}-\textbf{y})| + |\mu(\textbf{x}-\textbf{y})|\cdot||\textbf{x}-\textbf{y}||\]
 		a limita na pravé straně pro \textbf{y} $\rightarrow$ \textbf{x} je 0.
-		\item Máme \[\frac{1}{h}(f(...x_{k-1},x_k+h,x_{k+1},...) - f(x_1,...)) = A_k + \mu((...,0,h,0,...))\frac{||(0,...,h,...,0)||}{h},\]
+		\item Máme \[\frac{1}{h}(f(..., x_{k-1},x_k+h,x_{k+1},...) - f(x_1,...)) = A_k + \mu((...,0,h,0,...))\frac{||(0,...,h,...,0)||}{h},\]
 		a limita na pravé straně je zřejmě $A_k$.
 	\end{enumerate}
 \end{proof}
@@ -183,7 +195,7 @@ a pro $u = \psi (x)$ a $ v = \phi (x) $ platí:
 
 \subsection{Lagrangeovy věty}
 \begin{theorem}[Lagrangeova věta v jedné proměnné]
-	Nechť $f$ je spojitá funkce na intervalu $[a, b]$ a má na $(a, b)$ derivaci. Pak existuje bod $c \in (a, b)$ t. ž. tečna v bodě $c$ je rovná přímce procházející $(a, f(a))$ a $(b, f(b))$: $$f'(c) = \frac{f(b) - f(a)}{b - a} \qquad \text{nebo alternativně} \qquad f(b) - f(a) = f'(c)(b - a)$$
+	Nechť $f$ je spojitá funkce na intervalu $[a, b]$ a má na $(a, b)$ derivaci. Pak existuje bod $c \in (a, b)$ t. ž. tečna v bodě $c$ je rovná přímce procházející $(a, f(a))$ a $(b, f(b))$: $$f'(c) = \frac{f(b) - f(a)}{b - a} \qquad \text{nebo ekvivalentně} \qquad f(b) - f(a) = f'(c)(b - a)$$
 \end{theorem}
 
 \begin{theorem}[Lagrangeova věta ve více proměnných] \label{lagrange1}
