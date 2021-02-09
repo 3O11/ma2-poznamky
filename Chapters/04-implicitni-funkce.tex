@@ -12,9 +12,13 @@
 	Mějme spojité reálné funkce $F_i(x_1, ... , x_m, y_1, ... , y_n)$ pro každé $i \in \{1, ..., n\}$
 	v $n + m$
 	proměnných. Určuje systém rovnic
-	\[ F_1(x_1, ... , x_m, y_1, ... , y_n) = 0 \]
-	\[ \vdots \hspace{15mm} \vdots \hspace{15mm} \vdots \]
-	\[ F_n(x_1, ... , x_m, y_1, ... , y_n) = 0 \]
+	\[
+		\begin{aligned}
+			F_1(x_1, ... , x_m, y_1, ... , y_n) &= 0 \\
+			\vdots \hspace{15mm} \vdots \hspace{15mm} \vdots \\
+			F_n(x_1, ... , x_m, y_1, ... , y_n) &= 0
+		\end{aligned}
+\]
 	v nějakém smyslu funkce
 	\[ f_i \equiv y_i(x_1, ... , x_m) \]
 	pro $i \in \{ 1, ... , n \}$? Pokud ano, jak a kde je určuje a jaké mají funkce vlastnosti?
@@ -33,22 +37,20 @@
 	V případě $F(x,y)$ už zádná další situace nenastane.
 \end{example}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Věta o implicitní funkci}
-\hspace{1.2mm}
-\noindent
-Buď $F(x,y)$ reálná funkce definovaná v nějakém okolí bodu $(x_0, y_0)$. Nechť má $F$ spojité parciální
-derivace do řádu $k \geq 1$ a nechť platí:
-\begin{align*}
-    F(x_0, y_0) &= 0\\
-    \left| \frac{\partial F(x_0,y_0)}{\partial y} \right| &\neq 0
-\end{align*}
-Potom $ \exists \delta > 0$ a $\Delta > 0$ takové, že
-$\forall x \in (x_0 - \delta , x_0 + \delta) \exists! y \in (y_0 - \Delta , y_0 + \Delta): F(x,y) = 0$.
+\subsection{Věty o implicitní funkci}
 
-\noindent
-Dále, označíme-li toto jediné $y$ jako $y = f(x)$, potom získaná
-$f: (x_0 - \delta , x_0 + \delta ) \to \mathbb{R}$ má spojité derivace do řádu $k$.
+\begin{theorem}
+	Buď $F(x,y)$ reálná funkce definovaná v nějakém okolí bodu $(x_0, y_0)$. Nechť má $F$ spojité parciální
+	derivace do řádu $k \geq 1$ a nechť platí:
+	\begin{align*}
+	    F(x_0, y_0) &= 0\\
+	    \left| \frac{\partial F(x_0,y_0)}{\partial y} \right| &\neq 0
+	\end{align*}
+	Potom $ \exists \delta > 0$ a $\Delta > 0$ takové, že
+	$\forall x \in (x_0 - \delta , x_0 + \delta) \exists! y \in (y_0 - \Delta , y_0 + \Delta): F(x,y) = 0$.
+	Dále, označíme-li toto jediné $y$ jako $y = f(x)$, potom získaná
+	$f: (x_0 - \delta , x_0 + \delta ) \to \mathbb{R}$ má spojité derivace do řádu $k$.
+\end{theorem}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Tohle tam psat nebudu, neni to uplne necessary a neukaze ti to nic uplne novyho
@@ -59,32 +61,29 @@ $f: (x_0 - \delta , x_0 + \delta ) \to \mathbb{R}$ má spojité derivace do řá
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\begin{definition}[Jacobiho determinant]
+	Pro konečnou posloupnost funkcí
+	\[ \mathbf{F}(\mathbf{x}, \mathbf{y}) =
+	(F_1(\mathbf{x}, y_1, ..., y_m), ... , F_m(\mathbf{x}, y_1, ..., y_m)) \]
+	a pro $\mathbf{y} = (y_1, ... , y_m)$ se definuje Jacobiho determinant (Jacobián) jako
+	\[ \frac{D(\mathbf{F})}{D(\mathbf{y})} =
+	\det \left( \frac{\partial F_i}{\partial y_j} \right)_{i,j \in \{ 1, ... , m\}} \]
+\end{definition}
 
-\subsection{Definice Jacobiho determinantu}
-\hspace{1.2mm}
-\noindent
-Pro konečnou posloupnost funkcí
-\[ \mathbf{F}(\mathbf{x}, \mathbf{y}) =
-(F_1(\mathbf{x}, y_1, ..., y_m), ... , F_m(\mathbf{x}, y_1, ..., y_m)) \]
-a pro $\mathbf{y} = (y_1, ... , y_m)$ se definuje \textbf{Jacobiho determinant}(Jacobián) jako
-\[ \frac{D(\mathbf{F})}{D(\mathbf{y})} =
-\det \left( \frac{\partial F_i}{\partial y_j} \right)_{i,j \in \{ 1, ... , m\}} \]
-
-\subsection{Věta o implicitních funkcích}
-\hspace{1.2mm}
-\noindent
-Buďte $F_i(\mathbf{x}, y_1, ... , y_m)$ pro $i \in {1, ... , m}$ funkce $n+m$ proměnných se spojitými
-parciálními derivacemi do řádu $k \geq 1$. Buď \[ \mathbf{F}(\mathbf{x}^0, \mathbf{y}^0) = \mathbf{o} \]
-%a buď totální diferenciál v bodě $(\mathbf{x}^0, \mathbf{y}^0)$ 
-\[ \frac{D(\mathbf{F})}{D(\mathbf{y})}(\mathbf{x}^0, \mathbf{y}^0) \neq 0 \]
-Potom existují $\delta > 0$ a $\Delta > 0$ takové, že pro každé
-\[ \mathbf{x} \in (x_{1}^{0} - \delta, x_{1}^{0} + \delta) \times \cdot \cdot \cdot \times 
-(x_{n}^{0} - \delta, x_{n}^{0} + \delta)\]
-existuje právě jedno
-\[ \mathbf{y} \in (y_{1}^{0} - \Delta , y_{1}^{0} + \Delta) \times \cdot \cdot \cdot \times
-(y_{m}^{0} - \Delta , y_{m}^{0} + \Delta) \]
-takové, že
-\[ \mathbf{F}(\mathbf{x}, \mathbf{y}) = 0 \]
+\begin{theorem}
+	Buďte $F_i(\mathbf{x}, y_1, ... , y_m)$ pro $i \in {1, ... , m}$ funkce $n+m$ proměnných se spojitými
+	parciálními derivacemi do řádu $k \geq 1$. Buď \[ \mathbf{F}(\mathbf{x}^0, \mathbf{y}^0) = \mathbf{o} \]
+	%a buď totální diferenciál v bodě $(\mathbf{x}^0, \mathbf{y}^0)$ 
+	\[ \frac{D(\mathbf{F})}{D(\mathbf{y})}(\mathbf{x}^0, \mathbf{y}^0) \neq 0 \]
+	Potom existují $\delta > 0$ a $\Delta > 0$ takové, že pro každé
+	\[ \mathbf{x} \in (x_{1}^{0} - \delta, x_{1}^{0} + \delta) \times \cdot \cdot \cdot \times 
+	(x_{n}^{0} - \delta, x_{n}^{0} + \delta)\]
+	existuje právě jedno
+	\[ \mathbf{y} \in (y_{1}^{0} - \Delta , y_{1}^{0} + \Delta) \times \cdot \cdot \cdot \times
+	(y_{m}^{0} - \Delta , y_{m}^{0} + \Delta) \]
+	takové, že
+	\[ \mathbf{F}(\mathbf{x}, \mathbf{y}) = 0 \]
+\end{theorem}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{document}
