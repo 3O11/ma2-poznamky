@@ -19,8 +19,7 @@ je, tady ne).
 \subsection{Definice a značení}
 \begin{definition}[Parciální derivace]
 	Pro $f(x_1,...,x_n)$ vezmeme 
-	\[\phi_k(t) = f(x_1,...,x_{k-1},t,x_{k+1},...x_n)\]
-	\[... t = x_k...\]
+	\[\phi_k(t) = f(x_1,...,x_{k-1},t,x_{k+1},...x_n) \qquad x_j \text{ pro } j \neq k \text{ fixované}\]
 	Parciální derivace funkce $f$ podle $x_k$ (v bodě $(x_1,...,x_n))$ je (obvyklá) derivace funkce $\phi_k$,
 	\[\lim_{h\rightarrow 0}\frac{f(x_1,...,x_{k-1},x_k+h,x_{k+1},...x_n) - f(x_1,..)}{h}.\]
 	Označení
@@ -73,9 +72,9 @@ Pro \textbf{x} $\in \mathbb{E}_n$ (místo absolutní hodnoty) definujeme \(||\te
 
 \begin{proof}
 	\begin{enumerate}
-		\item Máme \[|f(\textbf{x}-\textbf{y})| \leq |\textbf{A}(\textbf{x}-\textbf{y})| + |\mu(\textbf{x}-\textbf{y})|\cdot||\textbf{x}-\textbf{y}||\]
+		\item Máme (dosazením do rovnice TD) \[|f(\textbf{x}) - f(\textbf{y})| \leq |\textbf{A}(\textbf{x}-\textbf{y})| + |\mu(\textbf{x}-\textbf{y})|\cdot||\textbf{x}-\textbf{y}||\]
 		a limita na pravé straně pro \textbf{y} $\rightarrow$ \textbf{x} je 0.
-		\item Máme \[\frac{1}{h}(f(..., x_{k-1},x_k+h,x_{k+1},...) - f(x_1,...)) = A_k + \mu((...,0,h,0,...))\frac{||(0,...,h,...,0)||}{h},\]
+		\item Máme (dosazením do rovnice TD) \[\frac{1}{h}(f(..., x_{k-1},x_k+h,x_{k+1},...) - f(x_1,...)) = A_k + \mu((...,0,h,0,...))\frac{||(0,...,h,...,0)||}{h},\]
 		a limita na pravé straně je zřejmě $A_k$.
 	\end{enumerate}
 \end{proof}
