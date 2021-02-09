@@ -61,7 +61,7 @@ Pro \textbf{x} $\in \mathbb{E}_n$ (místo absolutní hodnoty) definujeme \(||\te
 
 \subsubsection{Věty o totálním diferenciálu}
 
-\begin{lemma}[Spojitosti a totální diferenciál]\label{eq:satd}
+\begin{lemma}[Spojitost, parciální derivace a totální diferenciál]\label{eq:satd}
 	Nechť má funkce $f$ totální diferenciál v bodě \textbf{a}. Potom platí:
 	\begin{enumerate}
 	    \item $f$ je spojitá v \textbf{a},
@@ -182,10 +182,13 @@ Pravidlo pro skládání v nejjednodušší podobě následuje.
 	Pravidlo z předchozí věty dá tedy
 	\[\frac{\partial (f_i \circ \mathbf{g})(b)}{\partial t_j} = \sum^n_{k=1} \frac{\partial f_i(\mathbf{a})}{\partial x_k}
 	\cdot \frac{\partial g_k(\mathbf{b})}{\partial t_j}.\]
+\end{proof}
+
+\begin{remark}
 	Zavedeme-li matice $D\mathbf{f} = \left(\frac{\partial f_i(\mathbf{a})}{\partial x_k}\right)_{ik}$ je 
 	$D(\mathbf{f}\circ \mathbf{g}) = D\mathbf{f}\cdot D\mathbf{g}$ (napravo násobení matic), a tak to má být. $D\mathbf{h}$ je matice lineární aproximace 
 	funkce $\mathbf{h}$: \textit{lineární aproximace se skládají spolu s aproximovanými funkcemi}.
-\end{proof}
+\end{remark}
 
 \subsubsection{Násobení}
 \[ f(u,v) = u \cdot v \]
@@ -249,12 +252,12 @@ a pro $u = \psi (x)$ a $ v = \phi (x) $ platí:
 \end{remark}
 
 \subsection{Záměnnost pořadí při parciálních derivacích}
-\begin{theorem}[Tvrzení o záměnnosti]
+\begin{lemma}[O záměnnosti]
 	Mějme funkci $f(x,y)$ takovou, že existují parciální derivace
 	$\frac{\partial ^2 f}{\partial x \partial y}$ a $\frac{\partial ^2 f}{\partial y \partial x}$, které
 	jsou spojité v nějakém okolí bodu $(x,y)$. Potom:
 	\[ \frac{\partial ^2 f(x,y)}{\partial x \partial y} = \frac{\partial ^2 f(x,y)}{\partial y \partial x} \]
-\end{theorem}
+\end{lemma}
 
 \begin{proof}
 	Pokusíme se spočíst obě derivace v jednom kroku, tedy počítejme limitu $\lim_{h\rightarrow 0} F(h)$ funkce

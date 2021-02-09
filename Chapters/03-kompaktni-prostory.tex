@@ -16,9 +16,9 @@
 
 \begin{proof}
 	\begin{enumerate}
-	    \item[$\Rightarrow \phantom{\lnot} $] Buď $Y$ uzavřený podprostor kompaktního $X$ a buď $(y_n)_n$ posloupnost v $Y$. Jako posloupnost v X má 
+	    \item[$\Leftarrow \phantom{\lnot} $] Buď $Y$ uzavřený podprostor kompaktního $X$ a buď $(y_n)_n$ posloupnost v $Y$. Jako posloupnost v X má 
 	    konvergentní podposloupnost s limitou a z uzavřenosti je konvergentní podposloupností a tato limita je v $Y$.
-	    \item[$\lnot \Rightarrow \lnot $] Nechť $Y$ není uzavřený. Potom existuje posloupnost $(y_n)_n$ v $Y$ konvergentní v $X$ taková, že $y = \lim_n y_n \notin Y$. Potom $(y_n)_n$
+	    \item[$\lnot \Leftarrow \lnot $] Nechť $Y$ není uzavřený. Potom existuje posloupnost $(y_n)_n$ v $Y$ konvergentní v $X$ taková, že $y = \lim_n y_n \notin Y$. Potom $(y_n)_n$
 	    nemůže mít podposloupnost konvergentní v $Y$ protože každá její podposloupnost konverguje k $y$.
 	\end{enumerate}
 \end{proof}
@@ -83,7 +83,7 @@
 
 \subsection{Spojitá zobrazení}
 
-\begin{lemma}[Obraz spojitého zobrazení]
+\begin{lemma}[Obraz spojitého zobrazení na kompaktním prostoru]
 	Buď $f: (X,d) \to (Y, d')$ spojité zobrazení a buď $A \subseteq X$ kompaktní. Potom je $f[A]$ kompaktní.
 \end{lemma}
 
@@ -113,7 +113,7 @@
 \end{theorem}
 
 \begin{proof}
-	Buď $B$ uzavřená v $Z$. Potom je $A = g^{-1}[B]$ uzavřená $\implies$ kompaktnost v $X$ $\implies$ $f[A]$ je kompaktní $\implies$ uzavřená v $Y$. Jelikož  je $f$ zobrazení na, máme $f[f^{-1}[C]] = C \forall C$. Proto je 
+	Buď $B$ uzavřená v $Z$. Potom je $A = g^{-1}[B]$ uzavřená $\implies$ kompaktnost v $X$ $\implies$ $f[A]$ je kompaktní $\implies$ uzavřená v $Y$. Jelikož  je $f$ zobrazení na, máme $f[f^{-1}[C]] = C\ \forall C$. Proto je 
 	\[h^{-1}[B] = f[f^{-1}[h^{-1}[B]]] = f[(h \circ f)^{-1}[B]] = f[g^{-1}[B]] = f[A]\]
 	uzavřená.
 \end{proof}
