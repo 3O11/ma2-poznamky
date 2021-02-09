@@ -83,36 +83,42 @@ Teď již spojitost dostaneme. Vidíme, že v případě funkcí jedné proměnn
 mít totální diferenciál v tomto bodě. V případě více proměnných je však tento rozdíl zcela zásadní. Může být trochu překvapující, že 
 zatímco existence parciálních derivací mnoho neznamená, \textit{existence spojitých parciálních derivací} je něco úplně jiného.
 
-\subsubsection{O totálním diferenciálu}
-Buď
-\[\textbf{h}^{(0)} = \textbf{h}, \textbf{h}^{(1)} = (0, h_2,...,h_n), \textbf{h}^{(2)} = (0,0,h_3,...,h_n) \textrm{ atp.} \]
-(takže $\textbf{h}^{(n)} = \textbf{0})$.
-Potom máme
-\[f(\textbf{a}+\textbf{h}) - f(\textbf{a}) = \sum^n_{k=1}(f(\textbf{a}+\textbf{h}^{(k-1)})-f(\textbf{a}+\textbf{h}^{(k)})) = M.\]
-Podle Lagrangeovy věty existují $0 \leq \Theta_k \leq 1$ takové, že
-\[f(\textbf{a}+\textbf{h}^{(k-1)})-f(\textbf{a}+\textbf{h}^{(k)}) = \frac{\partial f(a_1,...,a_{k-1},a_k+ \Theta_kh_k,a_{k+1},...,a_n)}{\partial x_k}h_k\]
-a můžeme pokračovat
-\begin{align*} 
-	\begin{split}
-		M & = \sum\frac{\partial f(a_1,...a_k+\Theta_kh_k,...,a_n)}{\partial x_k}h_k = \\
-		 & = \sum \frac{\partial f(\textbf{a})}{\partial x_k}h_k + \sum \left( \frac{\partial f(a_1,...,a_k+\Theta_kh_k,...,a_n)}{\partial x_k}
-		 - \frac{\partial f(\textbf{a})}{\partial x_k} \right)h_k = \\
-		 & = \sum \frac{\partial f(\textbf{a})}{\partial x_k}h_k + ||\textbf{h}||\sum\left(\frac{\partial f(a_1,...,a_k+\Theta_kh_k,...,a_n)}
-		 {\partial x_k}- \frac{\partial f(\textbf{a})}{\partial x_k}\right)\frac{h_k}{||\textbf{h}||}.
-	\end{split}
-\end{align*}
-Položíme
-\[\mu (\textbf{h}) =
-    \begin{cases} & \sum\left(\frac{\partial f(a_1,...,a_k+\Theta_kh_k,...,a_n)}{\partial x_k} -
-    \frac{\partial f(\textbf{a})}{\partial x_k} \right)\frac{h_k}{||\textbf{h}||}.\\
-    & 0 \text{ pokud } \mathbf{h} = \mathbf{o}
-    \end{cases}\]
-Jelikož $\left|\frac{h_k}{||\textbf{h}||}\right| \leq 1$ a jelikož jsou funkce $\frac{\partial f}{\partial x_k}$ spojité,
-$\lim_{\textbf{h}\rightarrow \textbf{0}} \mu (\textbf{h}) = 0$.
-\begin{center}
-\LARGE 
-Můžeme tedy schematicky psát spojité PD $\implies$ TD $\implies$ PD
-\end{center}
+\begin{theorem}[Spojité parciální derivace a totální diferenciál]
+	Nechť má $f$ spojité parciální derivace v okolí bodu \textbf{a}. Potom má v \textbf{a} totální diferenciál.
+\end{theorem}
+
+\begin{proof}
+	Buď
+	\[\textbf{h}^{(0)} = \textbf{h}, \textbf{h}^{(1)} = (0, h_2,...,h_n), \textbf{h}^{(2)} = (0,0,h_3,...,h_n) \textrm{ atp.} \]
+	(takže $\textbf{h}^{(n)} = \textbf{0})$.
+	Potom máme
+	\[f(\textbf{a}+\textbf{h}) - f(\textbf{a}) = \sum^n_{k=1}(f(\textbf{a}+\textbf{h}^{(k-1)})-f(\textbf{a}+\textbf{h}^{(k)})) = M.\]
+	Podle Lagrangeovy věty existují $0 \leq \Theta_k \leq 1$ takové, že
+	\[f(\textbf{a}+\textbf{h}^{(k-1)})-f(\textbf{a}+\textbf{h}^{(k)}) = \frac{\partial f(a_1,...,a_{k-1},a_k+ \Theta_kh_k,a_{k+1},...,a_n)}{\partial x_k}h_k\]
+	a můžeme pokračovat
+	\begin{align*} 
+		\begin{split}
+			M & = \sum\frac{\partial f(a_1,...a_k+\Theta_kh_k,...,a_n)}{\partial x_k}h_k = \\
+			 & = \sum \frac{\partial f(\textbf{a})}{\partial x_k}h_k + \sum \left( \frac{\partial f(a_1,...,a_k+\Theta_kh_k,...,a_n)}{\partial x_k}
+			 - \frac{\partial f(\textbf{a})}{\partial x_k} \right)h_k = \\
+			 & = \sum \frac{\partial f(\textbf{a})}{\partial x_k}h_k + ||\textbf{h}||\sum\left(\frac{\partial f(a_1,...,a_k+\Theta_kh_k,...,a_n)}
+			 {\partial x_k}- \frac{\partial f(\textbf{a})}{\partial x_k}\right)\frac{h_k}{||\textbf{h}||}.
+		\end{split}
+	\end{align*}
+	Položíme
+	\[\mu (\textbf{h}) =
+	    \begin{cases} & \sum\left(\frac{\partial f(a_1,...,a_k+\Theta_kh_k,...,a_n)}{\partial x_k} -
+	    \frac{\partial f(\textbf{a})}{\partial x_k} \right)\frac{h_k}{||\textbf{h}||}.\\
+	    & 0 \text{ pokud } \mathbf{h} = \mathbf{o}
+	    \end{cases}\]
+	Jelikož $\left|\frac{h_k}{||\textbf{h}||}\right| \leq 1$ a jelikož jsou funkce $\frac{\partial f}{\partial x_k}$ spojité,
+	$\lim_{\textbf{h}\rightarrow \textbf{0}} \mu (\textbf{h}) = 0$.
+\end{proof}
+
+\begin{consequence}
+	Můžeme tedy schematicky psát \textbf{spojité PD $\implies$ TD $\implies$ PD}.
+\end{consequence}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Pravidla pro počítání parciálních derivací}
