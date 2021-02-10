@@ -65,10 +65,18 @@
 	Pro konečnou posloupnost funkcí
 	\[ \mathbf{F}(\mathbf{x}, \mathbf{y}) =
 	(F_1(\mathbf{x}, y_1, ..., y_m), ... , F_m(\mathbf{x}, y_1, ..., y_m)) \]
-	a pro $\mathbf{y} = (y_1, ... , y_m)$ se definuje Jacobiho determinant (Jacobián) jako
+	a pro $\mathbf{y} = (y_1, ... , y_m)$ se definuje Jacobiho determinant (Jakobián) jako
 	\[ \frac{D(\mathbf{F})}{D(\mathbf{y})} =
 	\det \left( \frac{\partial F_i}{\partial y_j} \right)_{i,j \in \{ 1, ... , m\}} \]
 \end{definition}
+
+\begin{intuition}
+	Stejně jako determinant v lineární algebře určuje, jak daná matice transformuje prostor (natahuje vektory v daných směrech), tak Jacobiho matice určuje, jak vektorová funkce $\mathbf{f} = \left(f_1, \ldots, f_n\right)$ při transformaci oblasti $U \subseteq \mathrm{E}_n$ na $\mathbf{f}[U]$ natahuje nebo stlačuje objemy malých kousků oblasti $U$ okolo $\mathbf{x}$ v poměru (absolutní hodnoty) Jakobiánu.
+\end{intuition}
+
+\begin{remark}
+	3b1b má o Jakobiánu na KhanAcademy super video [\href{https://www.khanacademy.org/math/multivariable-calculus/multivariable-derivatives/jacobian/v/the-jacobian-matrix}{odkaz}].
+\end{remark}
 
 \begin{theorem}
 	Buďte $F_i(\mathbf{x}, y_1, ... , y_m)$ pro $i \in {1, ... , m}$ funkce $n+m$ proměnných se spojitými

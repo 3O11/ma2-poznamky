@@ -52,7 +52,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Existence Riemannova integrálu}
 \begin{theorem}[Kritérium existence Riemannova integrálu]
-	Riemannův integrál $\int^b_a f(x) dx$ existuje právě když $\forall \varepsilon > 0 \exists$ rozdělení $P$ takové, že
+	Riemannův integrál $\int^b_a f(x) dx$ existuje právě když $\forall \varepsilon > 0\ \exists$ rozdělení $P$ takové, že
 	\[S(f,P) - s(f,P) < \varepsilon.\]
 \end{theorem}
 
@@ -64,7 +64,7 @@
 	            $S(f,P_1) < \int^b_a f(x) dx + \frac{\varepsilon}{2}$ & a & $s(f,P_2) > \int^b_a f(x) dx - \frac{\varepsilon}{2}$  \\
 	        \end{tabular}
 	    \end{center}
-	    Potom je pro společné zjemnění $P$ těch dvou $P_1,P_2$
+	    Potom platí pro společné zjemnění $P$ těch dvou $P_1,P_2$
 	    \[S(f,P) - s(f,P) < \int^b_a f(x)dx + \frac{\varepsilon}{2} - \int^b_a f(x)dx + \frac{\varepsilon}{2} = \varepsilon.\]
 	    \item[$\Leftarrow$:] Nechť druhé tvrzení platí. Zvolme $\varepsilon > 0 : S(f,P) - s(f,P) < \varepsilon.$ Potom je 
 	    \[\overline{\int}^b_a f(x)dx \leq S(f,P) < s(f,P) + \varepsilon \leq \underline{\int}^b_a f(x)dx + \varepsilon,\]
@@ -94,7 +94,7 @@
 \end{theorem}
 
 \begin{proof}
-	Položme $m = \min \{ f(x)|a \leq x \leq b \}$ a $M = \max \{ f(x)|a \leq x \leq b \} $
+	Položme $m = \min \{ f(x) \mid a \leq x \leq b \}$ a $M = \max \{ f(x) \mid a \leq x \leq b \} $
 	Zřejmě
 	\[ m(b-a) \leq \int_{a}^{b} f(x) \,dx \leq M(b-a) \]
 	Existuje tedy $K$ takové, že $m \leq K \leq M$ a $\int_{a}^{b} f(x) \,dx = K(b-a)$.
