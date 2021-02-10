@@ -24,7 +24,7 @@
 	\[\textbf{vol}(J) = \sum \{\textbf{vol}(B) : B \in \mathcal{B}(J)\}.\]
 \end{definition}
 
-\begin{definitionnodot}[Prmůměr (diametr)]
+\begin{definitionnodot}[Průměr (diametr)]
 	intervalu $J = \left<r_1,s_1\right> \times \cdot \cdot \cdot \times \left<r_n,s_n\right>$ je
 	\[\textbf{diam}(J) = \max_i (s_i - r_i)\]
 \end{definitionnodot}
@@ -99,7 +99,7 @@
 \end{proof}
 
 \begin{definition}[(Horní/dolní) Riemannův integrál]
-	Množiny $\{s(f,P) \mid P \text{ rozdělení}\}$ a $\{S(f,P) \mid P \text{ rozdělení}\}$ jsou shora/zdola omezené (předchozí tvrzení) a můžeme definovat \textbf{dolní/horní Riemannův integrál} funkce $f$ přes $J$ jako
+	Množiny $\{s(f,P) \mid P \text{ rozdělení}\}$ a $\{S(f,P) \mid P \text{ rozdělení}\}$ jsou shora/zdola omezené (předchozí tvrzení) a můžeme definovat dolní/horní Riemannův integrál funkce $f$ přes $J$ jako
 	\[\underline{\int}_J f(\textbf{x})d\textbf{x} = \sup\{s(f,P) \mid P \text{ rozdělení}\} \qquad \text{a} \qquad
 	\overline{\int}_J f(\textbf{x})d\textbf{x} = \inf\{S(f,P) \mid P \text{ rozdělení}\}.\]
 	Jsou-li si rovny, máme Riemannův integrál funkce $f$ přes $J$, značíme\footnote{Někdy se také značí jako \(\int_J f(x_1,...,x_n)dx_1,...x_n \text{ nebo } \int_J f(x_1,...,x_n)dx_1 dx_2\cdot \cdot \cdot dx_n\)}.
@@ -189,10 +189,10 @@
 	Zvolme rozdělení $P$ intervalu $J$ tak, aby
 	\[ \int f - \varepsilon \leq s(f,P) \leq S(f,P) \leq \int f + \varepsilon \]
 	Toto rozdělení je tvořeno rozděleními $P'$ intervalu $J'$ a $P''$ intervalu $J''$. Máme
-	\[ \mathcal{B}(P) = \{ B' \times B'' | B' \in \mathcal{B}(P'), B'' \in \mathcal{B}(P'') \} \]
+	\[ \mathcal{B}(P) = \{ B' \times B'' \mid B' \in \mathcal{B}(P'), B'' \in \mathcal{B}(P'') \} \]
 	a každá cihla $P$ se objeví jako právě jedno $B' \times B''$. Potom je
 	\[ F(\mathbf{x}) \leq \sum_{B''\in \mathcal{B}(P'')}
-	\max_{\mathbf{y} \in B''} f(\mathbf{x}, \mathbf{y}) \cdot \textrm{vol}B'' \]
+	\max_{\mathbf{y} \in B''} f(\mathbf{x}, \mathbf{y}) \cdot \textrm{vol}(B'') \]
 	a tedy
 	\begin{align*}
 	    S(F, P')
@@ -204,7 +204,7 @@
 	    \cdot \textrm{vol}(B'') \cdot \textrm{vol}(B') \leq\\
 	    &\leq \sum_{B' \times B'' \in \mathcal{B}(P)} \max_{\mathbf{z}\in B' \times B''}
 	    f(\mathbf{z}) \cdot \textrm{vol}(B' \times B'') =\\
-	    = S(f,P)
+			&= S(f,P)
 	\end{align*}
 	a podobně
 	\[ s(f,P) \leq s(F,P') \]
