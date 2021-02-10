@@ -123,8 +123,11 @@
 \begin{definition}[Cauchyovská posloupnost]
 	Posloupnost $(x_n)_n$ v $(X,d)$ je Cauchyovská, jestliže
 	\[ \forall \varepsilon > 0 \exists n_0: m,n \geq n_0 \implies d(x_m, x_n) < \varepsilon \]
-	Intuitivně se jedná o posloupnost, jejíž prvky se k sobě dostávají libovolně blízko (tj. pro každou vzdálenost $\varepsilon$ je jen konečně mnoho prvků od sebe dál než $\varepsilon$).
 \end{definition}
+
+\begin{intuition}
+	Intuitivně se jedná o posloupnost, jejíž prvky se k sobě dostávají libovolně blízko (tj. pro každou vzdálenost $\varepsilon$ je jen konečně mnoho prvků od sebe dál než $\varepsilon$).
+\end{intuition}
 
 \begin{lemma}[Konvergence Cauchyovské posloupnosti]
 	Nechť má Cauchyovská posloupnost konvergentní podposloupnost. Potom posloupnost konverguje k limitě
@@ -158,6 +161,10 @@
 \begin{definition}
 	Metrický prostor $(X,d)$ je úplný, pokud v něm každá Cauchyovská posloupnost konverguje.
 \end{definition}
+
+\begin{example}
+	$\mathbb{R}$ úplný je, ale např. $\mathbb{Q}$ úplný není -- uvážíme-li posloupnost zlomků, které se v $\mathbb{R}$ přibližují k $\sqrt{2}$, tak taková posloupnost v $\mathbb{Q}$ nemá limitu.
+\end{example}
 
 \begin{lemma}[Úplnost podprostoru]
 	Podprostor úplného prostoru je úplný, právě když je uzavřený.
