@@ -130,23 +130,23 @@
 \end{theorem}
 
 \begin{proof}
-	V $\mathbb{E}_n$ budeme používat vzdálenost $\sigma$ definovanou předpisem
+	V $\mathbb{E}_n$ budeme používat metriku $\sigma$ definovanou předpisem
 	\[ \sigma (\mathbf{x}, \mathbf{y}) = \max_{i} |x_i - y_i| \]
 	Jelikož je $f$ stejnoměrně spojitá, můžeme pro $\varepsilon > 0$ zvolit $\delta > 0$ takové, že
-	\[ \sigma (\mathbf{x}, \mathbf{y}) < \delta \Rightarrow
-	|f(\mathbf{x} - f(\mathbf{y}))| < \frac{\varepsilon}{\textrm{vol}(J)} \]
+	\[ \sigma (\mathbf{x}, \mathbf{y}) < \delta \quad \Rightarrow \quad
+	|f(\mathbf{x}) - f(\mathbf{y})| < \frac{\varepsilon}{\textrm{vol}(J)} \]
 	Připomeňme si jemnost $\mu (P)$. Je-li $\mu (P) < \delta$, pak je $\textrm{diam}(B) < \delta$ pro všechny
 	$ B \in \mathcal{B}(P) $ a tedy
 	\begin{align*}
-			M(f, B) - m(f, B) &= \sup\{ f(\mathbf{x})|\mathbf{x} \in B \} -
-			\inf\{ f(\mathbf{x})|\mathbf{x} \in B\}\leq\\
+			M(f, B) - m(f, B) &= \sup\{ f(\mathbf{x}) \mid \mathbf{x} \in B \} -
+			\inf\{ f(\mathbf{x}) \mid \mathbf{x} \in B\}\leq\\
 			&\leq \sup\{ |f(\mathbf{x}) - f(\mathbf{y})|: \mathbf{x}, \mathbf{y} \in B \}
 			= \frac{\varepsilon}{\textrm{vol}(J)}
 	\end{align*}
 	takže
 	\begin{align*}
-			S(f,P) - s(f,P) &= \sum \{ (M(f,B) - m(f,B))\cdot \textrm{vol}(B)|B\in \mathcal{B}(P) \}\leq\\
-			&\leq \frac{\varepsilon}{\textrm{vol}(J)}\sum \{ \textrm{vol}(B)| B\in \mathcal{B}(P) \}
+			S(f,P) - s(f,P) &= \sum \{ (M(f,B) - m(f,B))\cdot \textrm{vol}(B) \mid B\in \mathcal{B}(P) \}\leq\\
+			&\leq \frac{\varepsilon}{\textrm{vol}(J)}\sum \{ \textrm{vol}(B) \mid B\in \mathcal{B}(P) \}
 			= \frac{\varepsilon}{\textrm{vol}(J)}\textrm{vol}(J) = \varepsilon
 	\end{align*}
 \end{proof}
