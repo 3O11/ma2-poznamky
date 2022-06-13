@@ -8,34 +8,21 @@
 	\[f: D \rightarrow \mathbb{R}, D \subseteq \mathbb{E}_n\]
 \end{definition}
 
-Podobně jako ve funkcích jedné proměnné se nemůžeme omezit na případy, kdy definiční obor je celý prostor $\mathbb{E}_n$.  
-V případě funkcí jedné proměnné byly definiční obory obvykle intervaly nebo jednoduchá sjednocení intervalů. Tady budou definiční
-obory $D$ složitější, často (ale ne vždy) otevřené množiny v $\mathbb{E}_n$.
-
-O $D$ se často mluví jako o oblasti, na níž je funkce definovaná. To není termín (ve specifických kontextech slovo \uv{oblast} termín 
-je, tady ne).
-
+Podobně jako ve funkcích jedné proměnné se nemůžeme omezit na případy, kdy definiční obor je celý prostor $\mathbb{E}_n$.
+V případě funkcí jedné proměnné byly definiční obory obvykle intervaly nebo jednoduchá sjednocení intervalů, zde budou definiční obory složitější.
 
 \subsection{Definice a značení}
 \begin{definition}[Parciální derivace]
-	Pro $f(x_1,...,x_n)$ vezmeme 
-	\[\phi_k(t) = f(x_1,...,x_{k-1},t,x_{k+1},...x_n) \qquad x_j \text{ pro } j \neq k \text{ fixované}\]
-	Parciální derivace funkce $f$ podle $x_k$ (v bodě $(x_1,...,x_n))$ je (obvyklá) derivace funkce $\phi_k$,
-	\[\lim_{h\rightarrow 0}\frac{f(x_1,...,x_{k-1},x_k+h,x_{k+1},...x_n) - f(x_1,..)}{h}.\]
-	Označení
-	\[\frac{\partial f(x_1,...,x_n)}{\partial x_k} \textrm{ nebo } \frac{\partial f}{\partial x_k} (x_1,...,x_n),\]
-	Pro $f(x,y)$ píšeme
-	\[\frac{\partial f(x,y)}{\partial x} \textrm{ a } \frac{\partial f(x,y)}{\partial y}, \textrm{ atd.}\]
-	Když $\frac{\partial f(x_1,...,x_n)}{\partial x_k}$ existuje pro všechna $(x_1,...,x_n)$ v nějaké oblasti $D$ máme funkci
+	Pro funkci $f(x_1,...,x_n)$ a bod \(\textbf{a}\) definujme funkci
+	\[\phi_k(t) = f(a_1,...,a_{k-1},t,a_{k+1},...a_n)\]
+	\textit{Parciální derivace} funkce $f$ podle proměnné $x_k$ v bodě $\textbf{a}$ je (obvyklá) derivace funkce $\phi_k$ v bodě \(a_k\)
+	\[\lim_{h \rightarrow 0} \frac{\phi_k(a_k + h) - \phi_k(a_k)}{h} = \lim_{h\rightarrow 0}\frac{f(a_1,...,a_{k-1},a_k+h,a_{k+1},...a_n) - f(\textbf{a})}{h}.\]
+	Značíme
+	\[\frac{\partial f(\textbf{a})}{\partial x_k} \quad \textrm{nebo} \quad \frac{\partial f}{\partial x_k} (\textbf{a}),\]
+	Když $\frac{\partial f(\textbf{a})}{\partial x_k}$ existuje pro všechna $\textbf{a}$ v nějakém okolí $D$, pak dostáváme funkci
 	\[\frac{\partial f}{\partial x_k}: D \rightarrow \mathbb{R}.\]
-	Když budeme mluvit o parciální derivaci bude vždy zřejmé máme-li na mysli funkci, nebo jen číslo (hodnotu té limity nahoře).
+	Při použití bude vždy zřejmé, máme-li na mysli funkci nebo hodnotu limity výše.
 \end{definition}
-
-\begin{example}
-	Mějme funkci \[f(x, y) = x^3 + 2xy - 15y\]
-	Její parciální derivace v \(x\) je \[\frac{\partial f}{\partial x} (x, y) = 2x^2 + 2y\]
-	a analogicky v \(y\) je \[\frac{\partial f}{\partial y} (x, y) = 2x - 15\]
-\end{example}
 
 \begin{intuition}
 	Geometricky odpovídá tečně funkce v daném bodě a příslušné ose (viz \ref{fig:par}).
@@ -47,6 +34,12 @@ je, tady ne).
 	\caption{Geometrický význam parciální derivace funkce.}%
 	\label{fig:par}
 \end{figure}
+
+\begin{example}
+	Mějme funkci \[f(x, y) = x^3 + 2xy - 15y\]
+	Její parciální derivace v \(x\) je \[\frac{\partial f}{\partial x} (x, y) = 2x^2 + 2y\]
+	a analogicky v \(y\) je \[\frac{\partial f}{\partial y} (x, y) = 2x - 15\]
+\end{example}
 
 \subsection{Totální diferenciál}
 Nespojitá funkce $f$ může mít po souřadnicích všechny parciální derivace v každém bodě, to však ale neimplikuje spojitost.
