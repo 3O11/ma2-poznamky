@@ -49,19 +49,20 @@ je, tady ne).
 \end{figure}
 
 \subsection{Totální diferenciál}
-Nespojitá funkce $f$ může mít po souřadnicích všechny parciální derivace v každém bodě, to však ale neimplikuje spojitost. \textbf{Existence parciálních derivací neimplikuje spojitost!}
-Budeme potřebovat něco silnejšího. Připomeňte si tvrzení ekvivalentní se standardní derivací:
+Nespojitá funkce $f$ může mít po souřadnicích všechny parciální derivace v každém bodě, to však ale neimplikuje spojitost.
+\textbf{Existence parciálních derivací neimplikuje spojitost!}
+Budeme potřebovat něco silnejšího. Připomeňme si tvrzení ekvivalentní se standardní derivací:
 
-\begin{lemma}[Derivace]
-	Existuje $\mu$ konvergující k 0 při $h \rightarrow 0$ a A takové, že 
+\begin{lemma}[Ekvivalentní definice derivace]
+	Funkce \(f\) má v bodě \(x\) derivaci \(\iff\)  existuje $\mu$ konvergující k 0 při $h \rightarrow 0$ a A takové, že 
 	\[f(x+h) - f(x) = Ah + |h| \cdot \mu(h)\]
 \end{lemma}
 
 \begin{intuition}
-	$f(x+h) - f(x) = Ah$ vyjadřuje tečnu ke grafu funkce v bodě $(x,f(x))$ a $|h|\cdot \mu(h)$ je jakási malá chyba.
+	$Ah + f(x) $ vyjadřuje tečnu ke grafu v bodě $(x,f(x))$ a $|h|\cdot \mu(h)$ je malá chyba\footnote{Je zajímavé si rozmyslet, proč vlastně násobíme \(|h|\) (jaké funkce budou mít derivace tam, kde by neměly).}, která je poměrově menší než \(|h|\), pro \(h \rightarrow 0\).
 	Mysleme podobně o funkci $f(x,y)$ a uvažujme plochu:
 	\[S = \{(t,u,f(t,u)) : (t,u) \in D\} \subseteq \mathbb{R}^3.\]
-	Dvě parciální derivace vyjadřují směry dvou tečných přímek k S v bodě $(x,y,f(x,y))$, ale \textit{ne tečnou rovinu},
+	Dvě parciální derivace vyjadřují směry dvou tečných přímek k S v bodě $(x,y,f(x,y))$, ale \textbf{ne tečnou rovinu},
 	která teprve bude uspokojivé rozšíření faktu nahoře.
 \end{intuition}
 
@@ -230,18 +231,7 @@ a pro $u = \psi (x)$ a $ v = \phi (x) $ platí:
 \subsubsection{Globální extrémy}
 
 \subsection{Lagrangeovy věty}
-\begin{theorem}[Lagrangeova věta v jedné proměnné]
-	Nechť $f$ je spojitá funkce na intervalu $[a, b]$ a má na $(a, b)$ derivaci. Pak existuje bod $c \in (a, b)$ t. ž. tečna v bodě $c$ je rovná přímce procházející $(a, f(a))$ a $(b, f(b))$: $$f'(c) = \frac{f(b) - f(a)}{b - a} \qquad \text{nebo ekvivalentně} \qquad f(b) - f(a) = f'(c)(b - a)$$
-\end{theorem}
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=0.5\linewidth]{02-lagrange}%
-	\caption{Geometrický význam Lagrangeovy věty v jedné proměnné.}%
-	\label{fig:par}
-\end{figure}
-
-\begin{definition}[Konvexní podmnožina]
+\begin{definition}[Konvexní množina]
 	Podmnožina $U \subseteq \mathrm{E}_n$ je konvexní, pokud
 	$$\forall \mathbf{x}, \mathbf{y} \in U \quad \implies \quad \forall t, 0 \le t \le 1, (1 - t) \mathbf{x} + t \mathbf{y} = \mathbf{x} + t( \mathbf{y} - \mathbf{x}) \in U$$
 \end{definition}
@@ -254,12 +244,29 @@ a pro $u = \psi (x)$ a $ v = \phi (x) $ platí:
 	\caption{Příklad konvexní a nekonvexní podmnožiny $\mathrm{E}_n$}%
 \end{figure}
 
+\begin{theorem}[Lagrangeova věta v jedné proměnné]
+	Nechť $f$ je spojitá funkce na intervalu $[a, b]$ a má na $(a, b)$ derivaci. Pak existuje bod $c \in (a, b)$ t. ž. tečna v bodě $c$ je rovná přímce procházející $(a, f(a))$ a $(b, f(b))$: $$f'(c) = \frac{f(b) - f(a)}{b - a} \qquad \text{nebo ekvivalentně} \qquad f(b) - f(a) = f'(c)(b - a)$$
+\end{theorem}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.5\linewidth]{02-lagrange}%
+	\caption{Geometrický význam Lagrangeovy věty v jedné proměnné.}%
+	\label{fig:par}
+\end{figure}
+
 \begin{theorem}[Lagrangeova věta ve více proměnných]\label{lagrange1}
 	Nechť má $f$ spojité parciální derivace v konvexní otevřené množině $U \subseteq \mathbb{E}_{n}$.
 	Potom pro libovolné dva body $x,y \in U$ $\exists 0 \leq \theta \leq 1$ takové, že:
-	\[ f(\mathbf{y}) - f(\mathbf{x}) =
-	\sum^{n}_{j=1} \frac{\partial f(\mathbf{x} + \theta (\mathbf{y}-\mathbf{x}))}{\partial x_j}(y_j - x_j) \]
+	\[ f(\mathbf{y}) - f(\mathbf{x}) = \sum^{n}_{j=1} \frac{\partial f(\mathbf{x} + \theta (\mathbf{y}-\mathbf{x}))}{\partial x_j}(y_j - x_j) \]
+	nebo ekvivalentně jako
+	\[ f(\mathbf{y}) - f(\mathbf{x}) = \Delta f(\textbf{c}) (\textbf{y} - \textbf{x}) \]
+	kde \(\textbf{c} = \mathbf{x} + \theta (\mathbf{y}-\mathbf{x})\) a \[\Delta f(p) = \begin{pmatrix} \frac{\partial f}{\partial x_1} \\[6pt] \vdots \\[6pt] \frac{\partial f}{\partial x_n} \end{pmatrix}\] je \textbf{gradient} funkce \(f\).
 \end{theorem}
+
+\begin{intuition}
+	Jedná se o přímočaré zobecnění Lagrangeovy věty pro více proměnných, kde derivaci zobecňujeme gradientem (geometricky opět vektor tečné nadroviny v daném bodě) a skalárním součinem.
+\end{intuition}
 
 \begin{proof}
 	Položme $F(t) = f(\mathbf{x} + t(\mathbf{y} - \mathbf{x}))$ a $\mathbf{g}$ t. ž. $g_j(t) = x_j + t(y_j - x_j)$.
@@ -328,7 +335,7 @@ a pro $u = \psi (x)$ a $ v = \phi (x) $ platí:
 \end{consequence}
 
 \subsection{Věta o konvergentní podposloupnosti}
-\begin{theorem}[Z každé posloupnosti na kompaktním intervalu lze vybrat konvergentní podposloupnost]
+\begin{theorem}[Konvergentní podposloupnost na kompaktním intervalu]
 	Mějme $a,b \in \mathbb{R}$ taková, že $\forall n: a \leq x_n \leq b$. Potom existuje podposloupnost
 	$(x_{k_n})_n$ posloupnosti $(x_n)_n$ která konverguje v $\mathbb{R}$ a platí
 	$a \leq \lim_n x_{k_n} \leq b$
@@ -338,7 +345,7 @@ a pro $u = \psi (x)$ a $ v = \phi (x) $ platí:
 	Vezměme \[M = \{x : x \in \mathbb{R}, x \leq x_n \text{ pro nekonečně mnoho n}\}\]
 	$M$ je neprázdná a omezená protože $a \in M \text{ a } b$ je horní mez $M$. Musí tedy existovat $s = sup(M)$ a platí 
 	$a \leq s \leq b$. Dále, pro každé $n$ je množina 
-	\[K(n) = \{k : s - \frac{1}{n} < x_k < s + \frac{1}{n}\}\]
+	\[K(n) = \left\{k : s - \frac{1}{n} < x_k < s + \frac{1}{n}\right\}\]
 	nekonečná: skutečně, máme $x > s - \varepsilon$ takové, že $x_n > x$ pro nekonečně mnoho $n$, zatím co podle definice množiny M je jen
 	konečně mnoho $n$ takových, že $x_n \geq s + \varepsilon$. 
 	Zvolme $k_1$ tak, aby
