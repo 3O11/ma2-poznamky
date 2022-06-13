@@ -3,9 +3,9 @@
 \begin{document}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Extrémy}
+\section{Vázané extrémy}
 
-\begin{theorem}[O hledání extrému funkcí]
+\begin{theorem}[O hledání extrému funkcí s vazbami]
 	Buďte $f,g_1, ... , g_k$ reálné funkce definované na otevřené množině $D \subseteq \mathbb{E}_n$.
 	Nechť mají spojité parciální derivace. Nechť je hodnost matice
 	\[ M = \begin{pmatrix}
@@ -16,11 +16,54 @@
 	maximální, tedy $k \leq n$, v každém bodě oboru $D$.
 
 	Jestliže funkce $f$ nabývá v bodě $\mathbf{a} = (a_1, ... , a_n)$ lokálního extrému podmíněného vazbami
-	\[ g_i(x_1, ... , x_n) = 0 \forall i \in \{ 1, ... , k \} \]
+	\[ \forall i \in \{ 1, ... , k \} \quad g_i(x_1, ... , x_n) = 0\]
 	pak existují čísla $\lambda _1, ... , \lambda _k$ taková, že $\forall i \in {1, ... , n}$ platí
 	\[ \frac{\partial f(\mathbf{a})}{\partial x_i} +
 	\sum_{j=1}^{k}\lambda_j \cdot \frac{\partial g_j(\mathbf{a})}{\partial x_i} = 0 \]
 \end{theorem}
+
+\begin{intuition}
+	Je-li extrém na hranici vazby, tak parciální derivace funkce v daném bodě budou nějaký násobek parciálních derivací funkce (budou se „dotýkat“) (viz \ref{fig:lag}).
+	Koeficientům \(\lambda_i\), který určují tento násobek, se říká \textbf{Lagrangeovy multiplikátory}.
+
+	\begin{figure}[h]
+		\centering
+		\subfloat[\centering Vázané extrémy v \(\mathbb{R}^2\)]{{\includegraphics[height=5cm]{05-lagrange-2} }}%
+		\hspace{3em}
+		\subfloat[\centering Vázané extrémy ve \(\mathbb{R}^3\)]{{\includegraphics[height=5cm]{05-lagrange-1} }}%
+		\caption{Geometrický náhled na počítání vázaných extrémů.}%
+		\label{fig:lag}
+	\end{figure}
+\end{intuition}
+
+\begin{intuition}
+	Uvažme funkci \(f(x, y) = 2x + y\) s omezením \(g(x, y) = x^2 + y^2 - 1\).
+	Funkce splňuje předpoklady věty o hledání extrému funkcí a má tedy Lagrangeovy multiplikátory.
+	Spočítejme je dosazením do definice:
+	\[\begin{aligned}
+		\frac{\partial f(\mathbf{a})}{\partial x_i} + \sum_{j=1}^{k}\lambda_j \cdot \frac{\partial g_j(\mathbf{a})}{\partial x_i} &= 0 \\
+		\frac{\partial f(\mathbf{a})}{\partial x_i} &= \sum_{j=1}^{k}-\lambda_j \cdot \frac{\partial g_j(\mathbf{a})}{\partial x_i} \\
+		\begin{bmatrix} \frac{\partial f}{\partial x} \\[6pt] \frac{\partial f}{\partial y} \end{bmatrix} &= -\lambda_1 \begin{bmatrix} \frac{\partial g}{\partial x} \\[6pt]  \frac{\partial g}{\partial y} \end{bmatrix} \\
+			\begin{bmatrix} 2 \\ 1 \end{bmatrix} &= -\lambda_1 \begin{bmatrix} 2x \\ 2y \end{bmatrix}
+	\end{aligned}\]
+
+	Z toho vyplývá, že hledáme body, které splňují následující rovnice:
+	\[\begin{aligned}
+		2x \lambda &= -2 \\
+		y \lambda &= -1 \\
+		g(x, y) = x^2 + y^2 &= 1 \\
+	\end{aligned}\]
+
+	Jejich vyřešením (3 rovnice, 3 proměnné) dostáváme \(\left(\frac{2}{\sqrt{5}}, \frac{1}{\sqrt{5}}\right)\) a \(\left(\frac{-2}{\sqrt{5}}, \frac{-1}{\sqrt{5}}\right)\) (viz obrázek \ref{fig:lagex}).
+		
+
+	\begin{figure}[h]
+		\centering
+		\includegraphics[height=6cm]{05-lag-example}%
+		\caption{Geometrický pohled na řešený příklad: \(f\) je modrá, \(g\) červená a extrémy jsou dva viditelné body (maximum modré, minimum červené). Vygenerováno přes GeoGebru [\href{https://www.geogebra.org/3d?lang=en}{odkaz}].}%
+		\label{fig:lagex}
+	\end{figure}
+\end{intuition}
 
 \begin{proof}
 	Matice $M$ má hodnost $k$ právě když aspoň jedna její $k\times k$ podmatice $M$ je regulární (a tedy má nenulový determinant). Dejme tomu,

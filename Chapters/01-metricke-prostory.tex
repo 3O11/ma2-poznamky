@@ -30,8 +30,8 @@
 \begin{definition}[Euklidovský prostor $\mathbb{E}_n$]
 Definujeme jako metrický prostor $(\mathbb{R}^n,d)$, kde $d$:
 \[d((x_1,...,x_n),(y_1,...,y_n)) = \sqrt{\sum_i(x_i-y_i)^2}\]
-Pro nás zvlášť důležitý, známý v podobě vektorového prostoru $\mathbb{R}^n$ se skalárním součinem $\langle \textbf{u} | v \rangle$ a normou
-$\|\textbf{u}\| = \sqrt{\textbf{uu}}$ a vzdáleností $d(\textbf{u},v) = ||\textbf{u}-v||$
+Pro nás zvlášť důležitý, známý v podobě vektorového prostoru $\mathbb{R}^n$ se skalárním součinem $\langle \textbf{u} | \textbf{v} \rangle$ a normou
+$\|\textbf{u}\| = \sqrt{\textbf{uu}}$ a vzdáleností $d(\textbf{u},\textbf{v}) = ||\textbf{u}-\textbf{v} ||$
 \end{definition}
 
 \begin{definition}[Diskrétní prostor]
@@ -140,10 +140,8 @@ Pro zbytek sekce nechť $f: X \rightarrow Y, A \subseteq X, B \subseteq Y$.
 	Vzor podmnožiny $B\subseteq Y$ v $X$:
 	\[f^{-1}[B] = \{x \mid x \in X: f(x) \in B\}\]
 	\[X \underset{f^{-1}[-]}{\stackrel{f[-]}{\rightleftarrows}} Y\]
-	Pozor, $f^{-1}$ má dva významy:
 	\begin{itemize}
-		\item inverze $f^{-1}:Y \rightarrow X$, nemusí existovat
-		\item část v symbolu $f^{-1}[-]$, má smysl vždy
+		\item inverzní funkce $f^{-1}:Y \rightarrow X$ (značíme \(f^{-1}(B)\)) nemusí existovat, kdežto $f^{-1}[B]$ existuje vždy
 	\end{itemize}
 \end{definition}
 

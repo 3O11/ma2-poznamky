@@ -2,9 +2,17 @@
 
 \begin{document}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Opakování Riemannova integrálu v jedné proměnné}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{figure}[h]
+	\centering
+	\subfloat[Dolní Riemannova suma]{{\includegraphics[width=4.5cm]{08-lsum} }}%
+	\hspace{3em}
+	\subfloat[Horní Riemannova suma]{{\includegraphics[width=4.5cm]{08-usum} }}%
+	\hspace{3em}
+	\subfloat[Integrál funkce]{{\includegraphics[width=4.5cm]{08-integral} }}%
+	\caption{Geometrický význam Riemannova integrálů jedné proměnné.}
+\end{figure}
 
 \begin{definitionnodot}[Rozdělení]
 	intervalu $\left<a,b\right>$ je posloupnost 
@@ -92,6 +100,12 @@
 	Buď $f: \left< a,b \right> \to \mathbb{R}$ spojitá. Potom existuje $c \in \left< a,b \right>$ t. ž.
 	\[ \int_{a}^{b} f(x) \,dx = f(c)(b-a)\]
 \end{theorem}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.4\linewidth]{08-mean-value}%
+	\caption{Geometrický význam integrální věty o střední hodnotě.}
+\end{figure}
 
 \begin{proof}
 	Položme $m = \min \{ f(x) \mid a \leq x \leq b \}$ a $M = \max \{ f(x) \mid a \leq x \leq b \} $

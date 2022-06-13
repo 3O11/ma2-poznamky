@@ -12,7 +12,7 @@ Podobně jako ve funkcích jedné proměnné se nemůžeme omezit na případy, 
 V případě funkcí jedné proměnné byly definiční obory obvykle intervaly nebo jednoduchá sjednocení intervalů. Tady budou definiční
 obory $D$ složitější, často (ale ne vždy) otevřené množiny v $\mathbb{E}_n$.
 
-O $D$ se často mluví jako o oblasti na níž je funkce definovaná. To není termín (ve specifických kontextech slovo \uv{oblast} termín 
+O $D$ se často mluví jako o oblasti, na níž je funkce definovaná. To není termín (ve specifických kontextech slovo \uv{oblast} termín 
 je, tady ne).
 
 
@@ -30,6 +30,23 @@ je, tady ne).
 	\[\frac{\partial f}{\partial x_k}: D \rightarrow \mathbb{R}.\]
 	Když budeme mluvit o parciální derivaci bude vždy zřejmé máme-li na mysli funkci, nebo jen číslo (hodnotu té limity nahoře).
 \end{definition}
+
+\begin{example}
+	Mějme funkci \[f(x, y) = x^3 + 2xy - 15y\]
+	Její parciální derivace v \(x\) je \[\frac{\partial f}{\partial x} (x, y) = 2x^2 + 2y\]
+	a analogicky v \(y\) je \[\frac{\partial f}{\partial y} (x, y) = 2x - 15\]
+\end{example}
+
+\begin{intuition}
+	Geometricky odpovídá tečně funkce v daném bodě a příslušné ose (viz \ref{fig:par}).
+\end{intuition}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.8\linewidth]{02-partial}%
+	\caption{Geometrický význam parciální derivace funkce.}%
+	\label{fig:par}
+\end{figure}
 
 \subsection{Totální diferenciál}
 Nespojitá funkce $f$ může mít po souřadnicích všechny parciální derivace v každém bodě, to však ale neimplikuje spojitost. \textbf{Existence parciálních derivací neimplikuje spojitost!}
@@ -121,7 +138,7 @@ zatímco existence parciálních derivací mnoho neznamená, \textit{existence s
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Pravidla pro počítání parciálních derivací}
+\subsection{Počítání parciálních derivací}
 Aritmetická pravidla jsou stejná jako pro obyčejné derivace (tady totiž obyčejnými derivacemi jsou).
 Trochu jinak tomu je u pravidla pro skládání. Pro derivace jedné proměnné se dokazuje z formule
 \[ f(a+h) - f(a) = Ah + |h|\mu (h) \]
@@ -210,10 +227,19 @@ a pro $u = \psi (x)$ a $ v = \phi (x) $ platí:
 \frac{1}{\psi (x)} \phi '(x) + \frac{1}{\psi (x)^2}\psi '(x) =
 \frac{\psi (x)\phi '(x) - \phi (x)\psi '(x)}{\psi (x)^2} \]
 
+\subsubsection{Globální extrémy}
+
 \subsection{Lagrangeovy věty}
 \begin{theorem}[Lagrangeova věta v jedné proměnné]
 	Nechť $f$ je spojitá funkce na intervalu $[a, b]$ a má na $(a, b)$ derivaci. Pak existuje bod $c \in (a, b)$ t. ž. tečna v bodě $c$ je rovná přímce procházející $(a, f(a))$ a $(b, f(b))$: $$f'(c) = \frac{f(b) - f(a)}{b - a} \qquad \text{nebo ekvivalentně} \qquad f(b) - f(a) = f'(c)(b - a)$$
 \end{theorem}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.5\linewidth]{02-lagrange}%
+	\caption{Geometrický význam Lagrangeovy věty v jedné proměnné.}%
+	\label{fig:par}
+\end{figure}
 
 \begin{definition}[Konvexní podmnožina]
 	Podmnožina $U \subseteq \mathrm{E}_n$ je konvexní, pokud
@@ -225,7 +251,7 @@ a pro $u = \psi (x)$ a $ v = \phi (x) $ platí:
 	\subfloat[\centering Konvexní]{{\includegraphics[width=5cm]{02.convex} }}%
 	\hspace{5em}
 	\subfloat[\centering Nekonvexní]{{\includegraphics[width=5cm]{02.non-convex} }}%
-	\caption*{Příklad konvexní a nekonvexní podmnožiny $\mathrm{E}_n$}%
+	\caption{Příklad konvexní a nekonvexní podmnožiny $\mathrm{E}_n$}%
 \end{figure}
 
 \begin{theorem}[Lagrangeova věta ve více proměnných]\label{lagrange1}
@@ -301,7 +327,6 @@ a pro $u = \psi (x)$ a $ v = \phi (x) $ platí:
 	\[(r_j = 0 \text{ indukuje absenci symbolu } \partial x_j)\]
 \end{consequence}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Věta o konvergentní podposloupnosti}
 \begin{theorem}[Z každé posloupnosti na kompaktním intervalu lze vybrat konvergentní podposloupnost]
 	Mějme $a,b \in \mathbb{R}$ taková, že $\forall n: a \leq x_n \leq b$. Potom existuje podposloupnost

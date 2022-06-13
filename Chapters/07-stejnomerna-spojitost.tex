@@ -6,15 +6,24 @@
 \section{Stejnoměrná spojitost}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{definition}[Stejnoměrná spojitost]
-	Řekneme, že $f : (X,d) \rightarrow (Y,d')$ je stejnoměrně spojité, je-li
+	Řekneme, že $f : (X,d) \rightarrow (Y,d')$ je stejnoměrně spojitá, pokud
 	\[\forall \varepsilon > 0 \exists \delta > 0 : \forall x,y : d(x,y) < \delta \implies d'(f(x),f(y)) < \varepsilon\]
 \end{definition}
 
-\begin{example}
-	$f = (x \mapsto x^2) : \mathbb{R} \rightarrow \mathbb{R}$ je spojitá, ale ne stejnoměrně spojitá.
-	Máme $|f(x) - f(y)| = |x+y| \cdot |x-y|$; tedy abychom dostali $|f(x)-f(y)| < \varepsilon $ v 
-	blízkosti $x = 100$ potřebujeme $\delta$ stokrát menší než v blízkosti $x = 1$.
-\end{example}
+\begin{intuition}
+	Geometrický význam je ten, že pro libovolnou vzdálenost \(\varepsilon\) v \(y\) existuje \(\delta\) t. ž. okénko o velikosti \((\delta, \varepsilon)\) umístěné do libovolného místa v grafu není grafem protnuto nahoře ani dole. Na obrázku \ref{fig:con} je vidět, že funkce \(\sqrt{x}\) stejnosměrnou spojitost splňuje, kdežto funkce \(\frac{1}{x}\) nikoliv.
+
+	\begin{figure}[h]
+		\centering
+		\subfloat{{\includegraphics[width=4cm]{07-1} }}%
+		\hspace{3em}
+		\subfloat{{\includegraphics[width=4cm]{07-2} }}%
+		\hspace{3em}
+		\subfloat{{\includegraphics[width=4cm]{07-3} }}%
+		\caption{Geometrický význam stejnosměrné spojitosti pro \(f(x) = 1/x\) a \(g(x) = \sqrt{x}\) na intervalu \(\mathbb{R}^+\).}
+		\label{fig:con}
+	\end{figure}
+\end{intuition}
 
 \begin{theorem}[Spojitost zobrazení na kompaktním prostoru]
 	Je-li $(X,d)$ kompaktní, je každé spojité $f : (X,d) \rightarrow (Y,d')$ stejnoměrně spojité. Zejména to platí 
