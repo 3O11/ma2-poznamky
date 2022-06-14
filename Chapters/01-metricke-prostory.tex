@@ -106,6 +106,12 @@ $\|\textbf{u}\| = \sqrt{\textbf{uu}}$ a vzdáleností $d(\textbf{u},\textbf{v}) 
 	Formulaci $\Omega (x,\varepsilon)$ se říká otevřená koule s poloměrem $\varepsilon$ okolo $x$.
 \end{definition}
 
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.2\linewidth]{01-neighbourhood}%
+	\caption{Ilustrace \(\varepsilon\)-okolí bodu \(p\) v podprostoru \(\mathbb{E}_2\).}%
+\end{figure}
+
 \begin{example} [Použití okolí]
 	$"\textrm{U je okolí } x" \equiv \exists \varepsilon > 0, \Omega (x,\varepsilon) \subseteq U $
 \end{example}
@@ -115,9 +121,18 @@ $\|\textbf{u}\| = \sqrt{\textbf{uu}}$ a vzdáleností $d(\textbf{u},\textbf{v}) 
 \end{definition}
 
 \begin{definition}[Uzavřená množina]
-	$V \subseteq (X,d)$ je uzavřená, pokud $\forall (x_n)_n \subseteq V$ je konvergentní
-	v $X$ a $\lim_n x_n \in V$.
+	$V \subseteq (X,d)$ je uzavřená, pokud $\forall (x_n)_n \subseteq V$ je konvergentní v $X$ a $\lim x_n \in V$.
 \end{definition}
+
+\begin{example}
+	Uvážíme-li interval \(\left(0, \infty\right)\) s Euklidovskou metrikou, pak
+\begin{itemize}
+	\item \(\left<1, 2\right>\) je pouze uzavřený
+	\item \(\left(0, 1\right>\) je také pouze uzavřený (všechny limity konvergující v \(X\) mají limitu ve \(V\))
+	\item \(\left(1, \infty\right)\) je pouze otevřený
+	\item \(\left(0, \infty\right)\) je jak otevřený, tak uzavřený
+\end{itemize}
+\end{example}
 
 \begin{definition}[Vzdálenost od množiny]
 	Nechť $(X,d)$ je metrický prostor, $A \subseteq X, x\in X$, pak vzdálenost bodu $x$ od množiny $A$ je
@@ -140,10 +155,17 @@ Pro zbytek sekce nechť $f: X \rightarrow Y, A \subseteq X, B \subseteq Y$.
 	Vzor podmnožiny $B\subseteq Y$ v $X$:
 	\[f^{-1}[B] = \{x \mid x \in X: f(x) \in B\}\]
 	\[X \underset{f^{-1}[-]}{\stackrel{f[-]}{\rightleftarrows}} Y\]
-	\begin{itemize}
-		\item inverzní funkce $f^{-1}:Y \rightarrow X$ (značíme \(f^{-1}(B)\)) nemusí existovat, kdežto $f^{-1}[B]$ existuje vždy
-	\end{itemize}
+
+	Inverzní funkce $f^{-1}:Y \rightarrow X$ (značíme \(f^{-1}(B)\)) nemusí existovat, kdežto $f^{-1}[B]$ existuje vždy
 \end{definition}
+
+\begin{figure}[h]
+	\centering
+	\subfloat[\centering Obraz]{{\includegraphics[width=6cm]{01-image} }}%
+	\hspace{4em}
+	\subfloat[\centering Vzor]{{\includegraphics[width=6cm]{01-preimage} }}%
+	\caption{Ilustrace obrazu a vzoru množin \(X\) a \(Y\). Výsledek operace je vždy zelená množina.}%
+\end{figure}
 
 \begin{lemma}[Vztahy vzorů a obrazů]
 	\[f[A] \subseteq B \equiv A \subseteq f^{-1}[B],\]
@@ -184,6 +206,8 @@ Pro zbytek sekce nechť $f: X \rightarrow Y, A \subseteq X, B \subseteq Y$.
 \begin{definition}[Silně ekvivalentní metriky]
 	Metriky $d_1$ a $d_2$ na téže množině jsou silně ekvivalentní, pokud
 	\[\exists \alpha , \beta > 0: \alpha d_1(x,y) \leq d_2(x,y) \leq \beta d_1(x,y)\]
+
+	Jsou si tedy vždy rovné až na násobek omezený čísly \(\alpha\) a \(\beta\).
 \end{definition}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

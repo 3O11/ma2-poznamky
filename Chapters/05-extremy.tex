@@ -17,9 +17,10 @@
 
 	Jestliže funkce $f$ nabývá v bodě $\mathbf{a} = (a_1, ... , a_n)$ lokálního extrému podmíněného vazbami
 	\[ \forall i \in \{ 1, ... , k \} \quad g_i(x_1, ... , x_n) = 0\]
-	pak existují čísla $\lambda _1, ... , \lambda _k$ taková, že $\forall i \in {1, ... , n}$ platí
-	\[ \frac{\partial f(\mathbf{a})}{\partial x_i} +
-	\sum_{j=1}^{k}\lambda_j \cdot \frac{\partial g_j(\mathbf{a})}{\partial x_i} = 0 \]
+	Pak existují čísla $\lambda _1, ... , \lambda _k$ taková, že $\forall i \in {1, ... , n}$ platí
+	\[ \frac{\partial f(\mathbf{a})}{\partial x_i} + \sum_{j=1}^{k}\lambda_j \cdot \frac{\partial g_j(\mathbf{a})}{\partial x_i} = 0 \]
+	nebo ekvivalentně přes gradienty jako
+	\[ \Delta f(\mathbf{a}) + \mbox{\boldmath$\lambda$} \cdot \Delta g(\mathbf{a}) = 0\]
 \end{theorem}
 
 \begin{intuition}
@@ -38,7 +39,7 @@
 
 \begin{intuition}
 	Uvažme funkci \(f(x, y) = 2x + y\) s omezením \(g(x, y) = x^2 + y^2 - 1\).
-	Funkce splňuje předpoklady věty o hledání extrému funkcí a má tedy Lagrangeovy multiplikátory.
+	Jelikož funkce splňuje předpoklady věty o hledání extrému funkcí, tak můžeme přes Lagrangeovy multiplikátory najít body podezřelé z extrémů.
 	Spočítejme je dosazením do definice:
 	\[\begin{aligned}
 		\frac{\partial f(\mathbf{a})}{\partial x_i} + \sum_{j=1}^{k}\lambda_j \cdot \frac{\partial g_j(\mathbf{a})}{\partial x_i} &= 0 \\
@@ -54,7 +55,7 @@
 		g(x, y) = x^2 + y^2 &= 1 \\
 	\end{aligned}\]
 
-	Jejich vyřešením (3 rovnice, 3 proměnné) dostáváme \(\left(\frac{2}{\sqrt{5}}, \frac{1}{\sqrt{5}}\right)\) a \(\left(\frac{-2}{\sqrt{5}}, \frac{-1}{\sqrt{5}}\right)\) (viz obrázek \ref{fig:lagex}).
+	Jejich vyřešením (3 rovnice, 3 proměnné) dostáváme dvě řešení \(\left(\frac{2}{\sqrt{5}}, \frac{1}{\sqrt{5}}\right)\) a \(\left(\frac{-2}{\sqrt{5}}, \frac{-1}{\sqrt{5}}\right)\), které jsou minimum a maximum (viz obrázek \ref{fig:lagex}).
 		
 
 	\begin{figure}[h]
