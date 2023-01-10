@@ -50,6 +50,83 @@
 	$f: (x_0 - \delta , x_0 + \delta ) \to \mathbb{R}$ má spojité derivace do řádu $k$.
 \end{theorem}
 
+\begin{proof}
+	Buď třeba
+	$$
+	\frac{\partial F(x_0, y_0)}{\partial y} > 0
+	$$
+	Vzhledem ke spojitosti existují $\delta_1, \Delta > 0$ taková, že v
+	obdélníku $\langle x_0 - \delta_1, x_0 + \delta_1 \rangle \times
+	\langle y_0 - \Delta, y_0 + \Delta \rangle$ je $\frac{\partial
+	F}{\partial y} (x, y)$ stále kladná (víme, že $\exists \epsilon:
+	\frac{\partial F(x_0, y_0)}{\partial y} > \epsilon > 0$ a pro toto
+	$\epsilon$ mi spojitost PD dá $\delta_1, \Delta$). Tento obdélník je
+	kompaktní, tedy na něm spojité funkce nabývají extrémů a tedy $\exists
+	a, A > 0:$
+	\begin{equation} \label{eq:1}
+		\frac{\partial F}{\partial y}(x, y) > a,~ \left |
+		\frac{\partial F}{\partial x}(x, y) \right | < A
+	\end{equation}
+	Vezměme funkci $\varphi(y) = F(x_0, y)$. Ta má kladnou derivaci a tedy
+	roste na intervalu $\langle y_0 - \Delta, y_0 + \Delta \rangle$.
+	Jelikož $\varphi(y_0) = 0$, je $F(x_0, y_0 - \Delta) = \varphi(y_0 -
+	\Delta) < 0$ a $F(x_0, y_0 + \Delta) > 0$. Jelikož funkce $F$ je
+	spojitá (má spojité parciální derivace a tedy i totální diferenciál),
+	existuje $\delta > 0$ takové, že $F(x, y_0 - \Delta) < 0$ a $F(x, y_0 +
+	\Delta) > 0$ pro všechna $x \in (x_0 - \delta, x_0 + \delta)$. Pro
+	taková $x$ položme $\varphi_x(y) = F(x, y)$. Máme vždy $\varphi_x'(y) >
+	0$ na celém $\langle y_0 - \Delta, y_0 + \Delta \rangle$, takže je tam
+	každá z těchto funkcí rostoucí a ovšem spojitá. Jelikož $\varphi_x(y_0
+	- \Delta) < 0 < \varphi(y_0 + \Delta)$, nabývá $F(x, y) =
+	\varphi_x(y)$, v intervalu $(y_0 - \Delta, y_0 + \Delta)$ nuly v právě
+	jednom bodě $y$. Označme toto $y$ jako $f(x)$.
+
+	Zatím však ani nevíme, zda je $f$ spojitá. Pojďme odvodit vlastnosti
+	$f$.
+	$$
+	0 = F(x + h, f(x + h)) - F(x, f(x)) =
+	$$
+	$$
+	\frac{\partial F (x + \theta h, f(x) + \theta (f(x + h) -
+	f(x)))}{\partial x} \cdot h +
+	\frac{\partial F (x + \theta h, f(x) + \theta (f(x + h) -
+	f(x)))}{\partial y} \cdot (f(x + h) - f(x))
+	$$
+	První rovnost platí, protože $F(t, f(t)) = 0$. Druhá rovnost platí z
+	Lagrangeovy věty ve tvaru $f(\mathbf{x} + \mathbf{h}) - f(\mathbf{x}) =
+	\sum_{j=1}^{n} \frac{\partial f(\mathbf{x} + \theta
+	\mathbf{h})}{\partial x_j}h_j$, kde dosadíme $\mathbf{h} = (h, f(x + h)
+	- f(x))$.
+
+	Upravíme
+	\begin{equation} \label{eq:2}
+		f(x + h) - f(x) = -h \cdot
+		\frac{\frac{\partial F(...)}{\partial x}}
+		{\frac{\partial F(...)}{\partial y}}
+	\end{equation}
+	Podle \ref{eq:1} tedy $|f(x + h) - f(x)| < |h| \cdot \frac{A}{a}$ a $f$
+	je tedy spojité v bodě $x$. Vrátíme se ještě jednou k formuli
+	\ref{eq:2} a dostaneme
+	$$
+	\frac{f(x + h) - f(x)}{h} =
+	$$
+	$$
+	- \left ( \frac{\partial F (x + \theta h, f(x) + \theta (f(x + h) -
+	f(x)))}{\partial y} \right )^{-1} \cdot
+	\frac{\partial F(..., ...)}{\partial x}
+	$$
+	Nyní již ale víme, že $f$ je spojitá, a spojitost $\frac{\partial
+	F}{\partial x}$ a $\frac{\partial F}{\partial y}$ byla v předpokladech.
+	Tedy má pravá strana limitu pro $h \rightarrow 0$ a dostáváme
+	(dle věty o konvergenci můžeme dosadit $h = 0$)
+	$$
+	f'(x) = - \left ( \frac{\partial F(x, y)}{\partial y} \right )^{-1}
+	\cdot \frac{\partial F(x, y)}{\partial x}
+	$$
+	Tuto formuli můžeme nyní derivovat tak dlouho, jak to existence PD na
+	pravé straně dovolí.
+\end{proof}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Tohle tam psat nebudu, neni to uplne necessary a neukaze ti to nic uplne novyho
 %\subsection{Definice (implicitní?) funkce a vlastnosti}
@@ -90,6 +167,74 @@
 	takové, že
 	\[ \mathbf{F}(\mathbf{x}, \mathbf{y}) = 0 \]
 \end{theorem}
+
+\begin{proof}
+	Místo důkazu si rozmysleme jednoduchý případ použití věty. Uvažujme
+	dvojici rovnic
+	$$
+	F_1(\mathbf{x}, y_1, y_2) = 0,
+	$$
+	$$
+	F_2(\mathbf{x}, y_1, y_2) = 0
+	$$
+	a pokusme se najít řešení $y_i = f_i(\mathbf{x}), i = 1, 2$, v nějakém
+	okolí bodu $(\mathbf{x}^0, y_1^0, y_2^0)$. Aplikujme větu o jedné
+	rovnici. Mysleme o druhé z rovnic jako o rovnici pro $y_2$; v nějakém
+	okolí bodu $(\mathbf{x}^0, y_1^0, y_2^0)$ získáme $y_2$ jako funkci
+	$\psi(\mathbf{x}, y_1)$. Substituujme ji do první rovnice, což dá
+	$$
+	G(\mathbf{x}, y_1) = F_1(\mathbf{x}, y_1, \psi(\mathbf{x}, y_1))
+	$$
+	a řešení $y_1 = f_1(\mathbf{x})$ v nějakém okolí bodu $(\mathbf{x}^0,
+	y_1^0)$ může být substituováno do $\psi$ a získáme $y_2 =
+	f_2(\mathbf{x}) = \psi(\mathbf{x}, f_1(\mathbf{x}))$.
+
+	Co jsme vlastně předpokládali:
+	\begin{itemize}
+		\item Spojité parciální derivace funkcí $F_i$
+		\item $\frac{\partial F_2}{\partial y_2} (\mathbf{x}^0, y_1^0,
+			y_2^0) \neq 0$
+		\item Konečně jsme potřebovali (použijte řetízkové pravidlo)
+			$\frac{\partial G}{\partial y_1} (\mathbf{x}^0, y_1^0)
+			= \frac{\partial F_1}{\partial y_1} + \frac{\partial
+			F_1}{\partial y_2} \frac{\partial \psi}{\partial y_1}
+			\neq 0$ (*)
+	\end{itemize}
+	Užijme formuli, kterou již máme (z důkazů jednoduché verze věty)
+	$$
+	\frac{\partial \psi}{\partial y_1} = - \left ( \frac{\partial
+	F_2}{\partial y_2} \right )^{-1} \frac{\partial F_2}{\partial y_1}
+	$$
+	což transformuje (*) na
+	$$
+	\left ( \frac{\partial F_2}{\partial y_2} \right )^{-1} \left (
+	\frac{\partial F_1}{\partial y_1} \frac{\partial F_2}{\partial y_2} -
+	\frac{\partial F_1}{\partial y_2} \frac{\partial F_2}{\partial y_1}
+	\right ) \neq 0
+	$$
+	to jest,
+	$$
+	\left (
+	\frac{\partial F_1}{\partial y_1} \frac{\partial F_2}{\partial y_2} -
+	\frac{\partial F_1}{\partial y_2} \frac{\partial F_2}{\partial y_1}
+	\right ) \neq 0
+	$$
+	To je vzorec, který známe, totiž determinant. Takže jsme vlastně
+	předpokládali, že
+	$$
+	\det \left ( \frac{\partial F_i}{\partial y_j} \right )_{i,j} \neq 0
+	$$
+	A tato podmínka již stačí: není-li determinant nula, je \emph{buď}
+	$$
+	\frac{\partial F_2}{\partial y_2} (\mathbf{x}^0, y_1^0, y_2^0) \neq 0
+	$$
+	\emph{a/nebo}
+	$$
+	\frac{\partial F_2}{\partial y_1} (\mathbf{x}^0, y_1^0, y_2^0) \neq 0
+	$$
+	Platí-li tedy to druhé, můžeme začít řešením rovnice $F_2(\mathbf{x},
+	y_1, y_2) = 0$ pro $y_1$ místo $y_2$.
+\end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{document}
