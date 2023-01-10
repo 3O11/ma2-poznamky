@@ -193,10 +193,10 @@ Pravidlo pro skládání v nejjednodušší podobě následuje.
 
 \begin{proof}
 	Skládali jsme
-	\[\mathbb{E}_k \xrightarrow{\mathbf{g}} \mathbb{E}_n \xrightarrow{\textit{f}} \mathbb{R} \]
+	\[\mathbb{E}_r \xrightarrow{\mathbf{g}} \mathbb{E}_n \xrightarrow{\textit{f}} \mathbb{R} \]
 	Skládejme místo $f$ $m$-tici funkcí
 	$\mathbf{f} = (f_1,...,f_m)$, tedy $\mathbf{f}: \mathbb{E}_n \rightarrow \mathbb{E}_m$
-	\[\mathbb{E}_k \xrightarrow{\mathbf{g}} \mathbb{E}_n \xrightarrow{\textit{f}} \mathbb{E}_m \]
+	\[\mathbb{E}_r \xrightarrow{\mathbf{g}} \mathbb{E}_n \xrightarrow{\textit{\textbf{f}}} \mathbb{E}_m \]
 	Pravidlo z předchozí věty dá tedy
 	\[\frac{\partial (f_i \circ \mathbf{g})(b)}{\partial t_j} = \sum^n_{k=1} \frac{\partial f_i(\mathbf{a})}{\partial x_k}
 	\cdot \frac{\partial g_k(\mathbf{b})}{\partial t_j}.\]
@@ -225,7 +225,7 @@ Potom $ \frac{\partial f}{\partial u} = \frac{1}{v} $ a $ \frac{\partial f}{\par
 a pro $u = \psi (x)$ a $ v = \phi (x) $ platí:
 \[ \left( \frac{\phi (x)}{\psi (x)} \right)' =
 \frac{\partial f}{\partial u} \phi '(x) - \frac{\partial f}{\partial v} \psi '(x) =
-\frac{1}{\psi (x)} \phi '(x) + \frac{1}{\psi (x)^2}\psi '(x) =
+\frac{1}{\psi (x)} \phi '(x) + \frac{\phi (x)}{\psi (x)^2}\psi '(x) =
 \frac{\psi (x)\phi '(x) - \phi (x)\psi '(x)}{\psi (x)^2} \]
 
 \subsection{Lagrangeovy věty}
@@ -313,12 +313,13 @@ a pro $u = \psi (x)$ a $ v = \phi (x) $ platí:
 	a tedy podle Lagrangeovy věty \ref{lagrange1} (druhý tvar, rozdíl je $y + h - y = h$):
 	\begin{align*}
 		F(h) & = \frac{1}{h^2}(\varphi_h(y+h)-\varphi_h(y)) = \frac{1}{h}\varphi'_h(y+\theta_1h)\\
-		& = \frac{\partial f(x+h,y+\theta_1h)}{\partial y} -\frac{\partial f(x,y+\theta_1h)}{\partial y}.
+		& = \frac{1}{h} \left ( \frac{\partial f(x+h,y+\theta_1h)}{\partial y} -\frac{\partial
+		f(x,y+\theta_1h)}{\partial y} \right ).
 	\end{align*}
 	Potom znovu podle Lagrangeovy věty 
 	\[F(h) = \frac{\partial }{\partial x}\left(\frac{\partial f(x+\theta_2h,y+\theta_1h}{\partial y}\right)\]
 	pro nějaká $\theta_1,\theta_2$ mezi 0 a 1.
-	Druhá, $\frac{1}{h^2}(\varphi_h(x+h) - \varphi_h(x)))$ dá podobně
+	Druhá, $\frac{1}{h^2}(\psi_h(x+h) - \psi_h(x)))$ dá podobně
 	\[F(h) = \frac{\partial }{\partial y}\left(\frac{\partial f(x+\theta_4h,y + \theta_3h}{\partial x}\right)\]
 	Obě $\frac{\partial }{\partial y}(\frac{\partial f}{\partial x})$ a $\frac{\partial }{\partial x}(\frac{\partial f}{\partial y})$ jsou spojité ($x,y$), a $\lim_{h\rightarrow 0} F(h)$ můžeme počítat z kteréhokoli výrazu (první nebo druhá):
 	\[\lim_{h\rightarrow 0}F(h) = \frac{\partial ^2 f(x,y)}{\partial x \partial y} 
