@@ -58,11 +58,9 @@
 	Vzhledem ke spojitosti existují $\delta_1, \Delta > 0$ taková, že v
 	obdélníku $\langle x_0 - \delta_1, x_0 + \delta_1 \rangle \times
 	\langle y_0 - \Delta, y_0 + \Delta \rangle$ je $\frac{\partial
-	F}{\partial y} (x, y)$ stále kladná (víme, že $\exists \epsilon:
-	\frac{\partial F(x_0, y_0)}{\partial y} > \epsilon > 0$ a pro toto
-	$\epsilon$ mi spojitost PD dá $\delta_1, \Delta$). Tento obdélník je
-	kompaktní, tedy na něm spojité funkce nabývají extrémů a tedy $\exists
-	a, A > 0:$
+	F}{\partial y} (x, y)$ stále kladná. Tento obdélník je kompaktní, tedy
+	na něm spojité funkce nabývají extrémů a tedy
+	$\exists a, A > 0:$
 	\begin{equation} \label{eq:1}
 		\frac{\partial F}{\partial y}(x, y) > a,~ \left |
 		\frac{\partial F}{\partial x}(x, y) \right | < A
@@ -83,15 +81,13 @@
 
 	Zatím však ani nevíme, zda je $f$ spojitá. Pojďme odvodit vlastnosti
 	$f$.
-	$$
-	0 = F(x + h, f(x + h)) - F(x, f(x)) =
-	$$
-	$$
-	\frac{\partial F (x + \theta h, f(x) + \theta (f(x + h) -
-	f(x)))}{\partial x} \cdot h +
-	\frac{\partial F (x + \theta h, f(x) + \theta (f(x + h) -
-	f(x)))}{\partial y} \cdot (f(x + h) - f(x))
-	$$
+	\begin{align*}
+		0 &= F(x + h, f(x + h)) - F(x, f(x)) \\
+		&= \frac{\partial F (x + \theta h, f(x) + \theta (f(x + h) -
+		f(x)))}{\partial x} \cdot h \\
+		&+ \frac{\partial F (x + \theta h, f(x) + \theta (f(x + h) -
+		f(x)))}{\partial y} \cdot (f(x + h) - f(x))
+	\end{align*}
 	První rovnost platí, protože $F(t, f(t)) = 0$. Druhá rovnost platí z
 	Lagrangeovy věty ve tvaru $f(\mathbf{x} + \mathbf{h}) - f(\mathbf{x}) =
 	\sum_{j=1}^{n} \frac{\partial f(\mathbf{x} + \theta
@@ -108,11 +104,8 @@
 	je tedy spojité v bodě $x$. Vrátíme se ještě jednou k formuli
 	\ref{eq:2} a dostaneme
 	$$
-	\frac{f(x + h) - f(x)}{h} =
-	$$
-	$$
-	- \left ( \frac{\partial F (x + \theta h, f(x) + \theta (f(x + h) -
-	f(x)))}{\partial y} \right )^{-1} \cdot
+	\frac{f(x + h) - f(x)}{h} = - \left ( \frac{\partial F (x + \theta h,
+	f(x) + \theta (f(x + h) - f(x)))}{\partial y} \right)^{-1} \cdot
 	\frac{\partial F(..., ...)}{\partial x}
 	$$
 	Nyní již ale víme, že $f$ je spojitá, a spojitost $\frac{\partial
@@ -168,15 +161,13 @@
 	\[ \mathbf{F}(\mathbf{x}, \mathbf{y}) = 0 \]
 \end{theorem}
 
-\begin{proof}
+\begin{intuition}
 	Místo důkazu si rozmysleme jednoduchý případ použití věty. Uvažujme
 	dvojici rovnic
-	$$
-	F_1(\mathbf{x}, y_1, y_2) = 0,
-	$$
-	$$
-	F_2(\mathbf{x}, y_1, y_2) = 0
-	$$
+	\begin{align*}
+		F_1(\mathbf{x}, y_1, y_2) &= 0, \\
+		F_2(\mathbf{x}, y_1, y_2) &= 0 \\
+	\end{align*}
 	a pokusme se najít řešení $y_i = f_i(\mathbf{x}), i = 1, 2$, v nějakém
 	okolí bodu $(\mathbf{x}^0, y_1^0, y_2^0)$. Aplikujme větu o jedné
 	rovnici. Mysleme o druhé z rovnic jako o rovnici pro $y_2$; v nějakém
@@ -234,7 +225,7 @@
 	$$
 	Platí-li tedy to druhé, můžeme začít řešením rovnice $F_2(\mathbf{x},
 	y_1, y_2) = 0$ pro $y_1$ místo $y_2$.
-\end{proof}
+\end{intuition}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{document}
