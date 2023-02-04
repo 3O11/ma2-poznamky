@@ -61,10 +61,10 @@
 	F}{\partial y} (x, y)$ stále kladná. Tento obdélník je kompaktní, tedy
 	na něm spojité funkce nabývají extrémů a tedy
 	$\exists a, A > 0:$
-	\begin{equation} \label{eq:1}
-		\frac{\partial F}{\partial y}(x, y) > a,~ \left |
-		\frac{\partial F}{\partial x}(x, y) \right | < A
-	\end{equation}
+	$$
+	\frac{\partial F}{\partial y}(x, y) > a,~ \left |
+	\frac{\partial F}{\partial x}(x, y) \right | < A
+	$$
 	Vezměme funkci $\varphi(y) = F(x_0, y)$. Ta má kladnou derivaci a tedy
 	roste na intervalu $\langle y_0 - \Delta, y_0 + \Delta \rangle$.
 	Jelikož $\varphi(y_0) = 0$, je $F(x_0, y_0 - \Delta) = \varphi(y_0 -
@@ -95,14 +95,14 @@
 	- f(x))$.
 
 	Upravíme
-	\begin{equation} \label{eq:2}
-		f(x + h) - f(x) = -h \cdot
-		\frac{\frac{\partial F(...)}{\partial x}}
-		{\frac{\partial F(...)}{\partial y}}
-	\end{equation}
-	Podle \ref{eq:1} tedy $|f(x + h) - f(x)| < |h| \cdot \frac{A}{a}$ a $f$
-	je tedy spojité v bodě $x$. Vrátíme se ještě jednou k formuli
-	\ref{eq:2} a dostaneme
+	$$
+	f(x + h) - f(x) = -h \cdot
+	\frac{\frac{\partial F(...)}{\partial x}}
+	{\frac{\partial F(...)}{\partial y}}
+	$$
+	Podle výše získaných nerovností s $a$ a $A$ tedy $|f(x + h) - f(x)| <
+	|h| \cdot \frac{A}{a}$ a $f$ je tedy spojité v bodě $x$. Vrátíme se
+	ještě jednou k $f(x + h) - f(x)$ a dostaneme
 	$$
 	\frac{f(x + h) - f(x)}{h} = - \left ( \frac{\partial F (x + \theta h,
 	f(x) + \theta (f(x + h) - f(x)))}{\partial y} \right)^{-1} \cdot
