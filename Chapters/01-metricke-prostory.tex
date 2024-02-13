@@ -91,9 +91,9 @@ $\|\textbf{u}\| = \sqrt{\textbf{uu}}$ a vzdáleností $d(\textbf{u},\textbf{v}) 
 		Podle definice konvergence posloupnosti existuje $n_0$ takové, že pro $n \ge n_0$ je $d_1(x_n,x) < \delta$. Tedy je-li $n \ge n_0$
 		máme $d_2(f(x_n),f(x)) < \varepsilon$ a potom $\lim_n f(x_n) = f(\lim_n x_n)$.
 		\item[$\lnot \Rightarrow  \lnot$] Nechť $f$ není spojitá.
-		Potom existují $x \in X_1$ a $\varepsilon_0 > 0$ takové, že pro každé $\delta > 0$ existuje $x_\delta$ takové, že
-		$$d_1(x, x_\delta) < \delta \qquad \text{ale} \qquad d_2(f(x), f(x_\delta)) \ge \varepsilon_0$$
-		Položme $x_n = x_{1/n}$. Potom $\lim_n x_n = x$ ale $(f(x_n))_n$ nemůže konvergovat k $f(x)$.
+		Potom existují $x \in X_1$ a $\varepsilon_0 > 0$ takové, že pro každé $\delta > 0$ existuje $x_\delta := g(\delta)$ takové, že
+		$$d_1(x, g(\delta)) < \delta \qquad \text{ale} \qquad d_2(f(x), f(g(\delta))) \ge \varepsilon_0$$
+		Položme $x_n = g(1/n)$. Potom $\lim_n x_n = x$ ale $(f(x_n))_n$ nemůže konvergovat k $f(x)$.
 	\end{itemize}
 \end{proof}
 
