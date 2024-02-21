@@ -81,11 +81,15 @@
 	v $\Tilde{\textbf{a}}$, a tedy je 
 	\[\frac{\partial F(\Tilde{\textbf{a}})}{\partial x_i} = 0 \text{ pro } i = k+1,...,n,\]
 	to jest, podle řetízkového pravidla
-	\[\sum^k_{r=1}\frac{\partial f(\textbf{a})}{\partial x_r}\cdot \frac{\partial \phi_r(\Tilde{\textbf{a}})}{\partial x_i} + \frac{\partial f(\textbf{a})}{\partial x_i} \text{ pro } i = k+1,...,n.\]
-	Derivováním konstantní $g_j(\phi_1(\Tilde{\textbf{x}},...,\phi_k(\Tilde{\textbf{x}}),\Tilde{\textbf{x}}) = 0$ dostaneme pro $j = 1,...,k$
-	\[\sum^k_{r=1}\frac{\partial g_j(\textbf{a})}{\partial x_r}\cdot \frac{\partial \phi_r(\Tilde{\textbf{a}})}{\partial x_i} + \frac{\partial g_j(\textbf{a})}{\partial x_i} \text{ pro } i = k+1,...,n.\]
+	\[\sum^k_{r=1}\frac{\partial f(\textbf{a})}{\partial x_r}\cdot \frac{\partial \phi_r(\Tilde{\textbf{a}})}{\partial x_i} + \frac{\partial f(\textbf{a})}{\partial x_i} = 0 \text{ pro } i = k+1,...,n.\]
+	čili
+	\[\frac{\partial f(\textbf{a})}{\partial x_i} = -\sum^k_{r=1}\frac{\partial f(\textbf{a})}{\partial x_r}\cdot \frac{\partial \phi_r(\Tilde{\textbf{a}})}{\partial x_i} \text{ pro } i = k+1,...,n.\]
+	Podobně, derivováním konstantní $g_j(\phi_1(\Tilde{\textbf{x}}),...,\phi_k(\Tilde{\textbf{x}}),\Tilde{\textbf{x}}) = 0$ dostaneme pro $j = 1,...,k$
+	\[\sum^k_{r=1}\frac{\partial g_j(\textbf{a})}{\partial x_r}\cdot \frac{\partial \phi_r(\Tilde{\textbf{a}})}{\partial x_i} + \frac{\partial g_j(\textbf{a})}{\partial x_i}=0 \text{ pro } i = k+1,...,n.\]
+    čili
+    \[\frac{\partial g_j(\textbf{a})}{\partial x_i}=-\sum^k_{r=1}\frac{\partial g_j(\textbf{a})}{\partial x_r}\cdot \frac{\partial \phi_r(\Tilde{\textbf{a}})}{\partial x_i} \text{ pro } i = k+1,...,n.\]
 	Dále použijeme znovu vlastnost toho, že determinant je nenulový. Vzhledem k hodnosti matice má systém lineárních rovnic
-	\[\frac{\partial f(\textbf{a})}{\partial x_i} + \sum^n_{j=1}\lambda_j\cdot\frac{\partial g_j(\textbf{a})}{\partial x_i} = 0, i = 1,...,k\]
+	\[\frac{\partial f(\textbf{a})}{\partial x_i} + \sum^k_{j=1}\lambda_j\cdot\frac{\partial g_j(\textbf{a})}{\partial x_i} = 0, i = 1,...,k\]
 	jediné řešení $\lambda_1,...,\lambda_k.$ To jsou rovnosti z tvrzení, ale jen pro $i \leq k$. Musíme ještě dokázat, že to platí i pro $i > k$. 
 	\begin{align*}
 	\frac{\partial f(\textbf{a})}{\partial x_i} + & \sum^k_{j=1}\lambda_j\cdot\frac{\partial g_j(\textbf{a})}{\partial x_i}=\\
