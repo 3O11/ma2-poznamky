@@ -112,20 +112,20 @@ zatímco existence parciálních derivací mnoho neznamená, \textit{existence s
 	Potom máme
 	\[f(\textbf{a}+\textbf{h}) - f(\textbf{a}) = \sum^n_{k=1}(f(\textbf{a}+\textbf{h}^{(k-1)})-f(\textbf{a}+\textbf{h}^{(k)})) = M.\]
 	Podle Lagrangeovy věty \ref{lagrange1} existují $0 \leq \Theta_k \leq 1$ takové, že
-	\[f(\textbf{a}+\textbf{h}^{(k-1)})-f(\textbf{a}+\textbf{h}^{(k)}) = \frac{\partial f(a_1,...,a_{k-1},a_k+ \Theta_kh_k,a_{k+1},...,a_n)}{\partial x_k}h_k\]
+	\[f(\textbf{a}+\textbf{h}^{(k-1)})-f(\textbf{a}+\textbf{h}^{(k)}) = \frac{\partial f(a_1,...,a_{k-1},a_k+ \Theta_kh_k,a_{k+1}+h_{k+1}, a_{k+2}+h_{k+2},...,a_n+h_n)}{\partial x_k}h_k\]
 	a můžeme pokračovat
 	\begin{align*} 
 		\begin{split}
-			M & = \sum\frac{\partial f(a_1,...a_k+\Theta_kh_k,...,a_n)}{\partial x_k}h_k = \\
-			 & = \sum \frac{\partial f(\textbf{a})}{\partial x_k}h_k + \sum \left( \frac{\partial f(a_1,...,a_k+\Theta_kh_k,...,a_n)}{\partial x_k}
+			M & = \sum\frac{\partial f(a_1,...a_k+\Theta_kh_k, a_{k+1}+h_{k+1},...,a_n+h_n)}{\partial x_k}h_k = \\
+			 & = \sum \frac{\partial f(\textbf{a})}{\partial x_k}h_k + \sum \left( \frac{\partial f(a_1,...,a_k+\Theta_kh_k, a_{k+1}+h_{k+1},...,a_n+h_n)}{\partial x_k}
 			 - \frac{\partial f(\textbf{a})}{\partial x_k} \right)h_k = \\
-			 & = \sum \frac{\partial f(\textbf{a})}{\partial x_k}h_k + ||\textbf{h}||\sum\left(\frac{\partial f(a_1,...,a_k+\Theta_kh_k,...,a_n)}
+			 & = \sum \frac{\partial f(\textbf{a})}{\partial x_k}h_k + ||\textbf{h}||\sum\left(\frac{\partial f(a_1,...,a_k+\Theta_kh_k, a_{k+1}+h_{k+1},...,a_n+h_n)}
 			 {\partial x_k}- \frac{\partial f(\textbf{a})}{\partial x_k}\right)\frac{h_k}{||\textbf{h}||}.
 		\end{split}
 	\end{align*}
 	Položíme
 	\[\mu (\textbf{h}) =
-	    \begin{cases} & \sum\left(\frac{\partial f(a_1,...,a_k+\Theta_kh_k,...,a_n)}{\partial x_k} -
+	    \begin{cases} & \sum\left(\frac{\partial f(a_1,...,a_k+\Theta_kh_k,, a_{k+1}+h_{k+1},...,a_n+h_n)}{\partial x_k} -
 	    \frac{\partial f(\textbf{a})}{\partial x_k} \right)\frac{h_k}{||\textbf{h}||}.\\
 	    & 0 \text{ pokud } \mathbf{h} = \mathbf{o}
 	    \end{cases}\]
